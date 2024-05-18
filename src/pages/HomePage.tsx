@@ -19,7 +19,7 @@ const HomePage = () => {
           className="object-cover"
         />
       </div>
-      <Link to="/trainings">
+      <Link to="/trainings/trening1">
         <Button>Trainings</Button>
       </Link>
     </div>
