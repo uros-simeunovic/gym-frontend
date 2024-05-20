@@ -1,3 +1,8 @@
 export const Navbar = () => {
-  return <div className="p-4 h-full flex items-center bg-white m-2">sa</div>;
+  return (
+    <div className="h-full mx-32 flex items-center justify-between bg-white">
+      <div>Logo</div>
+      <div>User</div>
+    </div>
+  );
 };

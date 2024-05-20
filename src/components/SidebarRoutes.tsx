@@ -9,7 +9,7 @@ export const SidebarRoutes = () => {
     <div className="flex flex-col w-full gap-6">
       {routes.map((route, index) => (
         <div key={index} className="flex flex-col items-start">
-          <Link to={`/trainings/${route.href}`}>
+          <Link to={`/trainings/${route.href}`} onClick={onClose}>
             <h1 className="text-4xl font-semibold">{route.label}</h1>
           </Link>
           {route.workouts.map((workout, index) => (
