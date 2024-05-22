@@ -7,7 +7,7 @@ export const MobileSidebar = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side={"left"}>
+      <SheetContent side={"left"} className="w-full">
         <Sidebar />
       </SheetContent>
     </Sheet>

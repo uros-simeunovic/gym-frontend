@@ -12,6 +12,7 @@ export const workouts1 = [
     description:
       "Ova vezba sluzi za to i to. Ova vezba sluzi za to i to. Ova vezba sluzi za to i to Ova vezba sluzi za to i to",
     videoUrl: "KlFYYmcLCuTFsX8mkXQOJ00k4jdNTaBA4X00ZNdn02vGh8",
+    // videoUrl: video1,
     isFree: true,
     imageUrl: image1,
   },
@@ -21,6 +22,7 @@ export const workouts1 = [
     description:
       "Ova vezba sluzi za to i to. Ova vezba sluzi za to i to. Ova vezba sluzi za to i to Ova vezba sluzi za to i to",
     videoUrl: "KlFYYmcLCuTFsX8mkXQOJ00k4jdNTaBA4X00ZNdn02vGh8",
+    // videoUrl: video2,
     isFree: true,
     imageUrl: image2,
   },
@@ -30,6 +32,7 @@ export const workouts1 = [
     description:
       "Ova vezba sluzi za to i to. Ova vezba sluzi za to i to. Ova vezba sluzi za to i to Ova vezba sluzi za to i to",
     videoUrl: "KlFYYmcLCuTFsX8mkXQOJ00k4jdNTaBA4X00ZNdn02vGh8",
+    // videoUrl: video1,
     isFree: true,
     imageUrl: image3,
   },

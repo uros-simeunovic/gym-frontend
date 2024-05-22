@@ -57,7 +57,7 @@ export const DataTable = () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead></TableHead>
+            <TableHead>Slika</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Placeno</TableHead>
             <TableHead>Actions</TableHead>
