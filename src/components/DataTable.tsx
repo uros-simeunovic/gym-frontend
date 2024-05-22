@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import {
   Table,
@@ -35,23 +34,6 @@ let users = [
 ];
 
 export const DataTable = () => {
-  const [korisnici, setKorisnici] = useState(users);
-
-  const checkboxHandle = (id: string) => {
-    let k = users.map((user) => {
-      if (user.name == id && user.purchased) {
-        user.purchased = false;
-        return user;
-      } else if (user.name == id) {
-        user.purchased = true;
-        return user;
-      }
-      return user;
-    });
-    console.log(k);
-    setKorisnici(k);
-  };
-
   return (
     <div className="border mx-32">
       <Table>
