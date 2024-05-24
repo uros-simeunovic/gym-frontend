@@ -3,11 +3,13 @@ import logo from "../assets/Logo7.png";
 
 export const Navbar = () => {
   return (
-    <div className="h-full p-2 md:w-[1600px] mx-auto pt-6 flex items-center justify-between bg-white">
-      <Link to={"/"} className="w-[120px] md:w-[160px]">
-        <img src={logo} alt="logo" />
-      </Link>
-      <div>dasasddas</div>
+    <div className="h-full p-2 pt-6 bg-white">
+      <div className="h-full md:max-w-[1600px] mx-auto flex items-center justify-between">
+        <Link to={"/"}>
+          <img src={logo} alt="logo" className="w-[120px] md:w-[160px]" />
+        </Link>
+        <div>Korisnik</div>
+      </div>
     </div>
   );
 };

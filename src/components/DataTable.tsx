@@ -35,7 +35,7 @@ let users = [
 
 export const DataTable = () => {
   return (
-    <div className="border mx-32">
+    <div className="border">
       <Table>
         <TableHeader>
           <TableRow>

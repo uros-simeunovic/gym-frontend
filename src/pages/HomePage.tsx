@@ -12,16 +12,14 @@ import {
 
 const HomePage = () => {
   return (
-    <>
-      <div className="p-2 md:w-[1600px] mx-auto">
-        {/* Hero section */}
+    <div className="w-full">
+      <div className="p-2 md:max-w-[1600px] mx-auto">
         <div className="flex flex-col items-center text-center my-8 mt-24 w-full">
           <h5 className="font-normal text-xl">ACHIEVE YOUR FITNESS GOALS</h5>
-          <h1 className="font-bold text-[86px] md:max-w-[600px] md:text-[126px] leading-none">
+          <h1 className="font-bold text-[60px] sm:text-[86px] md:max-w-[600px] md:text-[126px] leading-none">
             FIND YOUR STRENGTH
           </h1>
         </div>
-
         <div className="mx-auto mt-[100px]">
           <img
             src={landingPageImage}
@@ -29,7 +27,6 @@ const HomePage = () => {
             className="mx-auto object-cover w-full h-[800px] rounded-[75px]"
           />
         </div>
-        {/* Join section */}
         <div className="flex flex-col items-center text-center space-y-12 my-52">
           <img
             src={silhouette}
@@ -54,8 +51,6 @@ const HomePage = () => {
             </Button>
           </Link>
         </div>
-
-        {/* Trainings section */}
         <div className="flex flex-col">
           <div className="flex flex-row justify-between mb-6 mx-6">
             <h3 className="text-4xl md:text-6xl font-semibold">Trening</h3>
@@ -83,7 +78,7 @@ const HomePage = () => {
 
       <div className="p-2 bg-[#171717] w-full my-32 py-32">
         {/* Dark section */}
-        <div className="flex flex-col items-center text-center space-y-12 md:w-[1600px] mx-auto">
+        <div className="flex flex-col items-center text-center space-y-12 md:max-w-[1600px] mx-auto">
           <img
             src={silhouette}
             alt="Girl workout silhouette"
@@ -108,7 +103,7 @@ const HomePage = () => {
           </Link>
         </div>
         {/* Faq section */}
-        <div className="mt-44 mx-auto md:w-[1600px]">
+        <div className="mt-44 md:max-w-[1600px] mx-auto">
           <h3 className="text-4xl text-white md:text-6xl font-semibold">
             Česta pitanja
           </h3>
@@ -150,7 +145,7 @@ const HomePage = () => {
           <Button>dashboard</Button>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
