@@ -25,7 +25,7 @@ const Workout = () => {
       <MuxPlayer
         // playbackId={currentWorkout.videoUrl}
         src={currentWorkout.videoUrl}
-        className="w-full"
+        className="w-full -z-50"
       />
       <div className="m-4 space-y-2">
         <h1 className="text-4xl font-semibold">{currentWorkout.title}</h1>

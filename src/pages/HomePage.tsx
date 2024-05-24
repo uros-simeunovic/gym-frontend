@@ -15,7 +15,7 @@ const HomePage = () => {
     <>
       <div className="p-2 md:w-[1600px] mx-auto">
         {/* Hero section */}
-        <div className="flex flex-col items-center text-center my-8 mt-24">
+        <div className="flex flex-col items-center text-center my-8 mt-24 w-full">
           <h5 className="font-normal text-xl">ACHIEVE YOUR FITNESS GOALS</h5>
           <h1 className="font-bold text-[86px] md:max-w-[600px] md:text-[126px] leading-none">
             FIND YOUR STRENGTH
@@ -81,7 +81,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="p-2 bg-[#171717] my-32 py-32">
+      <div className="p-2 bg-[#171717] w-full my-32 py-32">
         {/* Dark section */}
         <div className="flex flex-col items-center text-center space-y-12 md:w-[1600px] mx-auto">
           <img
