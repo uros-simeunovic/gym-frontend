@@ -2,12 +2,32 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import landingPageImage from "../assets/landingPage.jpg";
 import silhouette from "../assets/silueta.png";
-import logo from "../assets/LogoGGWhite.png";
+import logo from "../assets/logoGG1.png";
 import { ChevronRight, Play } from "lucide-react";
+import {
+  useMotionValueEvent,
+  useScroll,
+  motion,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
 
 const HomePage = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end start", "start end"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log(latest);
+  });
+
+  const line = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <div className="p-2 md:max-w-[1600px] mx-auto">
         <div className="flex flex-col items-center text-center my-8 mt-24 w-full">
           <h5 className="font-normal text-xl">ACHIEVE YOUR FITNESS GOALS</h5>
@@ -71,7 +91,25 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="p-2 bg-[#171717] w-full mt-32 py-40">
+      <div className="relative p-2 bg-[#171717] w-full mt-32 py-40">
+        <motion.div
+          ref={ref}
+          className="absolute top-8 flex flex-row items-end gap-20 text-4xl w-[1000px] md:w-[2500px] h-[80px] bg-pink-600"
+          style={{
+            translateX: line,
+          }}
+        >
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+          <img src={logo} alt="" className="w-28" />
+        </motion.div>
         {/* Dark section */}
         <div className="flex flex-col items-center text-center space-y-12 md:max-w-[1600px] mx-auto">
           <img
@@ -133,8 +171,8 @@ const HomePage = () => {
         </div> */}
       </div>
 
-      <div className="p-2 bg-[#171717] w-full pt-32 border-t-2 ">
-        {/* Footer */}
+      {/* Footer */}
+      <div className="p-2 bg-[#171717] w-full pt-32 ">
         <footer className="md:max-w-[1600px] mt-4 mx-auto ">
           <Link to={"/"}>
             <img src={logo} alt="logo" className="w-[120px] md:w-[160px]" />
