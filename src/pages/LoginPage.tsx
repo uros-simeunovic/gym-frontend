@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useGoogleLogin } from "@react-oauth/google";
 
 export const LoginPage = () => {
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => console.log(codeResponse),
+    flow: "auth-code",
+  });
+
   return (
     <div>
       <h1>Login</h1>
-      <Link to="http://localhost:8080/oauth2/authorization/google">
-        Login with Google
-      </Link>
+      <Button onClick={() => login()}>Login with Google</Button>
     </div>
   );
 };

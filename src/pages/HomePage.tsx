@@ -57,7 +57,7 @@ const HomePage = () => {
             machines, weight lifting equipment, and functional training areas
             provide a comprehensive workout experience.
           </p>
-          <Link to={"/"}>
+          <Link to={"/auth/login"}>
             <Button
               variant="outline"
               className="text-lg border-2 w-[200px] rounded-3xl hover:bg-pink-500 hover:text-white border-pink-500"
@@ -126,7 +126,7 @@ const HomePage = () => {
             machines, weight lifting equipment, and functional training areas
             provide a comprehensive workout experience.
           </p>
-          <Link to={"/"}>
+          <Link to={"/auth/login"}>
             <Button
               variant="outline"
               className="text-lg text-white border-2 w-[200px] rounded-3xl bg-transparent hover:bg-pink-500 hover:text-white border-pink-500"
