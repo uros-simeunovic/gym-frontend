@@ -2,13 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import landingPageImage from "../assets/landingPage.jpg";
 import silhouette from "../assets/silueta.png";
+import logo from "../assets/LogoGGWhite.png";
 import { ChevronRight, Play } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const HomePage = () => {
   return (
@@ -76,7 +71,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="p-2 bg-[#171717] w-full my-32 py-32">
+      <div className="p-2 bg-[#171717] w-full mt-32 py-40">
         {/* Dark section */}
         <div className="flex flex-col items-center text-center space-y-12 md:max-w-[1600px] mx-auto">
           <img
@@ -103,7 +98,7 @@ const HomePage = () => {
           </Link>
         </div>
         {/* Faq section */}
-        <div className="mt-44 md:max-w-[1600px] mx-auto">
+        {/* <div className="mt-44 md:max-w-[1600px] mx-auto">
           <h3 className="text-4xl text-white md:text-6xl font-semibold">
             Česta pitanja
           </h3>
@@ -135,15 +130,22 @@ const HomePage = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
+        </div> */}
       </div>
-      <div className="p-2 sm:w-full mx-auto bg-black">
-        <Link to="/trainings/trening1">
-          <Button>Trainings</Button>
-        </Link>
-        <Link to="/admin/dashboard">
-          <Button>dashboard</Button>
-        </Link>
+
+      <div className="p-2 bg-[#171717] w-full pt-32 border-t-2 ">
+        {/* Footer */}
+        <footer className="md:max-w-[1600px] mt-4 mx-auto ">
+          <Link to={"/"}>
+            <img src={logo} alt="logo" className="w-[120px] md:w-[160px]" />
+          </Link>
+          <Link to="/trainings/trening1">
+            <Button>Trainings</Button>
+          </Link>
+          <Link to="/admin/dashboard">
+            <Button>dashboard</Button>
+          </Link>
+        </footer>
       </div>
     </div>
   );
