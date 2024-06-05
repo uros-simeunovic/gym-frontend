@@ -7,7 +7,6 @@ import Workout from "./pages/TrainingPages/Workout";
 import Training from "./pages/TrainingPages/Training";
 import AdminPanel from "./pages/AdminPanel";
 import { LoginPage } from "./pages/LoginPage";
-import TrainingsPage from "./pages/TrainingPages/TrainingsPage";
 
 const App = () => {
   return (

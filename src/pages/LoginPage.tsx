@@ -7,6 +7,7 @@ export const LoginPage = () => {
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
+      console.log(codeResponse);
       navigate("/");
     },
     flow: "auth-code",
