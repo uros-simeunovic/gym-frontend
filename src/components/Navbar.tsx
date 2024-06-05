@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logoGG1.png";
 import { Menu } from "lucide-react";
-import { useSidebarMobile } from "@/hooks/useSidebarMobile";
-import { MobileNavbar } from "./MobileNavbar";
+import { Sheet, SheetContent } from "./ui/sheet";
+import { NavmenuSidebar } from "./NavmenuSidebar";
+import { useState } from "react";
 
 export const Navbar = () => {
-  const { onOpen } = useSidebarMobile();
+  const [open, setOpen] = useState(false);
+
+  console.log(open);
 
   return (
     <div className="h-full p-2 pt-6 bg-white">
@@ -13,16 +16,19 @@ export const Navbar = () => {
         <Link to={"/"}>
           <img src={logo} alt="logo" className="w-[100px] md:w-[140px]" />
         </Link>
-        <div className="hidden md:flex flex-row gap-4 font-medium text-3xl">
-          <Link to="/">Pocetna</Link>
-          <Link to="/trainings/trening1">Planovi</Link>
+        <div className="hidden md:flex flex-row gap-4 font-thin text-3xl">
+          <Link to="/">Početna</Link>
+          <Link to="/trainings">Planovi</Link>
           <Link to="/about">O meni</Link>
-          <div>Korisnik</div>
         </div>
-        <div onClick={onOpen} className="md:hidden">
+        <div onClick={() => setOpen(true)} className="md:hidden">
           <Menu className="w-10" />
         </div>
-        <MobileNavbar />
+        <Sheet open={open} onOpenChange={() => setOpen(false)}>
+          <SheetContent side={"right"} className="w-full">
+            <NavmenuSidebar />
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   );

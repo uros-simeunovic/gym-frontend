@@ -1,9 +1,9 @@
 import { routes } from "@/data/trainings";
-import { useSidebarMobile } from "@/hooks/useSidebarMobile";
+import { useWorkoutSidebarMobile } from "@/hooks/useWorkoutSidebarMobile";
 import { Link } from "react-router-dom";
 
 export const SidebarRoutes = () => {
-  const { onClose } = useSidebarMobile();
+  const { onClose } = useWorkoutSidebarMobile();
 
   return (
     <div className="flex flex-col w-full gap-6">

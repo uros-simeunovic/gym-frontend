@@ -1,13 +1,13 @@
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Sidebar } from "./Sidebar";
-import { useSidebarMobile } from "@/hooks/useSidebarMobile";
+import { useWorkoutSidebarMobile } from "@/hooks/useWorkoutSidebarMobile";
 
 export const MobileSidebar = () => {
-  const { isOpen, onClose } = useSidebarMobile();
+  const { isOpen, onClose } = useWorkoutSidebarMobile();
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side={"left"} className="w-full">
+      <SheetContent side={"right"} className="w-full">
         <Sidebar />
       </SheetContent>
     </Sheet>

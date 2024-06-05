@@ -1,14 +1,9 @@
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { useSidebarMobile } from "@/hooks/useSidebarMobile";
 import { NavmenuSidebar } from "./NavmenuSidebar";
-import { useEffect } from "react";
+import { useMainSidebarMobile } from "@/hooks/useMainSidebarMobile";
 
 export const MobileNavbar = () => {
-  const { isOpen, onClose } = useSidebarMobile();
-
-  useEffect(() => {
-    onClose();
-  }, []);
+  const { isOpen, onClose } = useMainSidebarMobile();
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>

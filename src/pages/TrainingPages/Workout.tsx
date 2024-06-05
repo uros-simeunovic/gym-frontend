@@ -1,16 +1,9 @@
 import { routes } from "@/data/trainings";
-import { useSidebarMobile } from "@/hooks/useSidebarMobile";
 import MuxPlayer from "@mux/mux-player-react";
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const Workout = () => {
   const params = useParams();
-  const { onClose } = useSidebarMobile();
-
-  useEffect(() => {
-    onClose();
-  }, []);
 
   const currentWorkout = routes
     .map((route) =>

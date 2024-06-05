@@ -4,16 +4,16 @@ import "./index.css";
 import "./main.css";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GoogleOAuthProvider } from "@react-oauth/google";
+import { AnimatePresence } from "framer-motion";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
+    <AnimatePresence mode="wait" initial={false}>
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
       </BrowserRouter>
-    </GoogleOAuthProvider>
+    </AnimatePresence>
   </React.StrictMode>
 );

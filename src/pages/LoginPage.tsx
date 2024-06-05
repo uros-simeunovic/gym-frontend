@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useGoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => console.log(codeResponse),
+    onSuccess: (codeResponse) => {
+      navigate("/");
+    },
     flow: "auth-code",
   });
 

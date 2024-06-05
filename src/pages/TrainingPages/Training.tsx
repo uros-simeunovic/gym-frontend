@@ -1,13 +1,10 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useGetTrainings } from "@/hooks/useGetTrainings";
 import { Play } from "lucide-react";
 
 const Training = () => {
-  const params = useParams();
   const trainings = useGetTrainings();
   const navigate = useNavigate();
-
-  console.log(params);
 
   return (
     <div className="w-full flex flex-col gap-4 md:w-[1000px] lg:w-[1300px] md:mx-auto px-4 mt-[10px]">

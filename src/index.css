@@ -8,6 +8,8 @@ body {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   /* background-color: #171717; */
+  scroll-behavior: smooth;
+  position: relative;
 }
 
 @layer base {
