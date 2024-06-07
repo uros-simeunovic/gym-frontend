@@ -43,14 +43,14 @@ export const Overlay = () => {
             onClick={() => onClick(1)}
             initial={{
               opacity: 0.8,
-              translateX: "-700px",
+              translateX: "-100%",
             }}
             animate={{
               opacity: 1,
               translateX: "0px",
             }}
             exit={{
-              translateX: "-700px",
+              translateX: "-100%",
             }}
             transition={{
               duration: 1,
@@ -72,14 +72,14 @@ export const Overlay = () => {
             onClick={() => onClick(2)}
             initial={{
               opacity: 0.8,
-              translateX: "700px",
+              translateX: "100%",
             }}
             animate={{
               opacity: 1,
               translateX: "0px",
             }}
             exit={{
-              translateX: "700px",
+              translateX: "100%",
             }}
             transition={{
               duration: 1,

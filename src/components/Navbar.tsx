@@ -8,8 +8,6 @@ import { useState } from "react";
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  console.log(open);
-
   return (
     <div className="h-full p-2 pt-6 bg-white">
       <div className="h-full md:max-w-[1600px] mx-auto flex items-center justify-between">

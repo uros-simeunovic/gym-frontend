@@ -1,13 +1,14 @@
 import { ArrowLeftCircle, Menu } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Sheet, SheetContent } from "./ui/sheet";
 import { Sidebar } from "./Sidebar";
 import { useState } from "react";
+import { useAuth } from "@/AuthProvider";
 
 export const TrainingNavbar = () => {
   const [open, setOpen] = useState(false);
 
-  console.log(open);
+  const { user } = useAuth();
 
   const navigate = useNavigate();
 
@@ -16,6 +17,15 @@ export const TrainingNavbar = () => {
       <div onClick={() => navigate("/")} className="flex flex-row items-center">
         <ArrowLeftCircle />
       </div>
+      {user ? (
+        <>
+          <div>Dobrodosao/la {user.name}</div>
+          <img className="rounded-full w-14" src={user.picture} />
+        </>
+      ) : (
+        <Link to="/auth/login">Login</Link>
+      )}
+
       <div onClick={() => setOpen(true)} className="md:hidden">
         <Menu />
       </div>

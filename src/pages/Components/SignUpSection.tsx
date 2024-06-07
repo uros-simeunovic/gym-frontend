@@ -1,16 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import silhouette from "../../assets/silueta.png";
+import { motion } from "framer-motion";
 
 export const SignUpSection = () => {
   return (
     <div className="flex flex-col items-center text-center space-y-12 my-52">
-      {/* TODO: Krug koji se smanji do nestanka a iza njega je pink silueta */}
-      <img
-        src={silhouette}
-        alt="Girl workout silhouette"
-        className="w-12 md:w-16"
-      />
+      <div className="relative">
+        <motion.div
+          className="bg-[#f72798] absolute -left-[43px] -top-[16px] w-[150px] h-[150px] rounded-3xl"
+          initial={{
+            scale: 1,
+          }}
+          whileInView={{
+            scale: 0.1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        />
+        <img
+          src={silhouette}
+          alt="Girl workout silhouette"
+          className="w-12 md:w-16"
+        />
+      </div>
       <h3 className="text-[40px] leading-[44px] md:text-7xl font-semibold max-w-[800px]">
         FITNESS SHOULD BE ACCESIBLE TO EVERYONE
       </h3>
