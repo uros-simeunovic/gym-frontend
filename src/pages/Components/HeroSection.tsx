@@ -15,7 +15,7 @@ export const HeroSection = ({ image }: { image: string }) => {
               translateY: "0px",
             }}
             transition={{
-              duration: 1,
+              duration: 0.7,
               ease: [0.45, 0, 0.55, 1],
               delay: 0.3,
             }}
@@ -34,7 +34,7 @@ export const HeroSection = ({ image }: { image: string }) => {
               translateY: "0px",
             }}
             transition={{
-              duration: 1,
+              duration: 0.7,
               ease: [0.45, 0, 0.55, 1],
               delay: 0.1,
             }}
@@ -53,7 +53,7 @@ export const HeroSection = ({ image }: { image: string }) => {
               translateY: "0px",
             }}
             transition={{
-              duration: 1,
+              duration: 0.7,
               ease: [0.45, 0, 0.55, 1],
             }}
           >

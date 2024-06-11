@@ -4,6 +4,7 @@ import { Sheet, SheetContent } from "./ui/sheet";
 import { Sidebar } from "./Sidebar";
 import { useState } from "react";
 import { useAuth } from "@/AuthProvider";
+import axios from "axios";
 
 export const TrainingNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -11,6 +12,15 @@ export const TrainingNavbar = () => {
   const { user } = useAuth();
 
   const navigate = useNavigate();
+
+  const logout = async () => {
+    const response = await axios.post(
+      "http://localhost:8080/api/sessions/logout",
+      {},
+      { withCredentials: true }
+    );
+    console.log(response);
+  };
 
   return (
     <div className="p-4 h-full flex justify-between items-center bg-white m-2">
@@ -21,6 +31,9 @@ export const TrainingNavbar = () => {
         <>
           <div>Dobrodosao/la {user.name}</div>
           <img className="rounded-full w-14" src={user.picture} />
+          <div className="cursor-pointer" onClick={logout}>
+            Logout
+          </div>
         </>
       ) : (
         <Link to="/auth/login">Login</Link>

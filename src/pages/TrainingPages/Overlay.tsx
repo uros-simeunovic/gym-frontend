@@ -31,7 +31,7 @@ export const Overlay = () => {
         <div
           className={
             show &&
-            "before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:bg-white before:-z-50"
+            "before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:bg-white before:-z-50 overflow-hidden"
           }
         >
           <motion.div
