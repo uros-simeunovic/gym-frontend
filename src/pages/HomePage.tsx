@@ -1,5 +1,5 @@
 import landingPageImage from "../assets/landingPage.jpg";
-import logo from "../assets/logoGG1.png";
+import logo from "../assets/logoGGWhite1.png";
 import { HeroSection } from "./Components/HeroSection";
 import { SignUpSection } from "./Components/SignUpSection";
 import { PlanSection } from "./Components/PlanSection";

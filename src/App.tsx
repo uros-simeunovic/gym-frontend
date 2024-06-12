@@ -6,8 +6,8 @@ import Workout from "./pages/TrainingPages/Workout";
 import Training from "./pages/TrainingPages/Training";
 import AdminPanel from "./pages/AdminPanel";
 import { LoginPage } from "./pages/LoginPage";
-import PrivateRoutes from "./components/PrivateRoutes";
-import PrivateAdminRoutes from "./components/PrivateAdminRoutes";
+// import PrivateRoutes from "./components/PrivateRoutes";
+// import PrivateAdminRoutes from "./components/PrivateAdminRoutes";
 
 const App = () => {
   return (
@@ -18,16 +18,15 @@ const App = () => {
       <Route element={<TrainingsLayout />}>
         <Route path="/trainings" element={<></>} />
       </Route>
-
-      <Route element={<PrivateRoutes />}>
-        <Route element={<TrainingsLayout />}>
-          <Route path="/trainings/:trainingId" element={<Training />} />
-          <Route
-            path="/trainings/:trainingId/workout/:workoutId"
-            element={<Workout />}
-          />
-        </Route>
+      <Route element={<TrainingsLayout />}>
+        <Route path="/trainings/:trainingId" element={<Training />} />
+        <Route
+          path="/trainings/:trainingId/workout/:workoutId"
+          element={<Workout />}
+        />
       </Route>
+
+      {/* <Route element={<PrivateRoutes />}></Route> */}
       {/* <Route element={<PrivateAdminRoutes />}>
       </Route> */}
       <Route path="/admin/dashboard" element={<AdminPanel />} />
