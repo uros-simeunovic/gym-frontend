@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 export const SignUpSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    margin: "-200px",
-    // once: true,
+    margin: "-100px",
+    once: true,
   });
 
   return (

@@ -4,16 +4,9 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent } from "./ui/sheet";
 import { NavmenuSidebar } from "./NavmenuSidebar";
 import { useState } from "react";
-// import { useAuth } from "@/AuthProvider";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-
-  // const { user, loading } = useAuth();
-
-  // if (!loading) {
-  //   console.log(user?.isAdmin);
-  // }
 
   return (
     <div className="h-full p-2 pt-6 bg-white">

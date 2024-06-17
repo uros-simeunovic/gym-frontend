@@ -1,29 +1,19 @@
-import { useAuth } from "@/AuthProvider";
+import { useAuth } from "@/Providers/AuthProvider";
 import { Navigate, Outlet } from "react-router-dom";
 import { toast } from "sonner";
 
 const PrivateAdminRoutes = ({}) => {
-  const { user, loading, error } = useAuth();
+  const { currentUser } = useAuth();
 
-  if (error) {
-    toast.error("dasads");
-    console.log(error);
-    return <Navigate to="/" />;
-  }
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user) {
+  if (!currentUser) {
     toast.error("Niste ulogovani!");
     return <Navigate to="/auth/login" />;
   }
 
-  if (!user.isAdmin) {
-    toast.error("Korisnik nije admin!");
-    return <Navigate to="/" />;
-  }
+  // if (!currentUser.isAdmin) {
+  //   toast.error("Korisnik nije admin!");
+  //   return <Navigate to="/" />;
+  // }
 
   return <Outlet />;
 };

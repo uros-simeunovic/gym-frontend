@@ -16,8 +16,8 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
-  email: z.string(),
-  message: z.string().max(200, {
+  email: z.string({ message: "Unesite email" }),
+  message: z.string({ message: "Unesite poruku" }).max(200, {
     message: "Poruka ne moze biti duza od 200 karaktera.",
   }),
 });

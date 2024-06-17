@@ -1,15 +1,14 @@
-import { getGoogleUrl } from "@/lib/utils";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import logo from "../assets/logoGG1.png";
 import googleIcon from "../assets/google.png";
-import { useAuth } from "@/AuthProvider";
+import { useAuth } from "@/Providers/AuthProvider";
 
 export const LoginPage = () => {
-  const { user } = useAuth();
+  const { currentUser, signInWithGoogle } = useAuth();
 
-  console.log("LOGIN PAGE: ", user);
+  console.log("LOGIN PAGE: ", currentUser);
 
-  if (user) {
+  if (currentUser) {
     return <Navigate to="/" />;
   }
 
@@ -20,18 +19,19 @@ export const LoginPage = () => {
           <h1 className="text-2xl md:text-4xl">Ulogujte se na</h1>
           <img src={logo} alt="logo" className="w-20 md:w-28" />
         </div>
-        <Link to={getGoogleUrl()}>
-          <div className="text-white bg-[#171717] flex flex-row items-center justify-center gap-2 md:gap-4 border rounded-2xl w-[180px] md:w-[230px] text-center py-2 hover:bg-[#171717]/80 transition-all duration-200 ease-in">
-            <img
-              src={googleIcon}
-              alt="google-icon"
-              className="w-5 h-5 md:w-6 md:h-6"
-            />
-            <h1 className="text-md md:text-xl font-light pb-1">
-              Login with Google
-            </h1>
-          </div>
-        </Link>
+        <div
+          onClick={signInWithGoogle}
+          className="text-white bg-[#171717] flex flex-row items-center justify-center gap-2 md:gap-4 border rounded-2xl w-[180px] md:w-[230px] text-center py-2 hover:bg-[#171717]/80 transition-all duration-200 ease-in cursor-pointer"
+        >
+          <img
+            src={googleIcon}
+            alt="google-icon"
+            className="w-5 h-5 md:w-6 md:h-6"
+          />
+          <h1 className="text-md md:text-xl font-light pb-1">
+            Login with Google
+          </h1>
+        </div>
       </div>
     </div>
   );
