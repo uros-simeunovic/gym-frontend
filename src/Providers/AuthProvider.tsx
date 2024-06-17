@@ -1,6 +1,5 @@
 import { auth, provider } from "@/firebase";
 import {
-  GoogleAuthProvider,
   User,
   onAuthStateChanged,
   signInWithPopup,
@@ -13,7 +12,6 @@ import React, {
   useState,
   ReactNode,
 } from "react";
-// import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -46,8 +44,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      // const credential = GoogleAuthProvider.credentialFromResult(result);
-      // const token = credential?.accessToken;
       const user = result.user;
       console.log(user);
 
