@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 
 const HomePage = () => {
   return (
-    <div className="w-full overflow-hidden bg-[#171717]">
+    <div className="w-full overflow-hidden">
       <div className="p-2 md:max-w-[1600px] mx-auto">
         <HeroSection image={landingPageImage} />
         <SignUpSection />

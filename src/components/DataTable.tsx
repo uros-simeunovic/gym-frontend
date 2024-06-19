@@ -1,4 +1,3 @@
-import { Avatar, AvatarImage } from "./ui/avatar";
 import {
   Table,
   TableBody,
@@ -7,12 +6,20 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
+import { Avatar, AvatarImage } from "./ui/avatar";
 import { Check, Edit, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useGetUsers } from "@/hooks/useGetUsers";
+import { useUpdateUser } from "@/hooks/useUpdateUser";
 
 export const DataTable = () => {
-  const { data, isLoading } = useGetUsers();
+  const { data, isLoading, error } = useGetUsers();
+  const { mutate } = useUpdateUser();
+
+  const changeStatus = async (id: string, premium: boolean) => {
+    mutate({ id, premium });
+  };
+
   return (
     <div className="border">
       <Table>
@@ -42,7 +49,10 @@ export const DataTable = () => {
                   )}
                 </TableCell>
                 <TableCell>
-                  <Button className="space-x-2">
+                  <Button
+                    onClick={() => changeStatus(user.uid, user.premium)}
+                    className="space-x-2"
+                  >
                     <Edit className="w-4" />
                     <div>Edit</div>
                   </Button>

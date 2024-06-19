@@ -1,10 +1,17 @@
-import { auth, provider } from "@/firebase";
+import { auth, db, provider } from "@/firebase";
 import {
   User,
   onAuthStateChanged,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import {
+  Timestamp,
+  doc,
+  getDoc,
+  serverTimestamp,
+  setDoc,
+} from "firebase/firestore";
 import React, {
   createContext,
   useContext,
@@ -15,10 +22,22 @@ import React, {
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
+export interface UserDetails {
+  uid: string;
+  premium: boolean;
+  name: string;
+  email: string;
+  picture: string;
+  timestamp: Timestamp;
+  isAdmin: boolean;
+}
+
 interface AuthContextType {
   currentUser: User | null;
   signInWithGoogle: () => Promise<void>;
   logout: () => void;
+  loading: boolean;
+  userDetails: UserDetails | null;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -37,6 +56,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
@@ -45,9 +65,25 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log(user);
 
-      toast.success(`Dobrodosao/la ${user.displayName}`, { duration: 0.5 });
+      const userRef = doc(db, "users", user.uid);
+      const document = await getDoc(userRef);
+
+      if (user && !document.exists()) {
+        await setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
+          name: user.displayName,
+          email: user.email,
+          picture: user.photoURL,
+          premium: false,
+          isAdmin: false,
+          timeStamp: serverTimestamp(),
+        });
+      } else {
+        console.log("User already exists!");
+      }
+
+      toast.success(`Dobrodosao/la ${user.displayName}`);
       navigate("/");
     } catch (error) {
       console.error("Error signing in with Google", error);
@@ -56,6 +92,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = async () => {
     try {
+      localStorage.removeItem("signedIn");
       await signOut(auth);
       console.log("Signed out...");
     } catch (error) {
@@ -64,8 +101,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setCurrentUser(user);
+
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        setUserDetails(docSnap.data() as UserDetails);
+      } else {
+        setUserDetails(null);
+      }
+
       setLoading(false);
     });
 
@@ -76,11 +122,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     currentUser,
     signInWithGoogle,
     logout,
+    loading,
+    userDetails,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {!loading && children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
