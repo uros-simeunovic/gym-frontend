@@ -13,7 +13,7 @@ import { useGetUsers } from "@/hooks/useGetUsers";
 import { useUpdateUser } from "@/hooks/useUpdateUser";
 
 export const DataTable = () => {
-  const { data, isLoading, error } = useGetUsers();
+  const { data, isLoading } = useGetUsers();
   const { mutate } = useUpdateUser();
 
   const changeStatus = async (id: string, premium: boolean) => {
