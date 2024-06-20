@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { db, storage } from "@/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { ref, uploadBytesResumable } from "firebase/storage";
+import { storage } from "@/firebase";
+// import { addDoc, collection } from "firebase/firestore";
 
 export const useHandleUpload = () => {
   const [videoFile, setVideoFile] = useState<FileList | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [exerciseName, setExerciseName] = useState("");
   const [exerciseDescription, setExerciseDescription] = useState("");
+
+  console.log(exerciseDescription, exerciseName);
 
   const handleUpload = async () => {
     if (!videoFile) {
@@ -31,7 +33,7 @@ export const useHandleUpload = () => {
           console.log("Error uploading video: ", error);
         },
         async () => {
-          const videoUrl = await getDownloadURL(videoRef);
+          // const videoUrl = await getDownloadURL(videoRef);
           // Dodajte podatke u Firestore
           // const planRef = await addDoc(collection(db, "trainingPlans"), {
           //   name: planName,
