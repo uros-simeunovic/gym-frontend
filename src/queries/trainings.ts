@@ -1,36 +1,35 @@
-import axios from "axios";
+import { db } from "@/firebase";
+import { collection, getDocs, query } from "firebase/firestore";
 
-type GetTrainings = {
-  data: {
-    title: string;
-    description: string;
-  }[];
+export const getTrainingPlans = async () => {
+  const plansSnapshot = await getDocs(collection(db, "trainingPlans"));
+  const plansList = plansSnapshot.docs.map((doc) => {
+    const document = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    return document as { id: string; name: string; description: string };
+  });
+  return plansList;
 };
 
-type Training = {
-  title: string;
-  description: string;
-};
-
-type PostTraining = {
-  data: {
-    title: string;
-    description: string;
-  };
-};
-
-export const getTrainings = async () => {
-  const response: GetTrainings = await axios.get(
-    "http://localhost:8080/trainings"
+export const getExercises = async (planId: string | undefined) => {
+  const exercisesQuery = query(
+    collection(db, `trainingPlans/${planId}/exercises`)
   );
-  return response.data;
-};
 
-export const createTraining = async (data: Training) => {
-  console.log(data);
-  const response: PostTraining = await axios.post(
-    "http://localhost:8080/trainings",
-    data
-  );
-  return response;
+  const exercisesSnapshot = await getDocs(exercisesQuery);
+  const exercisesList = exercisesSnapshot.docs.map((doc) => {
+    const document = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    return document as {
+      id: string;
+      name: string;
+      description: string;
+      videoUrl: string;
+    };
+  });
+  return exercisesList;
 };

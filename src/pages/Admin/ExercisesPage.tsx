@@ -1,0 +1,51 @@
+import { useDialog } from "@/hooks/useDialog";
+import { useGetExercises } from "@/hooks/useGetExercises";
+import { Edit, Plus } from "lucide-react";
+
+interface Exercise {
+  id: string;
+  name: string;
+  description: string;
+  videoUrl: string;
+}
+
+export const ExercisesPage = () => {
+  const { data } = useGetExercises();
+  const { onOpen, setData } = useDialog();
+
+  const onClickEdit = (exercise: Exercise) => {
+    setData(exercise);
+    onOpen();
+  };
+
+  return (
+    <div className="md:max-w-[1600px] mx-auto w-full p-2 space-y-10">
+      <div className="flex flex-wrap gap-6">
+        {data?.map((exercise, index) => (
+          <div key={index} className="flex flex-col gap-2">
+            <div
+              onClick={() => onClickEdit(exercise)}
+              className="w-[400px] relative aspect-video bg-black/5 rounded-2xl shadow-lg cursor-pointer hover:scale-[1.01]"
+            >
+              <h1 className="absolute bottom-0 left-0 p-4 text-2xl">
+                {exercise.name}
+              </h1>
+              <Edit className="w-6 h-6 absolute bottom-4 right-4" />
+            </div>
+          </div>
+        ))}
+        <div className="flex flex-col gap-2">
+          <div
+            // TODO: onClick open modal for exercise creation
+            className="w-[400px] relative flex items-center justify-center aspect-video bg-black/5 rounded-2xl shadow-lg cursor-pointer hover:scale-[1.01]"
+          >
+            <Plus className="w-12 h-12" />
+            <h1 className="absolute left-0 bottom-0 p-4 text-2xl">
+              Dodaj novu vezbu
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
