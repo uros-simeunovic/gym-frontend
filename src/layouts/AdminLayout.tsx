@@ -1,4 +1,3 @@
-import { EditModal } from "@/components/EditModal";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
 import { Outlet } from "react-router-dom";
@@ -12,7 +11,6 @@ const AdminLayout = () => {
       <div className="flex flex-row mt-28">
         <Sidebar />
         <div className="w-full">
-          <EditModal />
           <Outlet />
         </div>
       </div>

@@ -4,9 +4,11 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent } from "./ui/sheet";
 import { NavmenuSidebar } from "./NavmenuSidebar";
 import { useState } from "react";
+import { useAuth } from "@/Providers/AuthProvider";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { userDetails } = useAuth();
 
   return (
     <div className="h-full p-2 pt-6 bg-white">
@@ -18,7 +20,9 @@ export const Navbar = () => {
           <Link to="/">Početna</Link>
           <Link to="/trainings">Planovi</Link>
           <Link to="/about">O meni</Link>
-          {/* {user?.isAdmin && <Link to="/admin/dashboard">Panel</Link>} */}
+          {userDetails?.isAdmin && (
+            <Link to="/admin/dashboard/users">Admin</Link>
+          )}
         </div>
         <div onClick={() => setOpen(true)} className="md:hidden">
           <Menu className="w-10" />

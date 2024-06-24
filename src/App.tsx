@@ -21,9 +21,9 @@ const App = () => {
         <Route path="/trainings" element={<></>} />
       </Route>
       <Route element={<TrainingsLayout />}>
-        <Route path="/trainings/:trainingId" element={<Training />} />
+        <Route path="/trainings/:planId" element={<Training />} />
         <Route
-          path="/trainings/:trainingId/workout/:workoutId"
+          path="/trainings/:planId/exercise/:exerciseId"
           element={<Workout />}
         />
       </Route>

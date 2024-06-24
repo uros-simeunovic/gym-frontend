@@ -1,19 +1,26 @@
-import { useState } from "react";
-import { ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "@/firebase";
-// import { addDoc, collection } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { db, storage } from "@/firebase";
+import { useDialog } from "./useDialog";
+import { addDoc, collection } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 export const useHandleUpload = () => {
-  const [videoFile, setVideoFile] = useState<FileList | null>(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [exerciseName, setExerciseName] = useState("");
-  const [exerciseDescription, setExerciseDescription] = useState("");
+  const {
+    videoFile,
+    setUploadProgress,
+    exerciseDescription,
+    exerciseTitle,
+    setError,
+  } = useDialog();
 
-  console.log(exerciseDescription, exerciseName);
+  const params = useParams();
+
+  const { planId } = params;
 
   const handleUpload = async () => {
+    console.log(videoFile);
     if (!videoFile) {
-      console.log("Please select a video file");
+      setError("Izaberite fajl za upload");
       return;
     }
     try {
@@ -21,6 +28,14 @@ export const useHandleUpload = () => {
       const videoRef = ref(storage, `videos/${videoFile[0].name}`);
 
       const uploadTask = uploadBytesResumable(videoRef, videoFile[0]);
+
+      if (!planId) {
+        return;
+      }
+
+      if (!exerciseDescription && !exerciseTitle) {
+        return;
+      }
 
       uploadTask.on(
         "state_changed",
@@ -33,18 +48,14 @@ export const useHandleUpload = () => {
           console.log("Error uploading video: ", error);
         },
         async () => {
-          // const videoUrl = await getDownloadURL(videoRef);
-          // Dodajte podatke u Firestore
-          // const planRef = await addDoc(collection(db, "trainingPlans"), {
-          //   name: planName,
-          //   description: planDescription,
-          // });
+          console.log("GOTOVO");
+          const videoUrl = await getDownloadURL(videoRef);
 
-          // await addDoc(collection(planRef, "exercises"), {
-          //   name: exerciseName,
-          //   description: exerciseDescription,
-          //   videoUrl: videoUrl,
-          // });
+          await addDoc(collection(db, `trainingPlans/${planId}/exercises`), {
+            name: exerciseTitle,
+            description: exerciseDescription,
+            videoUrl: videoUrl,
+          });
 
           alert("Video uploaded and data saved successfully!");
           setUploadProgress(0);
@@ -57,9 +68,5 @@ export const useHandleUpload = () => {
 
   return {
     handleUpload,
-    setVideoFile,
-    setExerciseName,
-    setExerciseDescription,
-    uploadProgress,
   };
 };

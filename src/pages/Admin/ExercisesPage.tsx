@@ -1,5 +1,9 @@
+import { CreateForm } from "@/components/modals/CreateForm";
+import { EditForm } from "@/components/modals/EditForm";
+import { Modal } from "@/components/modals/Modal";
+import { Progress } from "@/components/ui/progress";
 import { useDialog } from "@/hooks/useDialog";
-import { useGetExercises } from "@/hooks/useGetExercises";
+import { useGetExercises } from "@/hooks/exercise/useGetExercises";
 import { Edit, Plus } from "lucide-react";
 
 interface Exercise {
@@ -11,11 +15,21 @@ interface Exercise {
 
 export const ExercisesPage = () => {
   const { data } = useGetExercises();
-  const { onOpen, setData } = useDialog();
+  const { onOpen, setData, setCreate, isCreate } = useDialog();
+
+  const { uploadProgress } = useDialog();
 
   const onClickEdit = (exercise: Exercise) => {
+    setCreate(false);
     setData(exercise);
     onOpen();
+  };
+
+  const onClickCreate = () => {
+    if (!uploadProgress) {
+      setCreate(true);
+      onOpen();
+    }
   };
 
   return (
@@ -36,9 +50,15 @@ export const ExercisesPage = () => {
         ))}
         <div className="flex flex-col gap-2">
           <div
-            // TODO: onClick open modal for exercise creation
+            onClick={onClickCreate}
             className="w-[400px] relative flex items-center justify-center aspect-video bg-black/5 rounded-2xl shadow-lg cursor-pointer hover:scale-[1.01]"
           >
+            {uploadProgress > 0 && (
+              <div className="absolute top-0 left-0 right-0 p-6">
+                <p>Upload Progress: {Math.round(uploadProgress)}%</p>
+                <Progress value={uploadProgress} className="border" />
+              </div>
+            )}
             <Plus className="w-12 h-12" />
             <h1 className="absolute left-0 bottom-0 p-4 text-2xl">
               Dodaj novu vezbu
@@ -46,6 +66,15 @@ export const ExercisesPage = () => {
           </div>
         </div>
       </div>
+      {isCreate ? (
+        <Modal title="Kreiraj vezbu">
+          <CreateForm />
+        </Modal>
+      ) : (
+        <Modal title="Izmeni vezbu">
+          <EditForm />
+        </Modal>
+      )}
     </div>
   );
 };

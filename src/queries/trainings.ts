@@ -1,5 +1,13 @@
 import { db } from "@/firebase";
-import { collection, getDocs, query } from "firebase/firestore";
+import { Exercise } from "@/types";
+import {
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+} from "firebase/firestore";
 
 export const getTrainingPlans = async () => {
   const plansSnapshot = await getDocs(collection(db, "trainingPlans"));
@@ -32,4 +40,30 @@ export const getExercises = async (planId: string | undefined) => {
     };
   });
   return exercisesList;
+};
+
+export const getExerciseById = async (
+  exerciseId: string | undefined,
+  planId: string | undefined
+) => {
+  const exerciseRef = doc(
+    db,
+    `/trainingPlans/${planId}/exercises/${exerciseId}`
+  );
+
+  const docSnap = await getDoc(exerciseRef);
+
+  return docSnap.data() as Exercise;
+};
+
+export const deleteExercise = async (data: {
+  planId: string | undefined;
+  exerciseId: string | undefined;
+}) => {
+  const { exerciseId, planId } = data;
+  const exerciseDeleted = await deleteDoc(
+    doc(db, `trainingPlans/${planId}/exercises/${exerciseId}`)
+  );
+  console.log(exerciseDeleted);
+  return exerciseDeleted;
 };
