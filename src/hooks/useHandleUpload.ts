@@ -48,13 +48,14 @@ export const useHandleUpload = () => {
           console.log("Error uploading video: ", error);
         },
         async () => {
-          console.log("GOTOVO");
           const videoUrl = await getDownloadURL(videoRef);
 
           await addDoc(collection(db, `trainingPlans/${planId}/exercises`), {
             name: exerciseTitle,
             description: exerciseDescription,
             videoUrl: videoUrl,
+            thumbnail: "thumbnail",
+            order: 1,
           });
 
           alert("Video uploaded and data saved successfully!");

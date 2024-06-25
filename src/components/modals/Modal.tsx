@@ -18,12 +18,12 @@ export const Modal = ({
 }) => {
   const { isOpen, onClose } = useDialog();
 
-  const { handleUpload } = useHandleUpload();
+  // const { handleUpload } = useHandleUpload();
 
-  const submit = () => {
-    handleUpload();
-    onClose();
-  };
+  // const submit = () => {
+  //   handleUpload();
+  //   onClose();
+  // };
 
   return (
     <Dialog onOpenChange={onClose} open={isOpen} modal defaultOpen={isOpen}>
@@ -32,9 +32,9 @@ export const Modal = ({
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
         {children}
-        <DialogFooter>
+        {/* <DialogFooter>
           <Button onClick={submit}>Save changes</Button>
-        </DialogFooter>
+        </DialogFooter> */}
       </DialogContent>
     </Dialog>
   );

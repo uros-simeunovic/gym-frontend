@@ -10,7 +10,7 @@ export const SignUpSectionBlack = () => {
         alt="Girl workout silhouette"
         className="w-12 md:w-16"
       />
-      <h3 className="text-[40px] leading-[44px] md:text-9xl font-semibold text-white max-w-[800px]">
+      <h3 className="text-7xl leading-[74px] md:text-9xl font-semibold text-white max-w-[800px]">
         YOUR BODY IS YOUR TEMPLE
       </h3>
       <p className="text-xl text-white font-normal max-w-[620px]">
@@ -22,7 +22,7 @@ export const SignUpSectionBlack = () => {
       <Link to={"/auth/login"}>
         <Button
           variant="outline"
-          className="text-lg text-white border-2 w-[200px] rounded-3xl bg-transparent hover:bg-pink-500 hover:text-white border-pink-500"
+          className="text-lg text-white border-2 w-[200px] rounded-2xl bg-transparent hover:bg-pink-500 hover:text-white border-pink-500 transition duration-300"
         >
           Prijavi se
         </Button>

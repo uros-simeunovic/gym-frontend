@@ -2,3 +2,18 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+::-webkit-scrollbar {
+  background: transparent;
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+  background: #fff
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

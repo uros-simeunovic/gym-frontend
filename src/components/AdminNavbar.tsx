@@ -1,10 +1,10 @@
 import { ArrowLeft, Menu } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetTitle } from "./ui/sheet";
-import { Sidebar } from "./Sidebar";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { AdminSidebar } from "./AdminSidebar";
 
-export const TrainingNavbar = () => {
+export const AdminNavbar = () => {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export const TrainingNavbar = () => {
       <Sheet open={open} onOpenChange={() => setOpen(false)}>
         <SheetTitle hidden>Menu</SheetTitle>
         <SheetContent side={"right"} className="w-full">
-          <Sidebar />
+          <AdminSidebar />
         </SheetContent>
       </Sheet>
     </div>

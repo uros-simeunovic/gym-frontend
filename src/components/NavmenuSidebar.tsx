@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logoGG1.png";
+import logo from "../assets/LogoGGWhite.svg";
 import { useMainSidebarMobile } from "@/hooks/useMainSidebarMobile";
 
 export const NavmenuSidebar = () => {
@@ -11,7 +11,7 @@ export const NavmenuSidebar = () => {
   };
 
   return (
-    <div className="h-full flex flex-col overflow-y-auto bg-white p-4 md:border-r">
+    <div className="h-full flex flex-col overflow-y-auto p-4">
       <Link to={"/"} className="w-[100px] md:w-[140px]">
         <img src={logo} alt="logo" />
       </Link>

@@ -20,14 +20,13 @@ export const Overlay = () => {
   return (
     <AnimatePresence>
       {location.pathname === "/trainings" && show && (
-        <div className="bg-white absolute left-0 right-0 top-0 bottom-0">
+        <div className="bg-background absolute left-0 right-0 top-0 bottom-0">
           <div
             className={
               show &&
               "before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:bg-white before:-z-50 overflow-hidden"
             }
           >
-            {/* {data && ( */}
             <>
               <motion.div
                 key="left-side"
@@ -97,7 +96,6 @@ export const Overlay = () => {
                 </>
               </motion.div>
             </>
-            {/* )} */}
           </div>
         </div>
       )}

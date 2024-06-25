@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import logo from "../assets/LogoGGWhite.svg";
 
-export const Sidebar = () => {
+export const AdminSidebar = () => {
   const { userDetails, logout, currentUser } = useAuth();
 
   return (
@@ -13,8 +13,8 @@ export const Sidebar = () => {
       </Link>
       <div className="mt-24 text-5xl font-light flex flex-col items-center space-y-12">
         <Link to={"/"}>Pocetna</Link>
-        <Link to={"/trainings"}>Planovi</Link>
-        <Link to={"/"}>O meni</Link>
+        <Link to={"/admin/dashboard/users"}>Korisnici</Link>
+        <Link to={"/admin/dashboard/plans"}>Planovi</Link>
       </div>
       {currentUser ? (
         <>

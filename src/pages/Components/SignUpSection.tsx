@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const SignUpSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    margin: "-100px",
+    margin: "-50px",
     once: true,
   });
 
@@ -84,7 +84,7 @@ export const SignUpSection = () => {
         <Button
           variant="outline"
           className={cn(
-            "text-lg border-2 w-[200px] rounded-3xl hover:bg-pink-500 hover:text-white border-pink-500 transition duration-700",
+            "text-lg border-2 w-[200px] rounded-2xl hover:bg-pink-500 hover:text-white border-pink-500 transition duration-300",
             isInView ? "scale-100 opacity-100" : "scale-0 opacity-0"
           )}
         >

@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import logo from "../assets/logoGG1.png";
+import logo from "../assets/LogoGGWhite.svg";
 import googleIcon from "../assets/google.png";
 import { useAuth } from "@/Providers/AuthProvider";
 
