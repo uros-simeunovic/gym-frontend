@@ -2,12 +2,12 @@ import { useDialog } from "@/hooks/useDialog";
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
+  // DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "../ui/dialog";
-import { Button } from "../ui/button";
-import { useHandleUpload } from "@/hooks/useHandleUpload";
+// import { Button } from "../ui/button";
+// import { useHandleUpload } from "@/hooks/useHandleUpload";
 
 export const Modal = ({
   children,
