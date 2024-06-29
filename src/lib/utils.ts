@@ -22,11 +22,19 @@ export const useScreenSize = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return screenSize;
+};
+
+export const compareLinksAndPathname = (pathname: string, to: string) => {
+  if (to === "/") {
+    return false;
+  }
+  return pathname.includes(to.split("/")[to.split("/").length - 1])
+    ? true
+    : false;
 };

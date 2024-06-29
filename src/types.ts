@@ -4,3 +4,11 @@ export interface Exercise {
   description: string;
   videoUrl: string;
 }
+
+export type Links =
+  | "/"
+  | "/trainings"
+  | "/admin/dashboard/users"
+  | "/admin/dashboard/plans"
+  | "/aboutme"
+  | "/admin";

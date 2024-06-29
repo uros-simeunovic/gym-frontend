@@ -8,12 +8,13 @@ import { useState } from "react";
 import { useAuth } from "@/Providers/AuthProvider";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "@/Providers/ThemeProvider";
+import { LinkItem } from "./LinkItem";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { userDetails } = useAuth();
   const { theme } = useTheme();
-  console.log(theme);
+
   return (
     <div className="h-full p-2 pt-6 bg-background">
       <div className="h-full md:max-w-[1600px] mx-auto flex items-center justify-between">
@@ -24,12 +25,12 @@ export const Navbar = () => {
             className="w-[100px] md:w-[140px]"
           />
         </Link>
-        <div className="hidden md:flex flex-row gap-4 font-thin text-3xl">
-          <Link to="/">Početna</Link>
-          <Link to="/trainings">Planovi</Link>
-          <Link to="/about">O meni</Link>
+        <div className="hidden md:flex flex-row gap-6 ">
+          {/* <LinkItem to="/" text="Pocetna" /> */}
+          <LinkItem to="/trainings" text="Planovi" />
+          <LinkItem to="/aboutme" text="O meni" />
           {userDetails?.isAdmin && (
-            <Link to="/admin/dashboard/users">Admin</Link>
+            <LinkItem to="/admin/dashboard/users" text="Admin" />
           )}
           <ThemeToggle />
         </div>

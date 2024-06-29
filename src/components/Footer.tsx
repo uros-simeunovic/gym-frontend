@@ -57,7 +57,7 @@ export const Footer = ({ logo }: { logo: string }) => {
             <div onClick={scrollToTop} className="cursor-pointer text-xl">
               <Button
                 variant="link"
-                className="font-light text-lg p-0 text-background"
+                className="font-light text-lg p-0 text-white"
               >
                 Pocetna
               </Button>
@@ -65,7 +65,7 @@ export const Footer = ({ logo }: { logo: string }) => {
             <Link to="/trainings" className="cursor-pointer text-xl">
               <Button
                 variant="link"
-                className="font-light text-lg p-0 text-background"
+                className="font-light text-lg p-0 text-white"
               >
                 Planovi
               </Button>
@@ -73,7 +73,7 @@ export const Footer = ({ logo }: { logo: string }) => {
             <Link to="/o-meni">
               <Button
                 variant="link"
-                className="font-light text-lg p-0 text-background"
+                className="font-light text-lg p-0 text-white"
               >
                 O meni
               </Button>
