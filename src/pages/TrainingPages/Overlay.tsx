@@ -13,13 +13,13 @@ export const Overlay = () => {
   const { data } = useGetTrainingPlans();
 
   const onClick = async (planId: string) => {
-    navigate(`/trainings/${planId}`);
+    navigate(`/plans/${planId}`);
     setShow(false);
   };
 
   return (
     <AnimatePresence>
-      {location.pathname === "/trainings" && show && (
+      {location.pathname === "/plans" && show && (
         <div className="bg-background absolute left-0 right-0 top-0 bottom-0">
           <div
             className={

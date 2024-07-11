@@ -18,7 +18,7 @@ export const TrainingNavbar = () => {
         <ArrowLeft className="w-8 h-8" />
       </div>
 
-      <div onClick={() => setOpen(true)}>
+      <div onClick={() => setOpen(true)} className="cursor-pointer md:hidden">
         <Menu />
       </div>
       <Sheet open={open} onOpenChange={() => setOpen(false)}>

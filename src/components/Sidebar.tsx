@@ -13,8 +13,7 @@ export const Sidebar = () => {
       </Link>
       <div className="mt-24 text-5xl font-light flex flex-col items-center space-y-12">
         <Link to={"/"}>Pocetna</Link>
-        <Link to={"/trainings"}>Planovi</Link>
-        <Link to={"/"}>O meni</Link>
+        <Link to={"/plans"}>Planovi</Link>
       </div>
       {currentUser ? (
         <>

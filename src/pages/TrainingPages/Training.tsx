@@ -24,7 +24,7 @@ const Training = () => {
                 key={index}
                 className="relative cursor-pointer hover:scale-[1.01] transition-all duration-300 overflow-hidden bg-white shadow-xl rounded-xl w-full aspect-video"
                 onClick={() =>
-                  navigate(`/trainings/${planId}/exercise/${exercise.id}`)
+                  navigate(`/plans/${planId}/exercise/${exercise.id}`)
                 }
               >
                 <Play

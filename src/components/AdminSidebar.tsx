@@ -2,6 +2,7 @@ import { useAuth } from "@/Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import logo from "../assets/LogoGGWhite.svg";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const AdminSidebar = () => {
   const { userDetails, logout, currentUser } = useAuth();
@@ -16,6 +17,10 @@ export const AdminSidebar = () => {
         <Link to={"/admin/dashboard/users"}>Korisnici</Link>
         <Link to={"/admin/dashboard/plans"}>Planovi</Link>
       </div>
+      <div className="absolute left-0 bottom-20">
+        <ThemeToggle />
+      </div>
+
       {currentUser ? (
         <>
           <div className="flex flex-row gap-4 items-center absolute left-0 bottom-0">

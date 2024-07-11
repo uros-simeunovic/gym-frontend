@@ -7,7 +7,7 @@ export interface Exercise {
 
 export type Links =
   | "/"
-  | "/trainings"
+  | "/plans"
   | "/admin/dashboard/users"
   | "/admin/dashboard/plans"
   | "/aboutme"

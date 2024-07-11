@@ -1,7 +1,9 @@
 import { useGetExerciseById } from "@/hooks/exercise/useGetExerciseById";
+// import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Workout = () => {
+  // const [url, setUrl] = useState<string>();
   const params = useParams();
 
   const { exerciseId } = params;
@@ -16,9 +18,18 @@ const Workout = () => {
     );
   }
 
+  // const generate = async () => {
+  // const storageRef = ref(storage, "videos/AAAAAAAAAAA.mp4");
+  // const bytes = await getBytes(storageRef);
+  // const blob = await getBlob(storageRef);
+  // console.log(bytes);
+  // setUrl(URL.createObjectURL(blob));
+  // };
   return (
     <div className="w-full flex flex-col md:flex-row md:w-[1000px] lg:w-[1300px] md:mx-auto p-4">
+      {/* <Button onClick={generate}>Generate</Button> */}
       <video
+        // src={url && url}
         src={data?.videoUrl}
         controls
         className="aspect-video w-[800px] rounded-2xl"

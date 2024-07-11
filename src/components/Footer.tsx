@@ -62,7 +62,7 @@ export const Footer = ({ logo }: { logo: string }) => {
                 Pocetna
               </Button>
             </div>
-            <Link to="/trainings" className="cursor-pointer text-xl">
+            <Link to="/plans" className="cursor-pointer text-xl">
               <Button
                 variant="link"
                 className="font-light text-lg p-0 text-white"

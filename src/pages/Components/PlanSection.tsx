@@ -7,7 +7,7 @@ export const PlanSection = ({ image }: { image: string }) => {
       <div className="flex flex-row justify-between mb-6 mx-6">
         <h3 className="text-4xl md:text-6xl font-semibold">Trening</h3>
         <Link
-          to={"/trainings"}
+          to={"/plans"}
           className="relative flex flex-row items-center gap-2 cursor-pointer before:absolute before:rounded-xl before:bottom-2 before:transition-all before:duration-300 before:w-0 before:h-1 hover:before:w-full before:bg-pink-500"
         >
           <h3 className="text-2xl font-light leading-6">Pogledaj sve</h3>
