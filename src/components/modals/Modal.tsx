@@ -2,12 +2,9 @@ import { useDialog } from "@/hooks/useDialog";
 import {
   Dialog,
   DialogContent,
-  // DialogFooter,
-  DialogHeader,
+  DialogDescription,
   DialogTitle,
 } from "../ui/dialog";
-// import { Button } from "../ui/button";
-// import { useHandleUpload } from "@/hooks/useHandleUpload";
 
 export const Modal = ({
   children,
@@ -18,23 +15,12 @@ export const Modal = ({
 }) => {
   const { isOpen, onClose } = useDialog();
 
-  // const { handleUpload } = useHandleUpload();
-
-  // const submit = () => {
-  //   handleUpload();
-  //   onClose();
-  // };
-
   return (
     <Dialog onOpenChange={onClose} open={isOpen} modal defaultOpen={isOpen}>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
-        </DialogHeader>
+      <DialogContent aria-describedby="success-message">
+        <DialogTitle className="text-4xl text-center">{title}</DialogTitle>
+        <DialogDescription className="hidden">Modal</DialogDescription>
         {children}
-        {/* <DialogFooter>
-          <Button onClick={submit}>Save changes</Button>
-        </DialogFooter> */}
       </DialogContent>
     </Dialog>
   );

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logoGG1.png";
 import logoDark from "../assets/LogoGGWhite.svg";
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent } from "./ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetTitle } from "./ui/sheet";
 import { NavmenuSidebar } from "./NavmenuSidebar";
 import { useState } from "react";
 import { useAuth } from "@/Providers/AuthProvider";
@@ -26,7 +26,6 @@ export const Navbar = () => {
           />
         </Link>
         <div className="hidden md:flex flex-row gap-6 ">
-          {/* <LinkItem to="/" text="Pocetna" /> */}
           <LinkItem to="/plans" text="Planovi" />
           {userDetails?.isAdmin && (
             <LinkItem to="/admin/dashboard/users" text="Admin" />
@@ -38,6 +37,10 @@ export const Navbar = () => {
         </div>
         <Sheet open={open} onOpenChange={() => setOpen(false)}>
           <SheetContent side={"right"} className="w-full">
+            <SheetDescription className="hidden">
+              Meni za telefone
+            </SheetDescription>
+            <SheetTitle className="hidden">Naslov</SheetTitle>
             <NavmenuSidebar />
           </SheetContent>
         </Sheet>

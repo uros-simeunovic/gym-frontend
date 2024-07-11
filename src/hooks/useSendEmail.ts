@@ -1,15 +1,17 @@
 import { useAuth } from "@/Providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { useDialog } from "./useDialog";
 
 export const useSendEmail = () => {
   const { currentUser } = useAuth();
-  const navigate = useNavigate();
   const [disabled, setDisabled] = useState(false);
+  const { onOpen } = useDialog();
 
   const sendEmail = (price: number) => {
+    onOpen();
+    toast.success("Uputstvo za placanje poslato na Vas email.");
     setDisabled(true);
     emailjs
       .send(
@@ -26,8 +28,7 @@ export const useSendEmail = () => {
       )
       .then(
         () => {
-          toast.success("Uputstvo za placanje poslato na Vas email.");
-          navigate("/");
+          setDisabled(false);
         },
         (error) => {
           console.log("Sending email failed: ", error);

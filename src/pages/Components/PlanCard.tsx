@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useSendEmail } from "@/hooks/useSendEmail";
 import { cn } from "@/lib/utils";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 export const PlanCard = ({
   price,
@@ -24,7 +24,7 @@ export const PlanCard = ({
         <h1 className="text-background text-4xl font-medium text-center">
           {planName}
         </h1>
-        <div className="text-background flex flex-row items-center justify-center p-1 text-4xl font-semibold bg-pink-500 text-white rounded-md w-[100px]">
+        <div className="text-background flex flex-row items-center justify-center p-1 text-4xl font-semibold bg-pink-500 text-white rounded-md">
           <h2>{price}eur</h2>
         </div>
         <ul className="text-background text-base space-y-3">
@@ -47,7 +47,7 @@ export const PlanCard = ({
               !premium && "text-muted-foreground"
             )}
           >
-            <Check className="text-pink-500" />
+            {!premium ? <X /> : <Check className="text-pink-500" />}
             <p>Lorem ipsum dolor sit, amet consectetur</p>
           </li>
         </ul>
