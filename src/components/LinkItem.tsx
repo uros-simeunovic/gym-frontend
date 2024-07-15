@@ -30,10 +30,10 @@ export const LinkItem = ({ to, text }: { to: Links; text: string }) => {
         className="absolute left-0 right-0 bg-pink-600 h-4 rounded-md"
         animate={{
           translateY: compareLinksAndPathname(pathname, to)
-            ? -4
+            ? -2
             : hovered
-            ? -4
-            : 0,
+            ? -2
+            : 4,
         }}
       />
     </motion.div>

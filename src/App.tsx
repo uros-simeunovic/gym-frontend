@@ -3,7 +3,6 @@ import HomePage from "./pages/HomePage";
 import HomeLayout from "./layouts/HomeLayout";
 import TrainingsLayout from "./layouts/TrainingsLayout";
 import Workout from "./pages/TrainingPages/Workout";
-import Training from "./pages/TrainingPages/Training";
 import AdminPanel from "./pages/Admin/AdminPanel";
 import { LoginPage } from "./pages/LoginPage";
 import PrivateAdminRoutes from "./components/PrivateAdminRoutes";
@@ -12,6 +11,7 @@ import ManagerPage from "./pages/Admin/ManagerPage";
 import { ExercisesPage } from "./pages/Admin/ExercisesPage";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { Plans } from "./pages/TrainingPages/Plans";
+import { PlanMenu } from "./components/PlanMenu";
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
       <Route element={<PrivateRoutes />}>
         <Route element={<TrainingsLayout />}>
           <Route path="/plans" element={<Plans />} />
-          <Route path="/plans/:planId" element={<Training />} />
+          <Route path="/plans/:planId" element={<PlanMenu />} />
           <Route
             path="/plans/:planId/exercise/:exerciseId"
             element={<Workout />}

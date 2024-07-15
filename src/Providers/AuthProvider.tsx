@@ -24,7 +24,7 @@ import { toast } from "sonner";
 
 export interface UserDetails {
   uid: string;
-  premium: boolean;
+  paidPlan: string | null;
   name: string;
   email: string;
   picture: string;
@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           name: user.displayName,
           email: user.email,
           picture: user.photoURL,
-          premium: false,
+          paidPlan: null,
           isAdmin: false,
           timeStamp: serverTimestamp(),
         });

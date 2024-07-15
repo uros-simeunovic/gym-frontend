@@ -16,12 +16,17 @@ export const getTrainingPlans = async () => {
       id: doc.id,
       ...doc.data(),
     };
-    return document as { id: string; name: string; description: string };
+    return document as {
+      id: string;
+      name: string;
+      description: string;
+      price: number;
+    };
   });
   return plansList;
 };
 
-export const getExercises = async (planId: string | undefined) => {
+export const getExercisesByPlanId = async (planId: string | undefined) => {
   const exercisesQuery = query(
     collection(db, `trainingPlans/${planId}/exercises`)
   );
@@ -37,6 +42,7 @@ export const getExercises = async (planId: string | undefined) => {
       name: string;
       description: string;
       videoUrl: string;
+      exerciseType: string;
     };
   });
   return exercisesList;
@@ -66,4 +72,22 @@ export const deleteExercise = async (data: {
   );
   console.log(exerciseDeleted);
   return exerciseDeleted;
+};
+
+export const getExerciseTypes = async () => {
+  const exerciseTypesQuery = query(collection(db, `exerciseTypes`));
+
+  const exerciseTypesSnapshot = await getDocs(exerciseTypesQuery);
+  const exerciseTypesList = exerciseTypesSnapshot.docs.map((doc) => {
+    const document = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    return document as {
+      id: string;
+      name: string;
+      displayName: string;
+    };
+  });
+  return exerciseTypesList;
 };

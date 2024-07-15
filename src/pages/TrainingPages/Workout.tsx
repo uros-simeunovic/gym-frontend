@@ -1,9 +1,8 @@
 import { useGetExerciseById } from "@/hooks/exercise/useGetExerciseById";
-// import { useState } from "react";
 import { useParams } from "react-router-dom";
+import MuxPlayer from "@mux/mux-player-react";
 
 const Workout = () => {
-  // const [url, setUrl] = useState<string>();
   const params = useParams();
 
   const { exerciseId } = params;
@@ -18,26 +17,13 @@ const Workout = () => {
     );
   }
 
-  // const generate = async () => {
-  // const storageRef = ref(storage, "videos/AAAAAAAAAAA.mp4");
-  // const bytes = await getBytes(storageRef);
-  // const blob = await getBlob(storageRef);
-  // console.log(bytes);
-  // setUrl(URL.createObjectURL(blob));
-  // };
   return (
-    <div className="w-full flex flex-col md:flex-row md:w-[1000px] lg:w-[1300px] md:mx-auto p-4">
-      {/* <Button onClick={generate}>Generate</Button> */}
+    <div className="w-full hidden md:flex md:max-w-[1400px] md:mx-auto p-4">
       <video
-        // src={url && url}
         src={data?.videoUrl}
         controls
-        className="aspect-video w-[800px] rounded-2xl"
+        className="aspect-video rounded-2xl"
       />
-      <div className="m-4 space-y-2">
-        <h1 className="text-4xl font-semibold">{data?.name}</h1>
-        <p>{data?.description}</p>
-      </div>
     </div>
   );
 };

@@ -18,12 +18,12 @@ export const getUsers = async () => {
   return allUsers;
 };
 
-export const updateUser = async (data: { id: string; premium: boolean }) => {
+export const updateUser = async (data: { id: string; planId: string }) => {
   const batch = writeBatch(db);
 
   const userRef = doc(db, "users", data.id);
   batch.update(userRef, {
-    premium: !data.premium,
+    paidPlan: data.planId,
     updatedAt: serverTimestamp(),
   });
   await batch.commit();

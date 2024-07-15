@@ -3,7 +3,7 @@ import { EditForm } from "@/components/modals/EditForm";
 import { Modal } from "@/components/modals/Modal";
 import { Progress } from "@/components/ui/progress";
 import { useDialog } from "@/hooks/useDialog";
-import { useGetExercises } from "@/hooks/exercise/useGetExercises";
+import { useGetExercisesByPlanId } from "@/hooks/exercise/useGetExercises";
 import { Edit, Plus } from "lucide-react";
 
 interface Exercise {
@@ -14,7 +14,7 @@ interface Exercise {
 }
 
 export const ExercisesPage = () => {
-  const { data } = useGetExercises();
+  const { data } = useGetExercisesByPlanId();
   const { onOpen, setData, setCreate, isCreate } = useDialog();
 
   const { uploadProgress } = useDialog();

@@ -1,8 +1,12 @@
 export interface Exercise {
   id: string;
   name: string;
-  description: string;
   videoUrl: string;
+  exerciseType: string;
+}
+
+export interface ExercisesByType {
+  [key: string]: Exercise[];
 }
 
 export type Links =

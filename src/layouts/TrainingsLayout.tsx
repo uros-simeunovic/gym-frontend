@@ -8,12 +8,9 @@ const TrainingsLayout = () => {
         <Navbar />
       </div>
       {/* <Overlay /> */}
-      <div className="mx-28">
+      <div className="md:mx-28">
         <Outlet />
       </div>
-      {/* <div className="hidden md:flex h-full w-60 flex-col fixed inset-y-0 z-50">
-        <Sidebar />
-      </div> */}
     </main>
   );
 };

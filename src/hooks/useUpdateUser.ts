@@ -7,7 +7,7 @@ export const useUpdateUser = () => {
 
   const mutation = useMutation({
     mutationKey: ["users"],
-    mutationFn: async (data: { id: string; premium: boolean }) =>
+    mutationFn: async (data: { id: string; planId: string }) =>
       await updateUser(data),
     onSuccess: () => {
       toast.success("Korisnik je uspesno azuriran.");

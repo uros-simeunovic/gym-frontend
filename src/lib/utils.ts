@@ -1,3 +1,4 @@
+import { Exercise, ExercisesByType } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -37,4 +38,15 @@ export const compareLinksAndPathname = (pathname: string, to: string) => {
   return pathname.includes(to.split("/")[to.split("/").length - 1])
     ? true
     : false;
+};
+
+export const groupExercisesByType = (exercises: Exercise[]) => {
+  return exercises.reduce((acc: ExercisesByType, exercise: Exercise) => {
+    const { exerciseType } = exercise;
+    if (!acc[exerciseType]) {
+      acc[exerciseType] = [];
+    }
+    acc[exerciseType].push(exercise);
+    return acc;
+  }, {});
 };

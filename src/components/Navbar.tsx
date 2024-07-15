@@ -9,10 +9,11 @@ import { useAuth } from "@/Providers/AuthProvider";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "@/Providers/ThemeProvider";
 import { LinkItem } from "./LinkItem";
+import { Button } from "./ui/button";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { userDetails } = useAuth();
+  const { userDetails, currentUser, logout } = useAuth();
   const { theme } = useTheme();
 
   return (
@@ -30,6 +31,7 @@ export const Navbar = () => {
           {userDetails?.isAdmin && (
             <LinkItem to="/admin/dashboard/users" text="Admin" />
           )}
+          {currentUser && <Button onClick={logout}>Logout</Button>}
           <ThemeToggle />
         </div>
         <div onClick={() => setOpen(true)} className="md:hidden">

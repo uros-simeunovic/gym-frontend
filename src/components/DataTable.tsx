@@ -7,17 +7,20 @@ import {
   TableRow,
 } from "./ui/table";
 import { Avatar, AvatarImage } from "./ui/avatar";
-import { Check, Edit, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useGetUsers } from "@/hooks/useGetUsers";
 import { useUpdateUser } from "@/hooks/useUpdateUser";
+import { useGetTrainingPlans } from "@/hooks/useGetTrainingPlans";
 
 export const DataTable = () => {
   const { data, isLoading } = useGetUsers();
   const { mutate } = useUpdateUser();
 
-  const changeStatus = async (id: string, premium: boolean) => {
-    mutate({ id, premium });
+  const { data: plans } = useGetTrainingPlans();
+
+  const changeStatus = async (id: string, planId: string) => {
+    mutate({ id, planId });
   };
 
   return (
@@ -27,7 +30,8 @@ export const DataTable = () => {
           <TableRow>
             <TableHead>Slika</TableHead>
             <TableHead>Name</TableHead>
-            <TableHead>Placeno</TableHead>
+            <TableHead>Plan 1</TableHead>
+            <TableHead>Plan 2</TableHead>
             <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
@@ -41,21 +45,27 @@ export const DataTable = () => {
                   </Avatar>
                 </TableCell>
                 <TableCell>{user.name}</TableCell>
-                <TableCell className="flex items-center justify-start">
-                  {user.premium ? (
-                    <Check className="w-16" color="green" />
-                  ) : (
-                    <X className="w-16" color="red" />
-                  )}
-                </TableCell>
-                <TableCell>
-                  <Button
-                    onClick={() => changeStatus(user.uid, user.premium)}
-                    className="space-x-2"
-                  >
-                    <Edit className="w-4" />
-                    <div>Edit</div>
-                  </Button>
+
+                {plans?.map((plan) => (
+                  <TableCell>
+                    {user.paidPlan == plan.id ? (
+                      <Check className="w-16" color="green" />
+                    ) : (
+                      <X className="w-16" color="red" />
+                    )}
+                  </TableCell>
+                ))}
+
+                <TableCell className="space-x-4">
+                  {plans?.map((plan) => (
+                    <Button
+                      key={plan.id}
+                      onClick={() => changeStatus(user.uid, plan.id)}
+                      className="space-x-2"
+                    >
+                      <div>{plan.name}</div>
+                    </Button>
+                  ))}
                 </TableCell>
               </TableRow>
             ))}

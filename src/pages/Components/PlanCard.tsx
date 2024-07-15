@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { useSendEmail } from "@/hooks/useSendEmail";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/Providers/AuthProvider";
 import { Check, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const PlanCard = ({
   price,
@@ -13,9 +15,12 @@ export const PlanCard = ({
   premium?: boolean;
 }) => {
   const { sendEmail, disabled } = useSendEmail();
+  const { currentUser } = useAuth();
+
+  const navigate = useNavigate();
 
   const onClick = () => {
-    sendEmail(price);
+    currentUser ? sendEmail(price) : navigate("/auth/login");
   };
 
   return (
