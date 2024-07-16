@@ -1,6 +1,5 @@
 import { useGetExerciseById } from "@/hooks/exercise/useGetExerciseById";
 import { useParams } from "react-router-dom";
-import MuxPlayer from "@mux/mux-player-react";
 
 const Workout = () => {
   const params = useParams();
