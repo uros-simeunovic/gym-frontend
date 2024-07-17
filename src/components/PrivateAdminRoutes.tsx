@@ -6,8 +6,6 @@ import { toast } from "sonner";
 const PrivateAdminRoutes = ({}) => {
   const { currentUser, loading, userDetails } = useAuth();
 
-  // const signedIn = localStorage.getItem("signedIn");
-
   if (loading) {
     return (
       <div className="w-full flex items-center justify-center mt-[150px] gap-2">
@@ -21,7 +19,7 @@ const PrivateAdminRoutes = ({}) => {
     toast.error("Niste ulogovani!", { duration: 2000 });
     return <Navigate to="/auth/login" />;
   }
-  console.log(userDetails);
+
   if (!userDetails?.isAdmin) {
     toast.error("Korisnik nije admin!", { duration: 2000 });
     return <Navigate to="/" />;

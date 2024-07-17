@@ -46,8 +46,8 @@ export const DataTable = () => {
                 </TableCell>
                 <TableCell>{user.name}</TableCell>
 
-                {plans?.map((plan) => (
-                  <TableCell>
+                {plans?.map((plan, index) => (
+                  <TableCell key={index}>
                     {user.paidPlan == plan.id ? (
                       <Check className="w-16" color="green" />
                     ) : (

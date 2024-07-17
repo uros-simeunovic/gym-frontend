@@ -10,12 +10,12 @@ export const PlanSection = () => {
   const { userDetails } = useAuth();
   const { data } = useGetTrainingPlans();
   const navigate = useNavigate();
-  console.log(data);
+
   return (
     <div className="flex flex-col items-center gap-20">
       <div className="flex flex-wrap justify-center gap-32">
-        {data?.map((plan) => (
-          <PlanCard planName={plan.name} price={plan.price} />
+        {data?.map((plan, index) => (
+          <PlanCard planName={plan.name} price={plan.price} key={index} />
         ))}
       </div>
       {userDetails?.paidPlan && (
