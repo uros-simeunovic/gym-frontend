@@ -1,5 +1,5 @@
 import { db } from "@/firebase";
-import { Exercise } from "@/types";
+import { Day, Exercise } from "@/types";
 import {
   collection,
   deleteDoc,
@@ -29,6 +29,7 @@ export const getTrainingPlans = async () => {
 export const getExercisesByPlanId = async (planId: string | undefined) => {
   const exercisesQuery = query(
     collection(db, `trainingPlans/${planId}/exercises`)
+    // orderBy("order", "asc")
   );
 
   const exercisesSnapshot = await getDocs(exercisesQuery);
@@ -37,15 +38,36 @@ export const getExercisesByPlanId = async (planId: string | undefined) => {
       id: doc.id,
       ...doc.data(),
     };
-    return document as {
-      id: string;
-      name: string;
-      description: string;
-      videoUrl: string;
-      exerciseType: string;
-    };
+    return document as Exercise;
   });
   return exercisesList;
+};
+
+export const getDaysByPlanIdTest = async (planId: string | undefined) => {
+  const daysQuery = query(
+    collection(db, `days`)
+    // orderBy("order", "asc")
+  );
+
+  const daysSnapshot = await getDocs(daysQuery);
+  const daysList = daysSnapshot.docs.map((doc) => {
+    const document: Day = {
+      id: doc.id,
+      order: doc.data().order,
+      plan: doc.data().plan,
+      group: doc.data().group,
+    };
+
+    return document;
+  });
+
+  const daysByPlanId = daysList.filter((day) => {
+    if (day.plan.id == planId) return day;
+  });
+
+  console.log(daysByPlanId);
+
+  return daysByPlanId;
 };
 
 export const getExerciseById = async (

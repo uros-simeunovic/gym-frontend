@@ -1,8 +1,18 @@
+import { DocumentReference } from "firebase/firestore";
+
 export interface Exercise {
   id: string;
   name: string;
   videoUrl: string;
-  exerciseType: string;
+  thumbnail: string;
+  exerciseType: number;
+}
+
+export interface Day {
+  id: string;
+  order: number;
+  plan: DocumentReference;
+  group: string;
 }
 
 export interface ExercisesByType {
