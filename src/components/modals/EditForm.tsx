@@ -1,7 +1,6 @@
 import { useDialog } from "@/hooks/useDialog";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { useDeleteExercise } from "@/hooks/exercise/useDeleteExercise";
@@ -30,14 +29,6 @@ export const EditForm = () => {
           className="col-span-3"
           defaultValue={data?.name}
           placeholder="Naziv vezbe"
-        />
-      </div>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="description">Opis</Label>
-        <Textarea
-          id="description"
-          defaultValue={data?.description}
-          className="col-span-3"
         />
       </div>
       <div className="flex flex-row  gap-2">
