@@ -1,11 +1,5 @@
+import { Exercise } from "@/types";
 import { create } from "zustand";
-
-interface Exercise {
-  id: string;
-  name: string;
-  description: string;
-  videoUrl: string;
-}
 
 interface DialogProps {
   isOpen: boolean;

@@ -5,13 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { useDialog } from "@/hooks/useDialog";
 import { useGetExercisesByPlanId } from "@/hooks/exercise/useGetExercises";
 import { Edit, Plus } from "lucide-react";
-
-interface Exercise {
-  id: string;
-  name: string;
-  description: string;
-  videoUrl: string;
-}
+import { Exercise } from "@/types";
 
 export const ExercisesPage = () => {
   const { data } = useGetExercisesByPlanId();
