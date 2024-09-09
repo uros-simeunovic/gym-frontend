@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import instagramLogo from "../../assets/instagramLogo.png";
 
 export const HeroSection = ({ image }: { image: string }) => {
   return (
     <>
-      <div className="flex flex-col items-center text-center my-8 mt-24 w-full">
+      <div className="flex flex-col items-center text-center my-8 mt-20 w-full">
         <div className="overflow-hidden">
           <motion.h5
             key="small-heading"
@@ -61,13 +62,53 @@ export const HeroSection = ({ image }: { image: string }) => {
           </motion.h1>
         </div>
       </div>
-      <div className="mx-auto mt-[100px]">
-        <motion.img
-          key="image"
-          src={image}
-          alt="Landing page image"
-          className="mx-auto object-cover w-full h-[800px] rounded-[75px]"
-        />
+      <div className="h-[400px] mt-[100px] relative">
+        <div className="absolute bottom-0 right-[40px]">
+          <motion.img
+            key="image"
+            src={image}
+            alt="Landing page image"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.45, 0, 0.55, 1],
+            }}
+            className="w-[150px]"
+          />
+        </div>
+
+        <motion.div
+          className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[400px] sm:h-[350px] rounded-[20px] absolute top-[40px] left-[40px] -z-10 shadow-lg"
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            duration: 0.7,
+            ease: [0.45, 0, 0.55, 1],
+          }}
+        >
+          <div className="w-[210px] text-white">
+            <h2 className="font-medium text-[20px] text-center">O meni</h2>
+            <p className="font-light text-[12px]">
+              Lorem ipsum dolor sit amet consectetur, elit. Ut optio voluptatum
+              reprehenderit ad ipsum corporis maxime mollitia aperiam!
+              Similique, totam. Ut optio voluptatum reprehenderit ad ipsum
+              corporis maxime mollitia aperiam! Similique, totam.
+            </p>
+          </div>
+        </motion.div>
+        <motion.div
+          className="bg-[#FF74A1] w-[200px] h-[60px] rounded-[20px] absolute top-[220px] left-[75px] -z-10 flex items-center gap-1 px-[12px] shadow-lg"
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            ease: [0.45, 0, 0.55, 1],
+          }}
+        >
+          <img src={instagramLogo} alt="" className="w-8" />
+          <p className="text-white">@Krisstina</p>
+        </motion.div>
       </div>
     </>
   );

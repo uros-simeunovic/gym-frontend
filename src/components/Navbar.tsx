@@ -27,7 +27,7 @@ export const Navbar = () => {
           />
         </Link>
         <div className="hidden md:flex flex-row gap-6 ">
-          <LinkItem to="/plans" text="Planovi" />
+          {/* <LinkItem to="/plans" text="Planovi" /> */}
           {userDetails?.isAdmin && (
             <LinkItem to="/admin/dashboard/users" text="Admin" />
           )}

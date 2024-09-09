@@ -21,7 +21,7 @@ export const AnimatedLine = ({ logo }: { logo: string }) => {
       <motion.div
         key="line"
         ref={ref}
-        className="absolute top-8 flex flex-row items-end gap-20 text-4xl w-[1000px] md:w-[2500px] h-[80px] bg-pink-600"
+        className="absolute flex flex-row items-center gap-20 text-4xl w-[1000px] md:w-[2500px] h-[80px] bg-pink-600"
         style={{
           translateX: line,
         }}
