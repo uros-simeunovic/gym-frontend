@@ -62,7 +62,7 @@ export const HeroSection = ({ image }: { image: string }) => {
           </motion.h1>
         </div>
       </div>
-      <div className="h-[400px] mt-[100px] relative">
+      <div className="h-[400px] sm:h-[500px] mt-[100px] relative">
         <div className="absolute bottom-0 right-[40px]">
           <motion.img
             key="image"
@@ -74,12 +74,12 @@ export const HeroSection = ({ image }: { image: string }) => {
               duration: 0.7,
               ease: [0.45, 0, 0.55, 1],
             }}
-            className="w-[150px]"
+            className="w-[150px] sm:w-[180px]"
           />
         </div>
 
         <motion.div
-          className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[400px] sm:h-[350px] rounded-[20px] absolute top-[40px] left-[40px] -z-10 shadow-lg"
+          className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[360px] sm:h-[200px] rounded-[20px] absolute top-[60px] right-[120px] -z-10 shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -87,9 +87,11 @@ export const HeroSection = ({ image }: { image: string }) => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <div className="w-[210px] text-white">
-            <h2 className="font-medium text-[20px] text-center">O meni</h2>
-            <p className="font-light text-[12px]">
+          <div className="max-w-[300px] text-white">
+            <h2 className="font-medium text-[20px] sm:text-[28px] text-center">
+              O meni
+            </h2>
+            <p className="font-light text-[12px] sm:text-[14px]">
               Lorem ipsum dolor sit amet consectetur, elit. Ut optio voluptatum
               reprehenderit ad ipsum corporis maxime mollitia aperiam!
               Similique, totam. Ut optio voluptatum reprehenderit ad ipsum
@@ -98,7 +100,7 @@ export const HeroSection = ({ image }: { image: string }) => {
           </div>
         </motion.div>
         <motion.div
-          className="bg-[#FF74A1] w-[200px] h-[60px] rounded-[20px] absolute top-[220px] left-[75px] -z-10 flex items-center gap-1 px-[12px] shadow-lg"
+          className="bg-[#FF74A1] w-[200px] h-[60px] rounded-[20px] absolute top-[240px] sm:w-[280px] sm:top-[280px] right-[110px] -z-10 flex items-center gap-1 px-[12px] shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
