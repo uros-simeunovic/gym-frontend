@@ -63,7 +63,7 @@ export const HeroSection = ({ image }: { image: string }) => {
         </div>
       </div>
       <div className="h-[400px] sm:h-[500px] mt-[100px] relative">
-        <div className="absolute bottom-0 right-[40px]">
+        <div className="absolute bottom-0 right-[20px]">
           <motion.img
             key="image"
             src={image}
@@ -79,7 +79,7 @@ export const HeroSection = ({ image }: { image: string }) => {
         </div>
 
         <motion.div
-          className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[360px] sm:h-[200px] rounded-[20px] absolute top-[60px] right-[120px] -z-10 shadow-lg"
+          className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[360px] sm:h-[200px] rounded-[20px] absolute top-[60px] right-[100px] -z-10 shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{

@@ -1,11 +1,12 @@
 import pinkOMeni from "../assets/PinkOMeni.png";
 import logo from "../assets/GGWhiteMainLogo.png";
 import { HeroSection } from "./Components/HeroSection";
-import { SignUpSection } from "./Components/SignUpSection";
-import { PlanSection } from "./Components/PlanSection";
+// import { SignUpSection } from "./Components/SignUpSection";
+// import { PlanSection } from "./Components/PlanSection";
 import { AnimatedLine } from "./Components/AnimatedLine";
-import { SignUpSectionBlack } from "./Components/SignUpSectionBlack";
+import { PlanSection } from "./Components/PlanSection";
 import { Footer } from "@/components/Footer";
+import Plans from "./Components/Plans";
 
 const HomePage = () => {
   return (
@@ -13,15 +14,14 @@ const HomePage = () => {
       <div className="px-2 md:max-w-[1600px] mx-auto">
         <HeroSection image={pinkOMeni} />
       </div>
-      <div className="relative w-full">
+      <div className="relative w-full h-[80px]">
         <AnimatedLine logo={logo} />
       </div>
-      <div className="p-2 md:max-w-[1600px] mx-auto">
-        <SignUpSection />
+      <div className="relative px-2 bg-[#171717] md:max-w-[1600px]">
         <PlanSection />
       </div>
-      <div className="relative p-2 bg-[#171717] w-full mt-32 py-40">
-        <SignUpSectionBlack />
+      <div className="px-2 md:max-w-[1600px]">
+        <Plans />
       </div>
       <div className="p-2 bg-[#171717] w-full pt-32 ">
         <Footer logo={logo} />
