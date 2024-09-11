@@ -13,17 +13,21 @@ const HomePage = () => {
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
         <HeroSection image={pinkOMeni} />
-      </div>
-      <div className="relative w-full h-[80px]">
         <AnimatedLine logo={logo} />
       </div>
-      <div className="relative px-2 bg-[#171717] md:max-w-[1600px]">
-        <PlanSection />
+      <div className="bg-[#171717] w-full mt-[80px]">
+        <div className="relative px-2">
+          <PlanSection />
+        </div>
       </div>
-      <div className="px-2 md:max-w-[1600px]">
+      <div className="px-2">
         <Plans />
       </div>
-      <div className="p-2 bg-[#171717] w-full pt-32 ">
+      <div className="h-[60px]">
+        <AnimatedLine logo={logo} />
+      </div>
+
+      <div className="p-2 bg-[#171717] w-full">
         <Footer logo={logo} />
       </div>
     </div>
