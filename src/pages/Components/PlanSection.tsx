@@ -11,8 +11,11 @@ export const PlanSection = () => {
             key="image"
             src={whitePlanovi}
             alt="Landing page image"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{
+              once: true,
+            }}
             transition={{
               duration: 0.7,
               ease: [0.45, 0, 0.55, 1],
@@ -23,8 +26,11 @@ export const PlanSection = () => {
 
         <motion.div
           className="bg-white px-6 py-2 w-[260px] h-[150px] sm:w-[320px] sm:h-[240px] md:w-[500px] md:h-[300px] rounded-[20px] absolute left-[110px] top-[120px] sm:left-[260px] sm:top-[260px] -z-0 shadow-lg flex justify-end"
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{
+            once: true,
+          }}
           transition={{
             duration: 0.7,
             ease: [0.45, 0, 0.55, 1],
@@ -40,9 +46,12 @@ export const PlanSection = () => {
           </div>
         </motion.div>
         <motion.div
-          className="bg-white w-[170px] h-[50px] rounded-[20px] absolute sm:w-[260px] left-[100px] top-[290px] sm:left-[300px] sm:top-[540px] flex items-center justify-end gap-1 px-[12px] -z-0 shadow-lg hover:w-[200px] sm:hover:w-[270px] transition-all cursor-pointer"
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          className="bg-white w-[170px] h-[50px] rounded-[20px] absolute sm:w-[260px] left-[100px] top-[290px] sm:left-[300px] sm:top-[540px] flex items-center justify-end gap-1 px-[12px] -z-0 shadow-lg cursor-pointer"
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{
+            once: true,
+          }}
           transition={{
             duration: 1,
             ease: [0.45, 0, 0.55, 1],
