@@ -1,4 +1,3 @@
-import pinkOMeni from "../assets/PinkOMeni.png";
 import logo from "../assets/GGWhiteMainLogo.png";
 import { HeroSection } from "./Components/HeroSection";
 // import { SignUpSection } from "./Components/SignUpSection";
@@ -12,7 +11,7 @@ const HomePage = () => {
   return (
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
-        <HeroSection image={pinkOMeni} />
+        <HeroSection />
         <AnimatedLine logo={logo} />
       </div>
       <div className="bg-[#171717] w-full mt-[80px]">

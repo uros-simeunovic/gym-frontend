@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import whitePlanovi from "../../assets/WhitePlanovi.png";
+// import whitePlanovi from "../../assets/WhitePlanovi.png";
 import { ArrowRightCircle } from "lucide-react";
 
 export const PlanSection = () => {
@@ -9,7 +9,8 @@ export const PlanSection = () => {
         <div className="absolute bottom-0 -left-8 z-50">
           <motion.img
             key="image"
-            src={whitePlanovi}
+            // src={whitePlanovi}
+            src="/WhitePlanovi.png"
             alt="Landing page image"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
