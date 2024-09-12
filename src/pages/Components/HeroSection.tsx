@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-// import instagramLogo from "../../assets/instagramLogo.png";
-// import pinkOMeni from "../../assets/PinkOMeni.png";
+import instagramLogo from "../../assets/instagramLogo.png";
+import pinkOMeni from "../../assets/PinkOMeniCompressed.png";
 
 export const HeroSection = () => {
   return (
@@ -67,8 +67,7 @@ export const HeroSection = () => {
         <div className="absolute bottom-0 right-[20px]">
           <motion.img
             key="image"
-            // src={pinkOMeni}
-            src="/PinkOMeni.png"
+            src={pinkOMeni}
             alt="Landing page image"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -110,12 +109,7 @@ export const HeroSection = () => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <img
-            // src={instagramLogo}
-            src="/instagramLogo.png"
-            alt="instagram-logo"
-            className="w-8"
-          />
+          <img src={instagramLogo} alt="instagram-logo" className="w-8" />
           <p className="text-white">@Krisstina</p>
         </motion.div>
       </div>
