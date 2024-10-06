@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logoGG1.png";
 import logoDark from "../assets/LogoGGWhite.svg";
-import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "./ui/sheet";
 import { NavmenuSidebar } from "./NavmenuSidebar";
 import { useState } from "react";

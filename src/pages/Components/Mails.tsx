@@ -1,6 +1,4 @@
-import { Modal } from "@/components/modals/Modal";
 import { PlanCard } from "./PlanCard";
-import { MailCheck } from "lucide-react";
 import { useAuth } from "@/Providers/AuthProvider";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
