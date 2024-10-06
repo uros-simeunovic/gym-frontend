@@ -26,11 +26,6 @@ export const Mails = () => {
           Otvori plan
         </Button>
       )}
-      <Modal title="Uputstvo za placanje Vam je poslato na email">
-        <div className="w-full flex flex-col items-center mt-10">
-          <MailCheck size={100} />
-        </div>
-      </Modal>
     </div>
   );
 };

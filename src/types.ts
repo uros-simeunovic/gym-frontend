@@ -5,7 +5,8 @@ export interface Exercise {
   name: string;
   videoUrl: string;
   thumbnail: string;
-  exerciseType: number;
+  order: number;
+  exerciseType: "donji_deo_1" | "donji_deo_2" | "gornji_deo_1";
 }
 
 export interface Day {

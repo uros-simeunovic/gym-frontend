@@ -2,8 +2,22 @@ import { motion } from "framer-motion";
 import pinkPlan1 from "../../assets/PinkGrl2.png";
 import whitePlan2 from "../../assets/WhiteGirl1.png";
 import { ArrowRightCircle, Check } from "lucide-react";
+import { useSendEmail } from "@/hooks/useSendEmail";
+import { useAuth } from "@/Providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Plans = () => {
+  const { sendEmail, disabled } = useSendEmail();
+  const { currentUser, userDetails } = useAuth();
+
+  const navigate = useNavigate();
+
+  const onClick = (price: number) => {
+    if (disabled) return;
+    currentUser ? sendEmail(price) : navigate("/auth/login");
+  };
+
   return (
     <>
       <div className="h-[460px] sm:h-[800px] relative">
@@ -32,23 +46,23 @@ const Plans = () => {
           }}
         >
           <div className="max-w-[300px] text-white">
-            <h2 className="font-medium text-[20px] sm:text-[28px] text-center">
+            <h2 className="font-medium text-[24px] sm:text-[28px] text-center">
               Plan 1
             </h2>
-            <ul>
-              <li className="w-full flex items-center">
+            <ul className="font-light">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
@@ -56,7 +70,7 @@ const Plans = () => {
           </div>
         </motion.div>
         <motion.div
-          className="bg-[#FF74A1] w-[170px] h-[50px] rounded-[20px] absolute sm:w-[280px] sm:top-[280px] right-[120px] top-[260px] flex items-center gap-1 px-[12px] -z-0 shadow-lg"
+          className="bg-[#FF74A1] w-[170px] h-[50px] rounded-[20px] absolute sm:w-[280px] sm:top-[280px] right-[120px] top-[260px]  px-[12px] flex -z-0 shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -64,8 +78,13 @@ const Plans = () => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <ArrowRightCircle color="white" />
-          <p className="text-white text-[24px] pb-1">Kupi</p>
+          <div
+            onClick={() => onClick(20)}
+            className="flex items-center gap-1 cursor-pointer"
+          >
+            <ArrowRightCircle color="white" size={30} />
+            <p className="text-white text-[24px]">Kupi</p>
+          </div>
         </motion.div>
       </div>
       {/* ========================== */}
@@ -95,23 +114,23 @@ const Plans = () => {
           }}
         >
           <div className="max-w-[300px]">
-            <h2 className="font-medium text-[20px] sm:text-[28px] text-center">
+            <h2 className="font-medium text-[24px] sm:text-[28px] text-center">
               Plan 2
             </h2>
             <ul>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
-              <li className="w-full flex items-center">
+              <li className="w-full flex items-center gap-1">
                 <Check />
                 <p>Lorem ipsum dolor sit.</p>
               </li>
@@ -127,10 +146,23 @@ const Plans = () => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <p className="text-[24px] leading-6 pb-1">Kupi</p>
-          <ArrowRightCircle size={30} />
+          <div
+            onClick={() => onClick(40)}
+            className="flex items-center gap-1 cursor-pointer"
+          >
+            <p className="text-[24px] pb-[2px]">Kupi</p>
+            <ArrowRightCircle size={30} />
+          </div>
         </motion.div>
       </div>
+      {userDetails?.paidPlan && (
+        <Button
+          onClick={() => navigate(`/plans/${userDetails?.paidPlan}`)}
+          className="w-[150px]"
+        >
+          Otvori plan
+        </Button>
+      )}
     </>
   );
 };

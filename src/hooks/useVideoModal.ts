@@ -1,3 +1,4 @@
+import { ExerciseTest } from "@/queries/trainings";
 import { Exercise } from "@/types";
 import { create } from "zustand";
 
@@ -9,8 +10,8 @@ interface VideoModalProps {
   setData: (data: Exercise) => void;
   title: string | null;
   setTitle: (title: string) => void;
-  selectedExercise: Exercise | null;
-  setSelectedExercise: (data: Exercise) => void;
+  selectedExercise: ExerciseTest | null;
+  setSelectedExercise: (data: ExerciseTest) => void;
 }
 
 export const useVideoModal = create<VideoModalProps>((set) => ({
@@ -22,5 +23,5 @@ export const useVideoModal = create<VideoModalProps>((set) => ({
   title: null,
   setTitle: (title: string) => set({ title: title }),
   selectedExercise: null,
-  setSelectedExercise: (data: Exercise) => set({ selectedExercise: data }),
+  setSelectedExercise: (data: ExerciseTest) => set({ selectedExercise: data }),
 }));

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import whitePlanovi from "../../assets/WhitePlanovi.png";
-import { ArrowRightCircle } from "lucide-react";
 
 export const PlanSection = () => {
   return (
@@ -36,16 +35,16 @@ export const PlanSection = () => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <div className="w-[260px] flex flex-col items-center">
+          <div className="flex flex-col items-center">
             <h2 className="font-medium text-[20px] sm:text-[28px]">Planovi</h2>
-            <p className="font-light text-[12px] sm:text-[14px] text-center">
+            <p className="font-normal text-[13px] sm:text-[15px] text-center">
               Lorem ipsum dolor sit amet consectetur, elit. Ut optio voluptatum
               reprehenderit ad ipsum corporis maxime mollitia aperiam!
-              Similique, totam. Ut optio voluptatum reprehenderit ad ipsum
+              Similique, totam.
             </p>
           </div>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           className="bg-white w-[170px] h-[50px] rounded-[20px] absolute sm:w-[260px] left-[100px] top-[290px] sm:left-[300px] sm:top-[540px] flex items-center justify-end gap-1 px-[12px] -z-0 shadow-lg cursor-pointer"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -59,7 +58,7 @@ export const PlanSection = () => {
         >
           <p className="text-[24px] leading-6 pb-1">Planovi</p>
           <ArrowRightCircle size={30} />
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );

@@ -5,7 +5,10 @@ import pinkOMeni from "../../assets/PinkOMeniCompressed.png";
 export const HeroSection = () => {
   return (
     <>
-      <div className="flex flex-col items-center text-center my-8 mt-20 w-full">
+      <div
+        className="flex flex-col items-center text-center my-8 mt-20 w-full"
+        style={{ fontFamily: '"Oswald", sans-serif' }}
+      >
         <div className="overflow-hidden">
           <motion.h5
             key="small-heading"
@@ -88,15 +91,15 @@ export const HeroSection = () => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <div className="max-w-[300px] text-white">
-            <h2 className="font-medium text-[20px] sm:text-[28px] text-center">
+          <div className="text-white">
+            <h2 className="font-medium text-[24px] sm:text-[28px] text-center">
               O meni
             </h2>
-            <p className="font-light text-[12px] sm:text-[14px]">
+            <p className="font-normal text-[13px] sm:text-[15px] text-center">
               Lorem ipsum dolor sit amet consectetur, elit. Ut optio voluptatum
               reprehenderit ad ipsum corporis maxime mollitia aperiam!
               Similique, totam. Ut optio voluptatum reprehenderit ad ipsum
-              corporis maxime mollitia aperiam! Similique, totam.
+              corporis
             </p>
           </div>
         </motion.div>

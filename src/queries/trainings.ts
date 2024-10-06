@@ -6,6 +6,7 @@ import {
   doc,
   getDoc,
   getDocs,
+  orderBy,
   query,
 } from "firebase/firestore";
 
@@ -28,8 +29,8 @@ export const getTrainingPlans = async () => {
 
 export const getExercisesByPlanId = async (planId: string | undefined) => {
   const exercisesQuery = query(
-    collection(db, `trainingPlans/${planId}/exercises`)
-    // orderBy("order", "asc")
+    collection(db, `trainingPlans/${planId}/exercises`),
+    orderBy("order", "asc")
   );
 
   const exercisesSnapshot = await getDocs(exercisesQuery);
@@ -112,4 +113,66 @@ export const getExerciseTypes = async () => {
     };
   });
   return exerciseTypesList;
+};
+
+// =====================
+
+export interface ExerciseTest {
+  id: string;
+  name: string;
+  videoUrl: string;
+  thumbnail: string;
+  order: number;
+}
+
+export const getLowerBody1Exercises = async () => {
+  const exercisesQuery = query(
+    collection(db, `/exercises/donji_deo_1/exercises/`),
+    orderBy("order", "asc")
+  );
+
+  const exercisesSnapshot = await getDocs(exercisesQuery);
+
+  const exercisesList = exercisesSnapshot.docs.map((doc) => {
+    const document = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    return document as ExerciseTest;
+  });
+  return exercisesList;
+};
+
+export const getLowerBody2Exercises = async () => {
+  const exercisesQuery = query(
+    collection(db, `/exercises/donji_deo_2/exercises/`),
+    orderBy("order", "asc")
+  );
+
+  const exercisesSnapshot = await getDocs(exercisesQuery);
+
+  const exercisesList = exercisesSnapshot.docs.map((doc) => {
+    const document = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    return document as ExerciseTest;
+  });
+  return exercisesList;
+};
+
+export const getUpperBody1Exercises = async () => {
+  const exercisesQuery = query(
+    collection(db, `/exercises/gornji_deo_1/exercises/`),
+    orderBy("order", "asc")
+  );
+  const exercisesSnapshot = await getDocs(exercisesQuery);
+  const exercisesList = exercisesSnapshot.docs.map((doc) => {
+    const document = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    return document as ExerciseTest;
+  });
+  return exercisesList;
 };

@@ -1,12 +1,10 @@
 import { Navigate } from "react-router-dom";
-import logo from "../assets/LogoGGWhite.svg";
+import logo from "../assets/logoGG1.png";
 import googleIcon from "../assets/google.png";
 import { useAuth } from "@/Providers/AuthProvider";
 
 export const LoginPage = () => {
   const { currentUser, signInWithGoogle } = useAuth();
-
-  console.log("LOGIN PAGE: ", currentUser);
 
   if (currentUser) {
     return <Navigate to="/" />;

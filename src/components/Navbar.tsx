@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logoGG1.png";
 import logoDark from "../assets/LogoGGWhite.svg";
 import { Menu } from "lucide-react";
@@ -6,7 +6,6 @@ import { Sheet, SheetContent, SheetDescription, SheetTitle } from "./ui/sheet";
 import { NavmenuSidebar } from "./NavmenuSidebar";
 import { useState } from "react";
 import { useAuth } from "@/Providers/AuthProvider";
-import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "@/Providers/ThemeProvider";
 import { LinkItem } from "./LinkItem";
 import { Button } from "./ui/button";
@@ -15,6 +14,12 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { userDetails, currentUser, logout } = useAuth();
   const { theme } = useTheme();
+
+  const navigate = useNavigate();
+
+  const login = () => {
+    navigate("/auth/login");
+  };
 
   return (
     <div className="h-full p-2 pt-6 bg-background">
@@ -26,17 +31,19 @@ export const Navbar = () => {
             className="w-[100px] md:w-[140px]"
           />
         </Link>
-        <div className="hidden md:flex flex-row gap-6 ">
-          {/* <LinkItem to="/plans" text="Planovi" /> */}
+        <div className="flex flex-row gap-6 ">
           {userDetails?.isAdmin && (
             <LinkItem to="/admin/dashboard/users" text="Admin" />
           )}
-          {currentUser && <Button onClick={logout}>Logout</Button>}
-          <ThemeToggle />
+          {currentUser ? (
+            <Button onClick={logout}>Logout</Button>
+          ) : (
+            <Button onClick={login}>Login</Button>
+          )}
         </div>
-        <div onClick={() => setOpen(true)} className="md:hidden">
+        {/* <div onClick={() => setOpen(true)} className="md:hidden">
           <Menu className="w-10" />
-        </div>
+        </div> */}
         <Sheet open={open} onOpenChange={() => setOpen(false)}>
           <SheetContent side={"right"} className="w-full">
             <SheetDescription className="hidden">
