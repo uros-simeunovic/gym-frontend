@@ -12,7 +12,7 @@ export const HeroSection = () => {
         <div className="overflow-hidden">
           <motion.h5
             key="small-heading"
-            className="font-normal text-xl"
+            className="font-normal text-xl sm2:text-2xl"
             initial={{
               translateY: "-100px",
             }}
@@ -31,7 +31,7 @@ export const HeroSection = () => {
         <div className="overflow-hidden">
           <motion.h1
             key="heading1"
-            className="font-bold text-[60px] sm:text-[86px] md:max-w-[600px] md:text-[126px] leading-none"
+            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none"
             initial={{
               translateY: "200px",
             }}
@@ -50,7 +50,7 @@ export const HeroSection = () => {
         <div className="overflow-hidden">
           <motion.h1
             key="heading2"
-            className="font-bold text-[60px] sm:text-[86px] md:max-w-[600px] md:text-[126px] leading-none"
+            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none"
             initial={{
               translateY: "200px",
             }}
@@ -78,7 +78,7 @@ export const HeroSection = () => {
               duration: 0.7,
               ease: [0.45, 0, 0.55, 1],
             }}
-            className="w-[150px] sm:w-[180px]"
+            className="w-[150px] sm:w-[180px] sm2:w-[190px]"
           />
         </div>
 

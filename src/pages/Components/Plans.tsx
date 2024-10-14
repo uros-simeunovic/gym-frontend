@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 const Plans = () => {
   const { sendEmail, disabled } = useSendEmail();
   const { currentUser, userDetails } = useAuth();
-
+  console.log(userDetails);
   const navigate = useNavigate();
 
   const onClick = (price: number) => {
@@ -21,6 +21,16 @@ const Plans = () => {
   return (
     <>
       <div className="h-[460px] sm:h-[800px] relative">
+        {userDetails?.paidPlan && (
+          <div className="mt-10 text-center">
+            <Button
+              onClick={() => navigate(`/plans/${userDetails?.paidPlan}`)}
+              className="w-[150px] bg-[#FF74A1]"
+            >
+              OTVORI PLAN
+            </Button>
+          </div>
+        )}
         <div className="absolute bottom-0 right-0 z-50">
           <motion.img
             key="image"
@@ -37,7 +47,7 @@ const Plans = () => {
         </div>
 
         <motion.div
-          className="bg-[#FF74A1] p-2 w-[250px] h-[150px] sm:w-[360px] sm:h-[200px] rounded-[20px] absolute right-[100px] top-[90px] -z-0 shadow-lg"
+          className="bg-[#FF74A1] p-2 w-[250px] h-[150px] sm:w-[360px] sm:h-[200px] md:h-[250px] md:w-[400px] rounded-[20px] absolute right-[100px] sm:right-[140px] md:right-[200px] top-[90px] -z-0 shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -70,7 +80,7 @@ const Plans = () => {
           </div>
         </motion.div>
         <motion.div
-          className="bg-[#FF74A1] w-[170px] h-[50px] rounded-[20px] absolute sm:w-[280px] sm:top-[280px] right-[120px] top-[260px]  px-[12px] flex -z-0 shadow-lg"
+          className="bg-[#FF74A1] w-[170px] h-[50px] rounded-[20px] absolute sm:w-[280px] sm:top-[320px] right-[120px] top-[260px] md:top-[360px] md:right-[180px] px-[12px] flex -z-0 shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -105,7 +115,7 @@ const Plans = () => {
         </div>
 
         <motion.div
-          className="bg-white px-6 py-2 w-[260px] h-[150px] sm:w-[320px] sm:h-[240px] md:w-[500px] md:h-[300px] rounded-[20px] absolute left-[80px] top-[140px] sm:left-[260px] sm:top-[260px] -z-0 drop-shadow-xl flex justify-end"
+          className="bg-white px-6 py-2 w-[260px] h-[150px] sm:w-[320px] sm:h-[240px] rounded-[20px] absolute left-[80px] top-[140px] sm:left-[260px] sm:top-[260px] md:h-[250px] md:w-[400px] -z-0 drop-shadow-xl flex justify-end md:justify-normal"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -113,7 +123,7 @@ const Plans = () => {
             ease: [0.45, 0, 0.55, 1],
           }}
         >
-          <div className="max-w-[300px]">
+          <div className="">
             <h2 className="font-medium text-[24px] sm:text-[28px] text-center">
               Plan 2
             </h2>
@@ -155,14 +165,6 @@ const Plans = () => {
           </div>
         </motion.div>
       </div>
-      {userDetails?.paidPlan && (
-        <Button
-          onClick={() => navigate(`/plans/${userDetails?.paidPlan}`)}
-          className="w-[150px]"
-        >
-          Otvori plan
-        </Button>
-      )}
     </>
   );
 };

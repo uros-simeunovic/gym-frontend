@@ -44,21 +44,6 @@ export const PlanSection = () => {
             </p>
           </div>
         </motion.div>
-        {/* <motion.div
-          className="bg-white w-[170px] h-[50px] rounded-[20px] absolute sm:w-[260px] left-[100px] top-[290px] sm:left-[300px] sm:top-[540px] flex items-center justify-end gap-1 px-[12px] -z-0 shadow-lg cursor-pointer"
-          initial={{ x: 200, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 1,
-            ease: [0.45, 0, 0.55, 1],
-          }}
-        >
-          <p className="text-[24px] leading-6 pb-1">Planovi</p>
-          <ArrowRightCircle size={30} />
-        </motion.div> */}
       </div>
     </>
   );

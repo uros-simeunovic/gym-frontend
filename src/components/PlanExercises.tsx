@@ -16,6 +16,7 @@ export const PlanExercises = () => {
     setSelectedExercise(exercise);
     onOpen();
   };
+
   return (
     <div className="flex flex-col gap-8 justify-center flex-wrap m-10">
       <div>
@@ -77,6 +78,7 @@ export const PlanExercises = () => {
           poster={selectedExercise?.thumbnail}
           preload="metadata"
         />
+
         <div>
           <h1>Opis</h1>
           <p className="font-light text-lg">Broj serija: 3</p>
