@@ -1,14 +1,12 @@
-import { motion } from "framer-motion";
 import pinkPlan1 from "../../assets/PinkGrl2.png";
 import whitePlan2 from "../../assets/WhiteGirl1.png";
-import { ArrowRightCircle, Check } from "lucide-react";
 import { useSendEmail } from "@/hooks/useSendEmail";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const Plans = () => {
   const { sendEmail, disabled } = useSendEmail();
-  const { currentUser, userDetails } = useAuth();
+  const { currentUser } = useAuth();
   const navigate = useNavigate();
 
   const onClick = (price: number) => {
@@ -29,7 +27,10 @@ const Plans = () => {
                 Veritatis vel aperiam cupiditate ratione? Ipsam magnam enim
               </p>
             </div>
-            <button className="bg-white text-[#f96294] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]">
+            <button
+              onClick={() => onClick(20)}
+              className="bg-white text-[#f96294] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
+            >
               Kupi
             </button>
           </div>
@@ -156,7 +157,10 @@ const Plans = () => {
               </p>
             </div>
             <div className="ml-auto">
-              <button className="bg-white text-[#db84ff] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]">
+              <button
+                onClick={() => onClick(40)}
+                className="bg-white text-[#db84ff] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
+              >
                 Kupi
               </button>
             </div>

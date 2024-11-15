@@ -7,7 +7,6 @@ import { useState } from "react";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useTheme } from "@/Providers/ThemeProvider";
 import { LinkItem } from "./LinkItem";
-import { Button } from "./ui/button";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -31,9 +30,9 @@ export const Navbar = () => {
           />
         </Link>
         <div className="flex flex-row gap-6 ">
-          {/* {userDetails?.isAdmin && (
+          {userDetails?.isAdmin && (
             <LinkItem to="/admin/dashboard/users" text="Admin" />
-          )} */}
+          )}
           {currentUser ? (
             <button
               onClick={logout}
