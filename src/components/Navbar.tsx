@@ -31,13 +31,24 @@ export const Navbar = () => {
           />
         </Link>
         <div className="flex flex-row gap-6 ">
-          {userDetails?.isAdmin && (
+          {/* {userDetails?.isAdmin && (
             <LinkItem to="/admin/dashboard/users" text="Admin" />
-          )}
+          )} */}
           {currentUser ? (
-            <Button onClick={logout}>Logout</Button>
+            <button
+              onClick={logout}
+              className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]"
+            >
+              Logout
+            </button>
           ) : (
-            <Button onClick={login}>Login</Button>
+            <button
+              onClick={login}
+              className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]"
+            >
+              Logout
+            </button>
+            // <Button onClick={login}>Login</Button>
           )}
         </div>
         {/* <div onClick={() => setOpen(true)} className="md:hidden">

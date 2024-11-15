@@ -7,25 +7,32 @@ import Plans from "./Components/Plans";
 import { Modal } from "@/components/modals/Modal";
 import { MailCheck } from "lucide-react";
 import { useAuth } from "@/Providers/AuthProvider";
+import { useRef } from "react";
 
 const HomePage = () => {
   const { userDetails } = useAuth();
 
+  const aboutMeSectionRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToAboutMeSection = () => {
+    if (aboutMeSectionRef.current) {
+      aboutMeSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
-        <HeroSection />
+        <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine logo={logo} />
       </div>
-      <div className="bg-[#171717] w-full mt-[80px]">
-        <div className="relative px-2">
+      <div className="bg-[#ffffff] w-full mt-[50px]">
+        <div className="relative px-2 mx-auto">
           <PlanSection />
         </div>
-      </div>
-      <div className="px-2">
         <Plans />
       </div>
-      <div className="h-[60px]">
+      <div className="h-[50px]">
         <AnimatedLine logo={logo} />
       </div>
 

@@ -4,7 +4,7 @@ import whitePlanovi from "../../assets/WhitePlanovi.png";
 export const PlanSection = () => {
   return (
     <>
-      <div className="h-[460px] sm:h-[900px] relative">
+      <div className="h-[440px] sm:h-[900px] relative">
         <div className="absolute bottom-0 -left-8 z-50">
           <motion.img
             key="image"
@@ -23,7 +23,7 @@ export const PlanSection = () => {
           />
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="bg-white px-6 py-2 w-[260px] h-[150px] sm:w-[320px] sm:h-[240px] md:w-[500px] md:h-[300px] rounded-[20px] absolute left-[110px] top-[120px] sm:left-[260px] sm:top-[260px] -z-0 shadow-lg flex justify-end"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -43,6 +43,25 @@ export const PlanSection = () => {
               Similique, totam.
             </p>
           </div>
+        </motion.div> */}
+        <motion.div
+          className="absolute left-[170px] top-[130px]"
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: [0.45, 0, 0.55, 1],
+          }}
+        >
+          <h1
+            style={{ fontFamily: '"Oswald", sans-serif' }}
+            className="text-6xl font-bold"
+          >
+            PLANOVI
+          </h1>
         </motion.div>
       </div>
     </>

@@ -21,24 +21,24 @@ export const AnimatedLine = ({ logo }: { logo: string }) => {
       <motion.div
         key="line"
         ref={ref}
-        className="absolute flex flex-row items-center gap-20 text-4xl w-[1000px] md:w-[2500px] h-[80px] bg-pink-600"
+        className="absolute flex flex-row items-center gap-20 text-4xl w-[1000px] md:w-[2500px] h-[50px] bg-pink-600"
         style={{
           translateX: line,
         }}
       >
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
-        <img src={logo} alt="" className="w-28" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
       </motion.div>
     </AnimatePresence>
   );

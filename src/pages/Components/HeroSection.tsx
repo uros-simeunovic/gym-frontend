@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import instagramLogo from "../../assets/instagramLogo.png";
 import pinkOMeni from "../../assets/PinkOMeniCompressed.png";
 
-export const HeroSection = () => {
+export const HeroSection = ({
+  scrollToSection,
+}: {
+  scrollToSection: () => void;
+}) => {
   return (
     <>
       <div
@@ -10,28 +13,9 @@ export const HeroSection = () => {
         style={{ fontFamily: '"Oswald", sans-serif' }}
       >
         <div className="overflow-hidden">
-          <motion.h5
-            key="small-heading"
-            className="font-normal text-xl sm2:text-2xl"
-            initial={{
-              translateY: "-100px",
-            }}
-            animate={{
-              translateY: "0px",
-            }}
-            transition={{
-              duration: 0.7,
-              ease: [0.45, 0, 0.55, 1],
-              delay: 0.3,
-            }}
-          >
-            ACHIEVE YOUR FITNESS GOALS
-          </motion.h5>
-        </div>
-        <div className="overflow-hidden">
           <motion.h1
             key="heading1"
-            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none"
+            className="font-light text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none text-[#f96294]"
             initial={{
               translateY: "200px",
             }}
@@ -50,7 +34,7 @@ export const HeroSection = () => {
         <div className="overflow-hidden">
           <motion.h1
             key="heading2"
-            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none"
+            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none text-[#f96294]"
             initial={{
               translateY: "200px",
             }}
@@ -65,9 +49,90 @@ export const HeroSection = () => {
             STRENGTH
           </motion.h1>
         </div>
+        <div className="overflow-hidden">
+          <motion.h5
+            key="small-heading"
+            className="font-normal text-xl sm2:text-2xl text-[#f96294]"
+            initial={{
+              translateY: "-100px",
+            }}
+            animate={{
+              translateY: "0px",
+            }}
+            transition={{
+              duration: 0.7,
+              ease: [0.45, 0, 0.55, 1],
+              delay: 0.3,
+            }}
+          >
+            ACHIEVE YOUR FITNESS GOALS
+          </motion.h5>
+        </div>
       </div>
       <div className="h-[400px] sm:h-[500px] mt-[100px] relative">
-        <div className="absolute bottom-0 right-[20px]">
+        <div className="h-full relative">
+          <motion.div
+            className="bg-[#f96294] w-[30px] h-[30px] rounded-full absolute left-[160px] top-[30px]"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.45, 0, 0.55, 1],
+            }}
+          />
+          <motion.div
+            className="bg-[#f96294] w-[70px] h-[70px] rounded-full absolute left-[70px] top-[40px]"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 1,
+              ease: [0.45, 0, 0.55, 1],
+              delay: 0.5,
+            }}
+          />
+          <motion.div
+            className="bg-[#f96294] w-[280px] h-[280px] rounded-full absolute top-[70px] left-[100px]"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.45, 0, 0.55, 1],
+              delay: 0.7,
+            }}
+          />
+          <div className="absolute left-[100px] bottom-[50px] w-[280px] overflow-hidden rounded-b-full">
+            <motion.img
+              src={pinkOMeni}
+              className="w-[160px] ml-auto mr-8"
+              alt="Landing page image"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                ease: [0.45, 0, 0.55, 1],
+                delay: 1,
+              }}
+            />
+          </div>
+          <motion.div
+            className="cursor-pointer absolute left-[40px] bottom-[100px]"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.45, 0, 0.55, 1],
+              delay: 1,
+            }}
+          >
+            <button
+              onClick={scrollToSection}
+              className="bg-[#f99b62] text-white text-[18px] font-semibold w-[140px] h-[55px] rounded-[40px]"
+            >
+              Saznaj vise
+            </button>
+          </motion.div>
+        </div>
+        {/* <div className="absolute bottom-0 right-[20px]">
           <motion.img
             key="image"
             src={pinkOMeni}
@@ -80,9 +145,9 @@ export const HeroSection = () => {
             }}
             className="w-[150px] sm:w-[180px] sm2:w-[190px]"
           />
-        </div>
+        </div> */}
 
-        <motion.div
+        {/* <motion.div
           className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[360px] sm:h-[200px] rounded-[20px] absolute top-[60px] right-[100px] -z-10 shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -92,19 +157,17 @@ export const HeroSection = () => {
           }}
         >
           <div className="text-white">
-            <h2 className="font-medium text-[24px] sm:text-[28px] text-center">
-              O meni
+            <h2 className="font-semibold text-[24px] sm:text-[28px] text-center">
+              O Meni
             </h2>
-            <p className="font-normal text-[13px] sm:text-[15px] text-center">
+            <p className="font-medium text-[16px] sm:text-[15px] text-left">
               Lorem ipsum dolor sit amet consectetur, elit. Ut optio voluptatum
-              reprehenderit ad ipsum corporis maxime mollitia aperiam!
-              Similique, totam. Ut optio voluptatum reprehenderit ad ipsum
-              corporis
+              reprehenderit ad ipsum corporis.
             </p>
           </div>
-        </motion.div>
-        <motion.div
-          className="bg-[#FF74A1] w-[200px] h-[60px] rounded-[20px] absolute top-[240px] sm:w-[280px] sm:top-[280px] right-[110px] -z-10 flex items-center gap-1 px-[12px] shadow-lg"
+        </motion.div> */}
+        {/* <motion.div
+          className="bg-[#FF74A1] w-[200px] h-[60px] font-normal text-[16px] rounded-[20px] absolute top-[240px] sm:w-[280px] sm:top-[280px] right-[110px] -z-10 flex items-center gap-3 px-[12px] shadow-lg"
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -114,7 +177,7 @@ export const HeroSection = () => {
         >
           <img src={instagramLogo} alt="instagram-logo" className="w-8" />
           <p className="text-white">@Krisstina</p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );
