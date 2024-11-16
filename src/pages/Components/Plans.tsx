@@ -17,7 +17,7 @@ const Plans = () => {
   return (
     <>
       <div className="h-[500px] sm:h-[800px] relative mt-20">
-        <div className="relative p-10 w-[400px] bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
+        <div className="relative p-8  bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
           <div className="max-w-[200px] text-white flex flex-col gap-12">
             <div className="space-y-4">
               <h1 className="text-[50px] font-semibold leading-none">Plan 1</h1>
@@ -140,14 +140,14 @@ const Plans = () => {
       </div>
       {/* ========================== */}
       <div className="h-[560px] sm:h-[900px] relative">
-        <div className="relative p-10 w-[400px] bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto flex">
+        <div className="relative p-10 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto">
           <img
             src={whitePlan2}
             className="w-[180px] absolute bottom-0 left-[10px]"
           />
           <div className="max-w-[200px] text-white flex flex-col gap-12 ml-auto">
             <div className="space-y-4">
-              <h1 className="text-[50px] font-semibold leading-none ml-auto text-right">
+              <h1 className="text-[50px] f ont-semibold leading-none ml-auto text-right">
                 Plan 2
               </h1>
               <p className="font-normal text-[12px] text-right leading-none max-w-[200px]">

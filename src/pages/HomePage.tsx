@@ -8,6 +8,7 @@ import { Modal } from "@/components/modals/Modal";
 import { MailCheck } from "lucide-react";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useRef } from "react";
+import AboutMe from "./Components/AboutMe";
 
 const HomePage = () => {
   const { userDetails } = useAuth();
@@ -26,10 +27,9 @@ const HomePage = () => {
         <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine logo={logo} />
       </div>
-      <div className="bg-[#ffffff] w-full mt-[50px]">
-        <div className="relative px-2 mx-auto">
-          <PlanSection />
-        </div>
+      <AboutMe />
+      <div className="w-full px-2">
+        <PlanSection />
         <Plans />
       </div>
       <div className="h-[50px]">

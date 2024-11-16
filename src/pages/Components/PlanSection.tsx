@@ -4,7 +4,7 @@ import whitePlanovi from "../../assets/WhitePlanovi.png";
 export const PlanSection = () => {
   return (
     <>
-      <div className="h-[440px] sm:h-[900px] relative">
+      <div className="h-[440px] sm:h-[900px] relative z-20 bg-white">
         <div className="absolute bottom-0 -left-8 z-50">
           <motion.img
             key="image"
@@ -45,7 +45,7 @@ export const PlanSection = () => {
           </div>
         </motion.div> */}
         <motion.div
-          className="absolute left-[170px] top-[130px]"
+          className="absolute left-[170px] top-[130px] bg-white"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{

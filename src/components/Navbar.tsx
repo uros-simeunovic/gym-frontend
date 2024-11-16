@@ -45,7 +45,7 @@ export const Navbar = () => {
               onClick={login}
               className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]"
             >
-              Logout
+              Login
             </button>
             // <Button onClick={login}>Login</Button>
           )}

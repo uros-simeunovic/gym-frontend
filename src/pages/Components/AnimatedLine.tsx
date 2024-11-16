@@ -14,7 +14,7 @@ export const AnimatedLine = ({ logo }: { logo: string }) => {
     offset: ["end start", "start end"],
   });
 
-  const line = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const line = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
     <AnimatePresence>
