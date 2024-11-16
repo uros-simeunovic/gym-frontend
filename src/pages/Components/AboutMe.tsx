@@ -17,7 +17,7 @@ const AboutMe = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
   return (
-    <div className="h-[80vh] mt-[50px] bg-radial">
+    <div className="h-[800px] mt-[50px] bg-radial">
       <div
         ref={textSectionRef}
         className="h-[400px] relative flex justify-center pt-10"
@@ -39,7 +39,7 @@ const AboutMe = () => {
           }}
         />
       </div>
-      <motion.div className="rounded-t-[60px] absolute w-full h-[50vh] shadow-2xl bg-white px-8 pt-10 z-0">
+      <div className="rounded-t-[60px] absolute w-full h-[500px] bg-white px-8 pt-10 z-0">
         <h2 className="text-2xl font-bold text-pink-500">Kristina Mitrović</h2>
         <hr className="my-2 border-pink-300" />
         <p className="text-pink-500">
@@ -49,7 +49,7 @@ const AboutMe = () => {
           lacus vel facilisis.
         </p>
         <hr className="my-2 border-pink-300" />
-      </motion.div>
+      </div>
     </div>
   );
 };
