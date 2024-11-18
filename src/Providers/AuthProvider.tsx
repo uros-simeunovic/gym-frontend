@@ -30,6 +30,7 @@ export interface UserDetails {
   picture: string;
   timestamp: Timestamp;
   isAdmin: boolean;
+  progress: string[];
 }
 
 interface AuthContextType {
@@ -78,6 +79,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           paidPlan: null,
           isAdmin: false,
           timeStamp: serverTimestamp(),
+          progress: [],
         });
       } else {
         console.log("User already exists!");

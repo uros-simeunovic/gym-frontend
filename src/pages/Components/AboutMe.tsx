@@ -3,6 +3,7 @@ import { useScroll, useTransform } from "framer-motion";
 import pinkOMeni from "../../assets/PinkOMeniCompressed.png";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import instagramLogo from "../../assets/instagram.png";
 
 const AboutMe = () => {
   const textSectionRef = useRef<HTMLDivElement | null>(null);
@@ -39,16 +40,27 @@ const AboutMe = () => {
           }}
         />
       </div>
-      <div className="rounded-t-[60px] absolute w-full h-[500px] bg-white px-8 pt-10 z-0">
-        <h2 className="text-2xl font-bold text-pink-500">Kristina Mitrović</h2>
-        <hr className="my-2 border-pink-300" />
-        <p className="text-pink-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis.
-        </p>
-        <hr className="my-2 border-pink-300" />
+      <div className="rounded-t-[60px] absolute w-full h-[500px] bg-white px-8 pt-10 flex flex-col gap-6">
+        <div>
+          <h2 className="text-2xl font-bold text-pink-500">
+            Kristina Mitrović
+          </h2>
+          <hr className="my-2 border-pink-300" />
+          <p className="text-pink-500">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+            accumsan lacus vel facilisis.
+          </p>
+          <hr className="my-2 border-pink-300" />
+        </div>
+        <div className="flex flex-row items-center gap-2 cursor-pointer">
+          <img src={instagramLogo} alt="instagram-logo" className="w-8" />
+          <p className="text-lg text-pink-500">@_kriss_tina</p>
+        </div>
+        <button className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]">
+          Kontakt
+        </button>
       </div>
     </div>
   );

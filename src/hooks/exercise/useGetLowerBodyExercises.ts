@@ -1,10 +1,12 @@
 import { getLowerBody1Exercises } from "@/queries/trainings";
 import { useQuery } from "@tanstack/react-query";
 
-export const useGetLowerBody1Exercises = () => {
+export const useGetLowerBody1Exercises = (
+  planId: string | undefined | null
+) => {
   const query = useQuery({
-    queryKey: ["exercises-lower-body-1"],
-    queryFn: async () => await getLowerBody1Exercises(),
+    queryKey: ["exercises"],
+    queryFn: async () => await getLowerBody1Exercises(planId),
   });
 
   return query;

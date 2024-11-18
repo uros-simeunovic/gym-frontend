@@ -50,3 +50,16 @@ export const groupExercisesByType = (exercises: Exercise[]) => {
     return acc;
   }, {});
 };
+
+export const progressValue = (
+  progressLength: number | undefined,
+  exercisesLength: number | undefined
+) => {
+  if (progressLength && exercisesLength) {
+    const value = (progressLength / exercisesLength) * 100;
+    console.log(progressLength, exercisesLength);
+    return value;
+  }
+  console.log(progressLength, exercisesLength);
+  return 0;
+};

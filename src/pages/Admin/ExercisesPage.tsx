@@ -29,7 +29,7 @@ export const ExercisesPage = () => {
   return (
     <div className="md:max-w-[1600px] mx-auto w-full p-2 space-y-10">
       <div className="flex flex-wrap gap-6">
-        {data?.map((exercise, index) => (
+        {data?.map((exercise: any, index: number) => (
           <div key={index} className="flex flex-col gap-2">
             <div
               onClick={() => onClickEdit(exercise)}

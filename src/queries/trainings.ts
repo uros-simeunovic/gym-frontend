@@ -123,11 +123,14 @@ export interface ExerciseTest {
   videoUrl: string;
   thumbnail: string;
   order: number;
+  exerciseType: "upper1" | "lower1" | "upper2" | "lower2";
 }
 
-export const getLowerBody1Exercises = async () => {
+export const getLowerBody1Exercises = async (
+  planId: string | undefined | null
+) => {
   const exercisesQuery = query(
-    collection(db, `/exercises/donji_deo_1/exercises/`),
+    collection(db, `/plans/${planId}/exercises`),
     orderBy("order", "asc")
   );
 
@@ -140,6 +143,7 @@ export const getLowerBody1Exercises = async () => {
     };
     return document as ExerciseTest;
   });
+
   return exercisesList;
 };
 

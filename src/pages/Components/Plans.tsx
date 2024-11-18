@@ -1,18 +1,27 @@
+import { Button } from "@/components/ui/button";
 import pinkPlan1 from "../../assets/PinkGrl2.png";
 import whitePlan2 from "../../assets/WhiteGirl1.png";
 import { useSendEmail } from "@/hooks/useSendEmail";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { useGetLowerBody1Exercises } from "@/hooks/exercise/useGetLowerBodyExercises";
+import { Progress } from "@/components/ui/progress";
+import { progressValue } from "@/lib/utils";
+import { useGetUserById } from "@/hooks/useGetUserById";
 
 const Plans = () => {
   const { sendEmail, disabled } = useSendEmail();
-  const { currentUser } = useAuth();
+  const { currentUser, userDetails } = useAuth();
   const navigate = useNavigate();
 
   const onClick = (price: number) => {
     if (disabled) return;
     currentUser ? sendEmail(price) : navigate("/auth/login");
   };
+
+  const { data: exercises } = useGetLowerBody1Exercises(userDetails?.paidPlan);
+
+  const { data: user } = useGetUserById();
 
   return (
     <>
@@ -27,12 +36,29 @@ const Plans = () => {
                 Veritatis vel aperiam cupiditate ratione? Ipsam magnam enim
               </p>
             </div>
-            <button
-              onClick={() => onClick(20)}
-              className="bg-white text-[#f96294] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
-            >
-              Kupi
-            </button>
+            {userDetails?.paidPlan ? (
+              <>
+                <Progress
+                  value={progressValue(
+                    user?.progress.length,
+                    exercises?.length
+                  )}
+                />
+
+                <Button
+                  onClick={() => navigate(`/plans/${userDetails.paidPlan}`)}
+                >
+                  Otvori Plan
+                </Button>
+              </>
+            ) : (
+              <button
+                onClick={() => onClick(20)}
+                className="bg-white text-[#f96294] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
+              >
+                Kupi
+              </button>
+            )}
           </div>
           <div className="absolute bottom-0 right-0 rounded-br-[40px] overflow-hidden">
             <img src={pinkPlan1} className="w-[170px]" />
