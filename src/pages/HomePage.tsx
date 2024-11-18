@@ -24,6 +24,7 @@ const HomePage = () => {
   return (
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
+        dasdasdasdasdas
         <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine logo={logo} />
       </div>

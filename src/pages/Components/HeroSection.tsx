@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pinkOMeni from "../../assets/PinkOMeniCompressed.png";
+import pinkOMeni from "../../assets/pinkOMeni.webp";
 
 export const HeroSection = ({
   scrollToSection,

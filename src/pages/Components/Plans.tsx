@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import pinkPlan1 from "../../assets/PinkGrl2.png";
+import pinkPlan1 from "../../assets/pinkGirl.webp";
 import whitePlan2 from "../../assets/WhiteGirl1.png";
 import { useSendEmail } from "@/hooks/useSendEmail";
 import { useAuth } from "@/Providers/AuthProvider";
