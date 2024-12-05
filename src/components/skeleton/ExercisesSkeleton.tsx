@@ -15,7 +15,7 @@ const ExercisesSkeleton = () => {
 
   return (
     <div>
-      {exercises.map((exercise, index) => (
+      {exercises.map((_tip, index) => (
         <li className="flex items-center gap-2 cursor-pointer" key={index}>
           <Skeleton />
         </li>
