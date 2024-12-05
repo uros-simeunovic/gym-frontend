@@ -1,4 +1,4 @@
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useSpring, useTransform } from "framer-motion";
 import pinkOMeni from "../../assets/pinkOMeni.webp";
 import { useRef } from "react";
 import { motion } from "framer-motion";
@@ -12,9 +12,19 @@ const AboutMe = () => {
     offset: ["start start", "end start"],
   });
 
-  const img = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const text = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const opacity = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+  const scrollSpring = useSpring(scrollYProgress, {
+    stiffness: 100,
+    bounce: 0,
+    mass: 0.1,
+    duration: 0.25,
+  });
+
+  // const img = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  // const text = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  // const opacity = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+  const img = useTransform(scrollSpring, [0, 1], [0, 200]);
+  const text = useTransform(scrollSpring, [0, 1], [0, 300]);
+  const opacity = useTransform(scrollSpring, [0, 1], ["100%", "0%"]);
 
   return (
     <div className="h-[800px] mt-[50px] bg-radial" id="about-me">

@@ -17,10 +17,10 @@ export const AnimatedLine = ({ logo }: { logo: string }) => {
   const scrollSpring = useSpring(scrollYProgress, {
     stiffness: 100,
     bounce: 0,
-    mass: 0.1,
+    mass: 0.2,
     duration: 0.25,
   });
-  console.log(scrollSpring);
+
   // const line = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   const line = useTransform(scrollSpring, [0, 1], ["0%", "-20%"]);
 
