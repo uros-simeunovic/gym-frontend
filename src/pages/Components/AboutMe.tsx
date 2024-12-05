@@ -11,13 +11,13 @@ const AboutMe = () => {
     target: textSectionRef,
     offset: ["start start", "end start"],
   });
-  console.log(scrollYProgress);
+
   const img = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const text = useTransform(scrollYProgress, [0, 1], [0, 300]);
   const opacity = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
   return (
-    <div className="h-[800px] mt-[50px] bg-radial">
+    <div className="h-[800px] mt-[50px] bg-radial" id="about-me">
       <div
         ref={textSectionRef}
         className="h-[400px] relative flex justify-center pt-10"

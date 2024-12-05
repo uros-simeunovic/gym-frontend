@@ -5,8 +5,9 @@ import { ExerciseTest } from "@/queries/trainings";
 import { cn, progressValue } from "@/lib/utils";
 import { useUpdateUserProgress } from "@/hooks/useUpdateUserProgress";
 import { useGetUserById } from "@/hooks/useGetUserById";
+import { Link, useParams } from "react-router-dom";
+import ExercisesSkeleton from "./skeleton/ExercisesSkeleton";
 import { Progress } from "./ui/progress";
-import { useParams } from "react-router-dom";
 
 export const PlanExercises = () => {
   const { planId } = useParams();
@@ -19,17 +20,44 @@ export const PlanExercises = () => {
     onOpen();
   };
 
-  const { data: userDetails } = useGetUserById();
+  const { data: userDetails, isLoading } = useGetUserById();
 
   const completeExercise = (exerciseId: string) => {
     mutate({ exerciseId, user: userDetails });
   };
 
+  if (isLoading) {
+    return <ExercisesSkeleton />;
+  }
+
+  if (exercises?.length == 0) {
+    return (
+      <div className="h-[500px] flex flex-col items-center justify-center gap-4">
+        <h1 className="text-4xl">PLAN NE POSTOJI</h1>
+        <Link to={"/"} className="text-2xl underline text-pink-500">
+          Vrati me na pocetnu stranicu
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-8 justify-center flex-wrap m-10">
-      <Progress
-        value={progressValue(userDetails?.progress.length, exercises?.length)}
-      />
+      <div className="flex flex-col items-center gap-2">
+        <h3 className="text-xl">
+          Progres:
+          <span className="px-1">
+            {progressValue(
+              userDetails?.progress.length,
+              exercises?.length
+            ).toFixed(0)}
+          </span>
+          %
+        </h3>
+        <Progress
+          value={progressValue(userDetails?.progress.length, exercises?.length)}
+        />
+      </div>
       <div>
         <h1 className="font-bold text-4xl">Donji deo 1</h1>
         {exercises?.map((exercise) => {

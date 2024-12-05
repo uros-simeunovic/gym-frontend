@@ -57,7 +57,6 @@ export const progressValue = (
 ) => {
   if (progressLength && exercisesLength) {
     const value = (progressLength / exercisesLength) * 100;
-    console.log(progressLength, exercisesLength);
     return value;
   }
   console.log(progressLength, exercisesLength);

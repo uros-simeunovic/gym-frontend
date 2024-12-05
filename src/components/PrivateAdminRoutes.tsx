@@ -1,5 +1,4 @@
 import { useAuth } from "@/Providers/AuthProvider";
-import { Loader } from "lucide-react";
 import { Navigate, Outlet } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -10,7 +9,6 @@ const PrivateAdminRoutes = ({}) => {
     return (
       <div className="w-full flex items-center justify-center mt-[150px] gap-2">
         <h1>Loading</h1>
-        <Loader className="w-10 h-10" />
       </div>
     );
   }

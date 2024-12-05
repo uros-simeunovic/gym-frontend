@@ -1,7 +1,9 @@
+import { Button } from "../ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogTitle,
 } from "../ui/dialog";
 import { useVideoModal } from "@/hooks/useVideoModal";
@@ -24,6 +26,9 @@ export const VideoModal = ({
         <DialogTitle className="text-4xl text-center">{title}</DialogTitle>
         <DialogDescription className="hidden">Modal</DialogDescription>
         {children}
+        <DialogFooter>
+          <Button className="bg-pink-500">Complete</Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );

@@ -9,6 +9,7 @@ import { MailCheck } from "lucide-react";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useRef } from "react";
 import AboutMe from "./Components/AboutMe";
+import AskQuestion from "./Components/AskQuestion";
 
 const HomePage = () => {
   const { userDetails } = useAuth();
@@ -24,7 +25,6 @@ const HomePage = () => {
   return (
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
-        dasdasdasdasdas
         <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine logo={logo} />
       </div>
@@ -33,10 +33,12 @@ const HomePage = () => {
         <PlanSection />
         <Plans />
       </div>
+      <div className="w-full">
+        <AskQuestion />
+      </div>
       <div className="h-[50px]">
         <AnimatedLine logo={logo} />
       </div>
-
       <div className="p-2 bg-[#171717] w-full">
         <Footer logo={logo} />
       </div>

@@ -2,6 +2,7 @@ import {
   AnimatePresence,
   motion,
   useScroll,
+  useSpring,
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
@@ -13,8 +14,15 @@ export const AnimatedLine = ({ logo }: { logo: string }) => {
     target: ref,
     offset: ["end start", "start end"],
   });
-
-  const line = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const scrollSpring = useSpring(scrollYProgress, {
+    stiffness: 100,
+    bounce: 0,
+    mass: 0.1,
+    duration: 0.25,
+  });
+  console.log(scrollSpring);
+  // const line = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const line = useTransform(scrollSpring, [0, 1], ["0%", "-20%"]);
 
   return (
     <AnimatePresence>
