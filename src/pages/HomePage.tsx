@@ -10,6 +10,7 @@ import { useAuth } from "@/Providers/AuthProvider";
 import { useRef } from "react";
 import AboutMe from "./Components/AboutMe";
 import AskQuestion from "./Components/AskQuestion";
+import { Faq } from "@/components/Faq";
 
 const HomePage = () => {
   const { userDetails } = useAuth();
@@ -32,6 +33,9 @@ const HomePage = () => {
       <div className="w-full px-2">
         <PlanSection />
         <Plans />
+      </div>
+      <div className="w-full">
+        <Faq />
       </div>
       <div className="w-full">
         <AskQuestion />

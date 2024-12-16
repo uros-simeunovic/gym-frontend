@@ -152,7 +152,7 @@ export const PlanExercises = () => {
         <video
           controls
           src={selectedExercise?.videoUrl}
-          className="rounded-2xl md:rounded-xl w-[1400px] aspect-video"
+          className="rounded-2xl md:rounded-xl aspect-video"
           poster={selectedExercise?.thumbnail}
           preload="metadata"
         />
