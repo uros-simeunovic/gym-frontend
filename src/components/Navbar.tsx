@@ -14,8 +14,8 @@ export const Navbar = () => {
         <Link to={"/"}>
           <img src={logo} alt="logo" className="w-[100px] md:w-[140px]" />
         </Link>
-        <div onClick={onOpen} className="md:hidden">
-          <Menu className="w-10" />
+        <div onClick={onOpen}>
+          <Menu className="w-10 cursor-pointer" />
         </div>
         <Sheet open={isOpen} onOpenChange={onClose}>
           <SheetContent side={"right"} className="w-full">

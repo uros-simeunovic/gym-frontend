@@ -69,10 +69,10 @@ export const HeroSection = ({
           </motion.h5>
         </div>
       </div>
-      <div className="h-[400px] sm:h-[500px] mt-[100px] relative">
-        <div className="h-full relative">
+      <div className="h-[400px] mt-[100px] sm:mt-[250px] sm:mb-[100px] relative">
+        <div className="h-full relative left-[calc(50%-200px)]">
           <motion.div
-            className="bg-[#f96294] w-[30px] h-[30px] rounded-full absolute left-[160px] top-[30px]"
+            className="bg-[#f96294] w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] rounded-full absolute left-[160px] top-[30px] sm:left-[15 0px] sm:top-[10px]"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
@@ -81,7 +81,7 @@ export const HeroSection = ({
             }}
           />
           <motion.div
-            className="bg-[#f96294] w-[70px] h-[70px] rounded-full absolute left-[70px] top-[40px]"
+            className="bg-[#f96294] w-[70px] h-[70px] sm:w-[100px] sm:h-[100px] rounded-full absolute left-[70px] top-[40px] sm:left-[30px] sm:top-[20px]"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
@@ -91,7 +91,7 @@ export const HeroSection = ({
             }}
           />
           <motion.div
-            className="bg-[#f96294] w-[280px] h-[280px] rounded-full absolute top-[70px] left-[100px]"
+            className="bg-[#f96294] w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] rounded-full absolute top-[70px] left-[100px]"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
@@ -100,10 +100,10 @@ export const HeroSection = ({
               delay: 0.7,
             }}
           />
-          <div className="absolute left-[100px] bottom-[50px] w-[280px] overflow-hidden rounded-b-full">
+          <div className="absolute left-[100px] bottom-[50px] sm:bottom-[10px] w-[320px] overflow-hidden rounded-b-full">
             <motion.img
               src={pinkOMeni}
-              className="w-[160px] ml-auto mr-8"
+              className="w-[160px] sm:w-[220px] ml-auto mr-8 sm:mr-0"
               alt="Landing page image"
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

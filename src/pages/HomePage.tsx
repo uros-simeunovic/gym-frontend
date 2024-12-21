@@ -30,14 +30,9 @@ const HomePage = () => {
         <AnimatedLine logo={logo} />
       </div>
       <AboutMe />
-      <div className="w-full px-2">
-        <PlanSection />
+      <div className="max-w-[1000px] mx-auto">
         <Plans />
-      </div>
-      <div className="w-full">
         <Faq />
-      </div>
-      <div className="w-full">
         <AskQuestion />
       </div>
       <div className="h-[50px]">
