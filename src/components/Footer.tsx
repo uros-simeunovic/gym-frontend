@@ -1,37 +1,8 @@
 import { Link } from "react-router-dom";
 import instagramLogo from "../assets/instagram.png";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "./ui/form";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
-
-const formSchema = z.object({
-  email: z.string({ message: "Unesite email" }),
-  message: z.string({ message: "Unesite poruku" }).max(200, {
-    message: "Poruka ne moze biti duza od 200 karaktera.",
-  }),
-});
 
 export const Footer = ({ logo }: { logo: string }) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-  });
-
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // TODO: On submit send mail
-    console.log(values);
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
@@ -80,45 +51,6 @@ export const Footer = ({ logo }: { logo: string }) => {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="max-w-[400px] w-full">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white">Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      autoComplete="email"
-                      placeholder="Email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white">Poruka</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Poruka..." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" variant="outline">
-              Posalji
-            </Button>
-          </form>
-        </Form>
       </div>
     </footer>
   );

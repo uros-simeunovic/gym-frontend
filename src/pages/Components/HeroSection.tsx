@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pinkOMeni from "../../assets/pinkOMeni.webp";
+import heroSectionImage from "../../assets/HeroSection.webp";
 
 export const HeroSection = ({
   scrollToSection,
@@ -69,7 +69,7 @@ export const HeroSection = ({
           </motion.h5>
         </div>
       </div>
-      <div className="h-[400px] mt-[100px] sm:mt-[250px] sm:mb-[100px] relative">
+      <div className="h-[400px] mt-[100px] sm:mt-[150px] sm:mb-[100px] relative">
         <div className="h-full relative left-[calc(50%-200px)]">
           <motion.div
             className="bg-[#f96294] w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] rounded-full absolute left-[160px] top-[30px] sm:left-[15 0px] sm:top-[10px]"
@@ -91,7 +91,7 @@ export const HeroSection = ({
             }}
           />
           <motion.div
-            className="bg-[#f96294] w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] rounded-full absolute top-[70px] left-[100px]"
+            className="bg-[#f96294] w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] rounded-full absolute top-[70px] left-[100px]"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
@@ -100,10 +100,10 @@ export const HeroSection = ({
               delay: 0.7,
             }}
           />
-          <div className="absolute left-[100px] bottom-[50px] sm:bottom-[10px] w-[320px] overflow-hidden rounded-b-full">
+          <div className="absolute left-[100px] bottom-[50px] sm:-bottom-[20px] w-[280px] sm:w-[350px] overflow-hidden rounded-b-full">
             <motion.img
-              src={pinkOMeni}
-              className="w-[160px] sm:w-[220px] ml-auto mr-8 sm:mr-0"
+              src={heroSectionImage}
+              className="w-[240px] sm:w-[360px] ml-auto mr-8 sm:mr-0"
               alt="Landing page image"
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -115,7 +115,7 @@ export const HeroSection = ({
             />
           </div>
           <motion.div
-            className="cursor-pointer absolute left-[40px] bottom-[100px]"
+            className="cursor-pointer absolute left-[40px] bottom-[100px] sm:left-0"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{
@@ -126,7 +126,7 @@ export const HeroSection = ({
           >
             <button
               onClick={scrollToSection}
-              className="bg-[#f99b62] text-white text-[18px] font-semibold w-[140px] h-[55px] rounded-[40px]"
+              className="bg-[#f99b62] text-white text-[18px] font-semibold w-[140px] h-[55px] sm:w-[180px] sm:h-[65px] rounded-[40px]"
             >
               Saznaj vise
             </button>
