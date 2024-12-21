@@ -1,7 +1,6 @@
 import logo from "../assets/GGWhiteMainLogo.png";
 import { HeroSection } from "./Components/HeroSection";
 import { AnimatedLine } from "./Components/AnimatedLine";
-import { PlanSection } from "./Components/PlanSection";
 import { Footer } from "@/components/Footer";
 import Plans from "./Components/Plans";
 import { Modal } from "@/components/modals/Modal";
