@@ -5,7 +5,7 @@ import whiteGrl from "@/assets/WhiteGirl1.png";
 const AskQuestion = () => {
   return (
     <div className="h-[600px] relative">
-      <div className="absolute -left-[200px] h-[360px] w-[2000px] bg-pink-500 -rotate-[10deg] -z-0" />
+      <div className="absolute -left-[200px] sm:-left-[400px] h-[360px] w-[2000px] bg-pink-500 -rotate-[10deg] -z-0" />
       <div className="absolute flex flex-col gap-4 pt-16 px-2 top-[100px]">
         <h2 className="text-white text-2xl sm:text-4xl sm:font-semibold">
           Dodatna pitanja?
