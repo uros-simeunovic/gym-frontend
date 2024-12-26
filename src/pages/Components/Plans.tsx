@@ -29,15 +29,16 @@ const Plans = () => {
         </p>
       </div>
       <div className="space-y-32">
-        <div className="relative md:h-[500px] p-8 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
+        <div className="relative md:h-[500px] p-4 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
           <div className="h-full max-w-[80%] text-white flex flex-col justify-between gap-12">
             <div className="space-y-4">
               <h1 className="text-[50px] font-semibold leading-none">Plan 1</h1>
-              <p className="font-normal text-[12px] sm:text-xl leading-none">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis vel aperiam cupiditate ratione? Ipsam magnam enim
-                Veritatis vel aperiam cupiditate ratione? Ipsam magnam enim
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <p className="font-normal text-[12px] sm:text-xl leading-none max-w-[200px]">
+                Idealno za početnike ili zauzet raspored. Dovoljno za održavanje
+                zdravlja, povećanje snage i sagorevanje kalorija. Omogućava
+                dovoljno vremena za oporavak između treninga. Manje treninga
+                može delovati manje zastrašujuće, što olakšava pridržavanje
+                rutini. Fokus na kvalitet, a ne kvantitet treninga.
               </p>
             </div>
             {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ? (
@@ -57,10 +58,10 @@ const Plans = () => {
             )}
           </div>
           <div className="absolute bottom-0 right-0 rounded-br-[40px] overflow-hidden">
-            <img src={plan1Image} className="w-[200px] sm:w-[360px]" />
+            <img src={plan1Image} className="w-[180px] sm:w-[360px]" />
           </div>
         </div>
-        <div className="relative md:h-[500px] flex p-8 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto">
+        <div className="relative md:h-[500px] flex p-4 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto">
           <div className="absolute bottom-0 left-[5px] overflow-hidden">
             <img src={whitePlan2} className="w-[170px] sm:w-[280px]" />
           </div>
@@ -70,10 +71,11 @@ const Plans = () => {
                 Plan 2
               </h1>
               <p className="font-normal text-[12px] sm:text-xl text-right leading-none">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis vel aperiam cupiditate ratione? Ipsam magnam enim
-                Veritatis vel aperiam cupiditate ratione? Ipsam magnam enim
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Brži rezultati. Dodatni trening ubrzava napredak u gubitku
+                masnoća i povećanju mišića. Više dana omogućava detaljniji rad
+                na pojedinačnim mišićnim grupama. Stvaranje snažnijih navika.
+                Učestaliji trening postaje deo dnevne rutine, što jača
+                disciplinu. Pruža više prostora za raznovrsnost u vežbama.
               </p>
             </div>
             <div className="ml-auto">
