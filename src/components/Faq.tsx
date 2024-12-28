@@ -6,21 +6,25 @@ import { FaqItem } from "./FaqItem";
 const FaqItems = [
   {
     question: "Da li ovaj program moze da koristi svako?",
-    answer: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    answer:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
   },
   {
     question: "Kako funkcionise online program?",
-    answer: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    answer:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
   },
   {
     question: "Koje u prednosti online programa?",
-    answer: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    answer:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
   },
   {
     question: "Da li mogu da se obratim treneru za pomoc?",
-    answer: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-  }
-]
+    answer:
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+  },
+];
 
 export const Faq = () => {
   return (
@@ -42,9 +46,15 @@ export const Faq = () => {
 
       <div className="text-center mt-12">
         <p className="text-pink-400 mb-4">Dodatna pitanja?</p>
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           className="rounded-full px-8 py-6 h-auto text-lg border-pink-500 text-pink-500 hover:bg-pink-50"
+          onClick={() => {
+            const contactForm = document.getElementById("contact-form");
+            if (contactForm) {
+              contactForm.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
         >
           Kontaktiraj me
           <ChevronDown className="ml-2 h-5 w-5" />
@@ -52,4 +62,4 @@ export const Faq = () => {
       </div>
     </div>
   );
-}
+};

@@ -28,18 +28,45 @@ const Plans = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing
         </p>
       </div>
-      <div className="space-y-32">
-        <div className="relative md:h-[500px] p-4 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
-          <div className="h-full max-w-[80%] text-white flex flex-col justify-between gap-12">
+      <div className="space-y-32 sm:space-y-80">
+        <div className="relative md:h-[500px] p-6 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
+          <div className="h-full text-white flex flex-col justify-between gap-12">
             <div className="space-y-4">
-              <h1 className="text-[50px] font-semibold leading-none">Plan 1</h1>
-              <p className="font-normal text-[12px] sm:text-xl leading-none max-w-[200px]">
-                Idealno za početnike ili zauzet raspored. Dovoljno za održavanje
-                zdravlja, povećanje snage i sagorevanje kalorija. Omogućava
-                dovoljno vremena za oporavak između treninga. Manje treninga
-                može delovati manje zastrašujuće, što olakšava pridržavanje
-                rutini. Fokus na kvalitet, a ne kvantitet treninga.
-              </p>
+              <h1 className="text-[50px] font-medium leading-none">Plan 1</h1>
+              <ol className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1 max-w-[60%]">
+                <li className="relative">
+                  <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                  <p className="ml-3">
+                    Idealno za početnike ili zauzet raspored.
+                  </p>
+                </li>
+                <li className="relative">
+                  <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                  <p className="ml-3">
+                    Dovoljno za održavanje zdravlja, povećanje snage i
+                    sagorevanje kalorija.
+                  </p>
+                </li>
+                <li className="relative">
+                  <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                  <p className="ml-3">
+                    Omogućava dovoljno vremena za oporavak između treninga.
+                  </p>
+                </li>
+                <li className="relative">
+                  <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                  <p className="ml-3">
+                    Manje treninga može delovati manje zastrašujuće, što
+                    olakšava pridržavanje rutini.
+                  </p>
+                </li>
+                <li className="relative">
+                  <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                  <p className="ml-3">
+                    Fokus na kvalitet, a ne kvantitet treninga.
+                  </p>
+                </li>
+              </ol>
             </div>
             {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ? (
               <Button
@@ -58,24 +85,56 @@ const Plans = () => {
             )}
           </div>
           <div className="absolute bottom-0 right-0 rounded-br-[40px] overflow-hidden">
-            <img src={plan1Image} className="w-[180px] sm:w-[360px]" />
+            <img src={plan1Image} className="w-[180px] sm:w-[320px]" />
           </div>
         </div>
-        <div className="relative md:h-[500px] flex p-4 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto">
+        <div className="relative md:h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto">
           <div className="absolute bottom-0 left-[5px] overflow-hidden">
-            <img src={whitePlan2} className="w-[170px] sm:w-[280px]" />
+            <img src={whitePlan2} className="w-[180px] sm:w-[300px]" />
           </div>
-          <div className="max-w-[250px] sm:max-w-[80%] ml-auto text-white flex flex-col justify-between gap-12">
+          <div className="ml-[120px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
             <div className="space-y-4">
-              <h1 className="text-[50px] font-semibold leading-none ml-20 text-left">
+              <h1 className="text-[50px] font-medium leading-none text-left">
                 Plan 2
               </h1>
-              <p className="font-normal text-[12px] sm:text-xl text-right leading-none">
-                Brži rezultati. Dodatni trening ubrzava napredak u gubitku
-                masnoća i povećanju mišića. Više dana omogućava detaljniji rad
-                na pojedinačnim mišićnim grupama. Stvaranje snažnijih navika.
-                Učestaliji trening postaje deo dnevne rutine, što jača
-                disciplinu. Pruža više prostora za raznovrsnost u vežbama.
+              <p className="font-normal text-[12px] sm:text-xl leading-none">
+                <ol className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1">
+                  <li className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">Brži rezultati.</p>
+                  </li>
+                  <li className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">
+                      Dodatni trening ubrzava napredak u gubitku masnoća i
+                      povećanju mišića.
+                    </p>
+                  </li>
+                  <li className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">
+                      Više dana omogućava detaljniji rad na pojedinačnim
+                      mišićnim grupama.
+                    </p>
+                  </li>
+                  <li className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">Stvaranje snažnijih navika.</p>
+                  </li>
+                  <li className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">
+                      Učestaliji trening postaje deo dnevne rutine, što jača
+                      disciplinu.
+                    </p>
+                  </li>
+                  <li className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">
+                      Pruža više prostora za raznovrsnost u vežbama.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </div>
             <div className="ml-auto">
