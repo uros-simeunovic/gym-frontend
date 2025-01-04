@@ -1,30 +1,29 @@
 import { useVideoModal } from "@/hooks/useVideoModal";
 import { VideoModal } from "./modals/VideoModal";
 import { useGetLowerBody1Exercises } from "@/hooks/exercise/useGetLowerBodyExercises";
-import { ExerciseTest } from "@/queries/trainings";
-import { cn, progressValue } from "@/lib/utils";
-import { useUpdateUserProgress } from "@/hooks/useUpdateUserProgress";
+import { progressValue } from "@/lib/utils";
 import { useGetUserById } from "@/hooks/useGetUserById";
 import { Link, useParams } from "react-router-dom";
 import ExercisesSkeleton from "./skeleton/ExercisesSkeleton";
 import { Progress } from "./ui/progress";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
+import { PhaseOne } from "./PhaseOne";
+import { PhaseTwo } from "./PhaseTwo";
+import { useGetPlanById } from "@/hooks/plan/useGetPlanById";
 
 export const PlanExercises = () => {
   const { planId } = useParams();
   const { data: exercises } = useGetLowerBody1Exercises(planId);
-  const { mutate } = useUpdateUserProgress();
-  const { onOpen, selectedExercise, setSelectedExercise } = useVideoModal();
-
-  const onClick = (exercise: ExerciseTest) => {
-    setSelectedExercise(exercise);
-    onOpen();
-  };
+  const { selectedExercise } = useVideoModal();
 
   const { data: userDetails, isLoading } = useGetUserById();
 
-  const completeExercise = (exerciseId: string) => {
-    mutate({ exerciseId, user: userDetails });
-  };
+  const { data: planDetails } = useGetPlanById();
 
   if (isLoading) {
     return <ExercisesSkeleton />;
@@ -59,94 +58,39 @@ export const PlanExercises = () => {
         />
       </div>
       <div>
-        <h1 className="font-bold text-4xl">Donji deo 1</h1>
-        {exercises?.map((exercise) => {
-          if (exercise.exerciseType == "lower1") {
-            return (
-              <li
-                className="flex items-center gap-2 cursor-pointer"
-                key={exercise.id}
-              >
-                <div
-                  className={cn(
-                    "w-5 h-5 rounded-full cursor-pointer",
-                    userDetails?.progress.includes(exercise.id)
-                      ? "bg-pink-500"
-                      : "bg-gray-600"
-                  )}
-                  onClick={() => completeExercise(exercise.id)}
-                />
-                <h1
-                  className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
-                  key={exercise.id}
-                  onClick={() => onClick(exercise)}
-                >
-                  {exercise.order}. {exercise.name}
-                </h1>
-              </li>
-            );
-          }
-        })}
+        <h1 className="text-4xl font-bold text-center">{planDetails?.name}</h1>
       </div>
       <div>
-        <h1 className="font-bold text-4xl">Gornji deo 1</h1>
-        {exercises?.map((exercise) => {
-          if (exercise.exerciseType == "upper1") {
-            return (
-              <li
-                className="flex items-center gap-2 cursor-pointer"
-                key={exercise.id}
-              >
-                <div
-                  className={cn(
-                    "w-5 h-5 rounded-full cursor-pointer",
-                    userDetails?.progress.includes(exercise.id)
-                      ? "bg-pink-500"
-                      : "bg-gray-600"
-                  )}
-                  onClick={() => completeExercise(exercise.id)}
-                />
-                <h1
-                  className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
-                  key={exercise.id}
-                  onClick={() => onClick(exercise)}
-                >
-                  {exercise.order}. {exercise.name}
-                </h1>
-              </li>
-            );
-          }
-        })}
-      </div>
-      <div>
-        <h1 className="font-bold text-4xl">Donji deo 2</h1>
-        {exercises?.map((exercise) => {
-          if (exercise.exerciseType == "lower2") {
-            return (
-              <li
-                className="flex items-center gap-2 cursor-pointer"
-                key={exercise.id}
-              >
-                <div
-                  className={cn(
-                    "w-5 h-5 rounded-full cursor-pointer",
-                    userDetails?.progress.includes(exercise.id)
-                      ? "bg-pink-500"
-                      : "bg-gray-600"
-                  )}
-                  onClick={() => completeExercise(exercise.id)}
-                />
-                <h1
-                  className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
-                  key={exercise.id}
-                  onClick={() => onClick(exercise)}
-                >
-                  {exercise.order}. {exercise.name}
-                </h1>
-              </li>
-            );
-          }
-        })}
+        <Accordion type="single" collapsible className="space-y-4">
+          <AccordionItem
+            value={"faza-1"}
+            className="border-none bg-pink-500 rounded-[30px]"
+          >
+            <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-bold text-4xl text-left w-full transition-all duration-300 ease-in-out">
+              Faza 1
+            </AccordionTrigger>
+            <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+              <hr className="w-[90%] mx-auto" />
+              <div className="px-8 py-6 text-white">
+                <PhaseOne exercises={exercises} />
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem
+            value={"faza-2"}
+            className="border-none bg-pink-500 rounded-[30px]"
+          >
+            <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-bold text-4xl text-left w-full transition-all duration-300 ease-in-out">
+              Faza 2
+            </AccordionTrigger>
+            <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+              <hr className="w-[90%] mx-auto" />
+              <div className="px-8 py-6 text-white">
+                <PhaseTwo exercises={exercises} />
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
       <VideoModal title={selectedExercise?.name!}>
         <video

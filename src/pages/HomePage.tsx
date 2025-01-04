@@ -29,7 +29,7 @@ const HomePage = () => {
         <AnimatedLine logo={logo} />
       </div>
       <AboutMe />
-      <div className="max-w-[1000px] mx-auto space-y-32">
+      <div className="max-w-[1000px] mx-auto space-y-[300px]">
         <Plans />
         <Faq />
         <AskQuestion />

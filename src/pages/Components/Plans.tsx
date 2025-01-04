@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import plan1Image from "../../assets/pinkGirl.webp";
+import plan1Image from "../../assets/IMG_5613.png";
 import whitePlan2 from "../../assets/WhiteGirl1.png";
 import { useSendEmail } from "@/hooks/useSendEmail";
 import { useAuth } from "@/Providers/AuthProvider";
@@ -32,7 +32,9 @@ const Plans = () => {
         <div className="relative md:h-[500px] p-6 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
           <div className="h-full text-white flex flex-col justify-between gap-12">
             <div className="space-y-4">
-              <h1 className="text-[50px] font-medium leading-none">Plan 1</h1>
+              <h1 className="text-[40px] font-medium leading-none">
+                3 x nedeljno
+              </h1>
               <ol className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1 max-w-[60%]">
                 <li className="relative">
                   <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
@@ -94,8 +96,8 @@ const Plans = () => {
           </div>
           <div className="ml-[120px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
             <div className="space-y-4">
-              <h1 className="text-[50px] font-medium leading-none text-left">
-                Plan 2
+              <h1 className="text-[40px] font-medium leading-none text-left">
+                4 x nedeljno
               </h1>
               <p className="font-normal text-[12px] sm:text-xl leading-none">
                 <ol className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1">

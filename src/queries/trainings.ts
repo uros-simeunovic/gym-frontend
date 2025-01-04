@@ -147,6 +147,20 @@ export const getLowerBody1Exercises = async (
   return exercisesList;
 };
 
+export interface Plan {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+}
+
+export const getPlanById = async (planId: string | undefined) => {
+  const planRef = doc(db, `plans/${planId}`);
+  const planDoc = await getDoc(planRef);
+  console.log(planDoc.data());
+  return planDoc.data() as Plan;
+};
+
 export const getLowerBody2Exercises = async () => {
   const exercisesQuery = query(
     collection(db, `/exercises/donji_deo_2/exercises/`),
