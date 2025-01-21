@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import whiteGrl from "@/assets/IMG_5642.png";
+import pinkGirlAskQuestion from "@/assets/PinkGirlAskQuestion.webp";
 
 const AskQuestion = () => {
   return (
@@ -20,7 +20,7 @@ const AskQuestion = () => {
         />
       </div>
       <div className="absolute w-[100px] sm:w-[200px] right-[70px] sm:-bottom-[100px]">
-        <img src={whiteGrl} alt="white-girl" />
+        <img src={pinkGirlAskQuestion} alt="white-girl" />
       </div>
     </div>
   );

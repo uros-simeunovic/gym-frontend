@@ -3,22 +3,24 @@ import { HeroSection } from "./Components/HeroSection";
 import { AnimatedLine } from "./Components/AnimatedLine";
 import { Footer } from "@/components/Footer";
 import Plans from "./Components/Plans";
-import { Modal } from "@/components/modals/Modal";
-import { MailCheck } from "lucide-react";
-import { useAuth } from "@/Providers/AuthProvider";
 import { useRef } from "react";
 import AboutMe from "./Components/AboutMe";
 import AskQuestion from "./Components/AskQuestion";
 import { Faq } from "@/components/Faq";
 
 const HomePage = () => {
-  const { userDetails } = useAuth();
-
   const aboutMeSectionRef = useRef<HTMLDivElement | null>(null);
+  const contactFormSectionRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToAboutMeSection = () => {
     if (aboutMeSectionRef.current) {
       aboutMeSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToContactFormSection = () => {
+    if (contactFormSectionRef.current) {
+      contactFormSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -28,11 +30,15 @@ const HomePage = () => {
         <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine logo={logo} />
       </div>
-      <AboutMe />
+      <div ref={aboutMeSectionRef}>
+        <AboutMe scrollToSection={scrollToContactFormSection} />
+      </div>
       <div className="max-w-[1000px] mx-auto space-y-[300px]">
         <Plans />
         <Faq />
-        <AskQuestion />
+        <div ref={contactFormSectionRef}>
+          <AskQuestion />
+        </div>
       </div>
       <div className="h-[50px]">
         <AnimatedLine logo={logo} />
@@ -40,14 +46,6 @@ const HomePage = () => {
       <div className="p-2 bg-[#171717] w-full">
         <Footer logo={logo} />
       </div>
-      <Modal title="Uputstvo za placanje je poslato na email:">
-        <div className="flex flex-col items-center">
-          <div>{userDetails?.email}</div>
-          <div className="w-full flex flex-col items-center mt-10">
-            <MailCheck size={100} />
-          </div>
-        </div>
-      </Modal>
     </div>
   );
 };

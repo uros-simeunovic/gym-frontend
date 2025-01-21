@@ -1,10 +1,10 @@
 import { useScroll, useSpring, useTransform } from "framer-motion";
-import aboutMeImage from "../../assets/AboutMe.png";
+import aboutMeImage from "../../assets/AboutMe.webp";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import instagramLogo from "../../assets/instagram.png";
 
-const AboutMe = () => {
+const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
   const textSectionRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -24,7 +24,7 @@ const AboutMe = () => {
   const opacity = useTransform(scrollSpring, [0, 1], ["100%", "0%"]);
 
   return (
-    <div className="h-[800px] pt-20 bg-radial" id="about-me">
+    <div className="h-[800px] pt-20 bg-radial">
       <div
         ref={textSectionRef}
         className="h-[400px] sm:h-[600px] relative flex justify-center pt-10"
@@ -65,7 +65,10 @@ const AboutMe = () => {
             <img src={instagramLogo} alt="instagram-logo" className="w-8" />
             <p className="text-lg text-pink-500">@_kriss_tina</p>
           </div>
-          <button className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]">
+          <button
+            onClick={scrollToSection}
+            className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]"
+          >
             Kontakt
           </button>
         </div>

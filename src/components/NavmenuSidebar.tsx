@@ -33,9 +33,21 @@ export const NavmenuSidebar = () => {
       </Link>
       <div className="space-y-20">
         <div className="mt-24 text-5xl font-light flex flex-col items-center space-y-12">
-          <div onClick={onClick}>Početna</div>
-          <div onClick={() => scrollToSection("plans")}>Planovi</div>
-          <div onClick={() => scrollToSection("about-me")}>O meni</div>
+          <div onClick={onClick} className="cursor-pointer">
+            Početna
+          </div>
+          <div
+            onClick={() => scrollToSection("plans")}
+            className="cursor-pointer"
+          >
+            Planovi
+          </div>
+          <div
+            onClick={() => scrollToSection("about-me")}
+            className="cursor-pointer"
+          >
+            O meni
+          </div>
         </div>
         <div className="text-center">
           {currentUser ? (
