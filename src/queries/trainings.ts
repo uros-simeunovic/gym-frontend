@@ -124,6 +124,10 @@ export interface ExerciseTest {
   thumbnail: string;
   order: number;
   exerciseType: "upper1" | "lower1" | "upper2" | "lower2";
+  description1: string;
+  description2: string;
+  description3: string;
+  reps: string[];
 }
 
 export const getLowerBody1Exercises = async (

@@ -102,16 +102,27 @@ export const PlanExercises = () => {
         />
 
         <div>
-          <h1>Opis</h1>
-          <p className="font-light text-lg">Broj serija: 3</p>
-          <p className="font-light text-lg">Odmor izmedju serija: 2 minuta</p>
-          <p className="font-light text-lg">Odmor posle vezbe: 5 minuta</p>
-          <h1 className="mt-4">Tips</h1>
-          <p className="font-light text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            laboriosam molestiae sapiente atque recusandae voluptate amet
-            voluptatibus earum aspernatur. Blanditiis.
-          </p>
+          <h1 className="text-xl">Opis</h1>
+          <div className="font-light text-lg flex leading-[22px]">
+            <span className="mr-1">-</span>
+            <p>{selectedExercise?.description1}</p>
+          </div>
+          <div className="font-light text-lg flex">
+            <span className="mr-1">-</span>
+            <p>{selectedExercise?.description2}</p>
+          </div>
+          {selectedExercise?.description3 && (
+            <div className="font-light text-lg flex">
+              <span className="mr-1">-</span>
+              {selectedExercise?.description3}
+            </div>
+          )}
+          <h1 className="mt-4 text-xl">Broj ponavljanja</h1>
+          <ul className="font-light text-lg">
+            {selectedExercise?.reps.map((rep) => (
+              <li>{rep}</li>
+            ))}
+          </ul>
         </div>
       </VideoModal>
     </div>

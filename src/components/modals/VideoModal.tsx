@@ -1,4 +1,3 @@
-import { Button } from "../ui/button";
 import {
   Dialog,
   DialogContent,
@@ -27,7 +26,7 @@ export const VideoModal = ({
         <DialogDescription className="hidden">Modal</DialogDescription>
         {children}
         <DialogFooter>
-          <Button className="bg-pink-500">Complete</Button>
+          {/* <Button className="bg-pink-500">Complete</Button> */}
         </DialogFooter>
       </DialogContent>
     </Dialog>

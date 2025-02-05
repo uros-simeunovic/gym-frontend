@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
 import instagramLogo from "../assets/instagram.png";
 import { Button } from "./ui/button";
 
-export const Footer = ({ logo }: { logo: string }) => {
+export const Footer = ({
+  logo,
+  scrollToAboutMe,
+  scrollToPlans,
+}: {
+  logo: string;
+  scrollToAboutMe: () => void;
+  scrollToPlans: () => void;
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
@@ -19,7 +26,7 @@ export const Footer = ({ logo }: { logo: string }) => {
           />
           <div className="flex flex-row gap-2 text-white items-center cursor-pointer hover:scale-[1.02] transition-all">
             <img src={instagramLogo} className="w-8 h-8" alt="social-link" />
-            <p>@instagram_ime</p>
+            <p>@_kris_tinna</p>
           </div>
         </div>
         <div className="flex flex-col font-light text-white gap-4">
@@ -33,22 +40,22 @@ export const Footer = ({ logo }: { logo: string }) => {
                 Pocetna
               </Button>
             </div>
-            <Link to="/plans" className="cursor-pointer text-xl">
+            <div onClick={scrollToPlans}>
               <Button
                 variant="link"
                 className="font-light text-lg p-0 text-white"
               >
                 Planovi
               </Button>
-            </Link>
-            <Link to="/o-meni">
+            </div>
+            <div onClick={scrollToAboutMe}>
               <Button
                 variant="link"
                 className="font-light text-lg p-0 text-white"
               >
                 O meni
               </Button>
-            </Link>
+            </div>
           </div>
         </div>
       </div>

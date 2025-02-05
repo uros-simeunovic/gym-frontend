@@ -11,6 +11,7 @@ import { Faq } from "@/components/Faq";
 const HomePage = () => {
   const aboutMeSectionRef = useRef<HTMLDivElement | null>(null);
   const contactFormSectionRef = useRef<HTMLDivElement | null>(null);
+  const plansSectionRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToAboutMeSection = () => {
     if (aboutMeSectionRef.current) {
@@ -24,6 +25,12 @@ const HomePage = () => {
     }
   };
 
+  const scrollToPlansSection = () => {
+    if (plansSectionRef.current) {
+      plansSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
@@ -34,7 +41,9 @@ const HomePage = () => {
         <AboutMe scrollToSection={scrollToContactFormSection} />
       </div>
       <div className="max-w-[1000px] mx-auto space-y-[300px]">
-        <Plans />
+        <div ref={plansSectionRef}>
+          <Plans />
+        </div>
         <Faq />
         <div ref={contactFormSectionRef}>
           <AskQuestion />
@@ -44,7 +53,11 @@ const HomePage = () => {
         <AnimatedLine logo={logo} />
       </div>
       <div className="p-2 bg-[#171717] w-full">
-        <Footer logo={logo} />
+        <Footer
+          logo={logo}
+          scrollToAboutMe={scrollToAboutMeSection}
+          scrollToPlans={scrollToPlansSection}
+        />
       </div>
     </div>
   );
