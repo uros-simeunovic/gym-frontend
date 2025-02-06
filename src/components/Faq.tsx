@@ -7,7 +7,7 @@ const FaqItems = [
   {
     question: "Da li ovaj program moze da koristi svako?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+      "Prilagođeno baš tebi Svaka žena je jedinstvena, i moj program to poštuje. Bilo da si početnica ili već treniraš, vežbe su prilagođene tvom nivou, ciljevima i tempu.",
   },
   {
     question: "Kako funkcionise online program?",
@@ -17,12 +17,12 @@ const FaqItems = [
   {
     question: "Koje u prednosti online programa?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+      "Fleksibilnost bez granica Zaboravi na gužve u teretani i gubljenje vremena! Treniraj kad ti odgovara, ujutru pre posla, tokom pauze ili uveče – potpuno prilagođeno tvom rasporedu.",
   },
   {
     question: "Da li mogu da se obratim treneru za pomoc?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+      "Naravno! Uvek sam tu za tebe. Možeš me kontaktirati putem emaila, instragrama ili platforme, i rado ću odgovoriti na sva tvoja pitanja ili prilagoditi treninge.",
   },
 ];
 
