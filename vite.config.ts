@@ -13,6 +13,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/uros-simeunovic/",
   build: {
     outDir: "dist",
   },
