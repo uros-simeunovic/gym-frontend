@@ -14,10 +14,14 @@ jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm install && npm run build
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_GAINGRLZ }}
           projectId: gaingrlz
+          channelId: live
