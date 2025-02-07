@@ -27,6 +27,5 @@ dist-ssr
 
 *.mp4
 
-firebase.json
 .firebaserc
 .firebase
