@@ -11,9 +11,10 @@ html, body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0.25rem;
-  background: #fff
+  background: rgb(255, 0, 174)
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #fff;
+  position: absolute;
 }
