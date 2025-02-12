@@ -59,6 +59,5 @@ export const progressValue = (
     const value = (progressLength / exercisesLength) * 100;
     return value;
   }
-  console.log(progressLength, exercisesLength);
   return 0;
 };

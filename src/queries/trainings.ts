@@ -66,8 +66,6 @@ export const getDaysByPlanIdTest = async (planId: string | undefined) => {
     if (day.plan.id == planId) return day;
   });
 
-  console.log(daysByPlanId);
-
   return daysByPlanId;
 };
 
@@ -93,7 +91,6 @@ export const deleteExercise = async (data: {
   const exerciseDeleted = await deleteDoc(
     doc(db, `trainingPlans/${planId}/exercises/${exerciseId}`)
   );
-  console.log(exerciseDeleted);
   return exerciseDeleted;
 };
 
@@ -123,7 +120,13 @@ export interface ExerciseTest {
   videoUrl: string;
   thumbnail: string;
   order: number;
-  exerciseType: "upper1" | "lower1" | "upper2" | "lower2";
+  exerciseType:
+    | "upper1"
+    | "lower1"
+    | "upper2"
+    | "lower2"
+    | "lower3"
+    | "lower1.2";
   description1: string;
   description2: string;
   description3: string;
@@ -161,7 +164,6 @@ export interface Plan {
 export const getPlanById = async (planId: string | undefined) => {
   const planRef = doc(db, `plans/${planId}`);
   const planDoc = await getDoc(planRef);
-  console.log(planDoc.data());
   return planDoc.data() as Plan;
 };
 

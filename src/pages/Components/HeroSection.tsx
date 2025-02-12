@@ -132,52 +132,6 @@ export const HeroSection = ({
             </button>
           </motion.div>
         </div>
-        {/* <div className="absolute bottom-0 right-[20px]">
-          <motion.img
-            key="image"
-            src={pinkOMeni}
-            alt="Landing page image"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              duration: 0.7,
-              ease: [0.45, 0, 0.55, 1],
-            }}
-            className="w-[150px] sm:w-[180px] sm2:w-[190px]"
-          />
-        </div> */}
-
-        {/* <motion.div
-          className="bg-[#FF74A1] p-[12px] w-[260px] h-[160px] sm:w-[360px] sm:h-[200px] rounded-[20px] absolute top-[60px] right-[100px] -z-10 shadow-lg"
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            duration: 0.7,
-            ease: [0.45, 0, 0.55, 1],
-          }}
-        >
-          <div className="text-white">
-            <h2 className="font-semibold text-[24px] sm:text-[28px] text-center">
-              O Meni
-            </h2>
-            <p className="font-medium text-[16px] sm:text-[15px] text-left">
-              Lorem ipsum dolor sit amet consectetur, elit. Ut optio voluptatum
-              reprehenderit ad ipsum corporis.
-            </p>
-          </div>
-        </motion.div> */}
-        {/* <motion.div
-          className="bg-[#FF74A1] w-[200px] h-[60px] font-normal text-[16px] rounded-[20px] absolute top-[240px] sm:w-[280px] sm:top-[280px] right-[110px] -z-10 flex items-center gap-3 px-[12px] shadow-lg"
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            duration: 1,
-            ease: [0.45, 0, 0.55, 1],
-          }}
-        >
-          <img src={instagramLogo} alt="instagram-logo" className="w-8" />
-          <p className="text-white">@Krisstina</p>
-        </motion.div> */}
       </div>
     </>
   );

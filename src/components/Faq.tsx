@@ -1,7 +1,11 @@
 import { ChevronDown } from "lucide-react";
-import { Accordion } from "./ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
 import { Button } from "./ui/button";
-import { FaqItem } from "./FaqItem";
 
 const FaqItems = [
   {
@@ -39,9 +43,54 @@ export const Faq = () => {
       </div>
 
       <Accordion type="single" collapsible className="space-y-4">
-        {FaqItems.map((item, index) => (
-          <FaqItem key={index} question={item.question} answer={item.answer} />
-        ))}
+        <AccordionItem
+          value={"item-1"}
+          className="border-none bg-pink-500 rounded-[30px]"
+        >
+          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+            {FaqItems[0].question}
+          </AccordionTrigger>
+          <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+            <hr className="w-[90%] mx-auto" />
+            <div className="px-8 py-6 text-white">{FaqItems[0].answer}</div>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem
+          value={"item-2"}
+          className="border-none bg-pink-500 rounded-[30px]"
+        >
+          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+            {FaqItems[1].question}
+          </AccordionTrigger>
+          <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+            <hr className="w-[90%] mx-auto" />
+            <div className="px-8 py-6 text-white">{FaqItems[1].answer}</div>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem
+          value={"item-3"}
+          className="border-none bg-pink-500 rounded-[30px]"
+        >
+          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+            {FaqItems[2].question}
+          </AccordionTrigger>
+          <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+            <hr className="w-[90%] mx-auto" />
+            <div className="px-8 py-6 text-white">{FaqItems[2].answer}</div>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem
+          value={"item-4"}
+          className="border-none bg-pink-500 rounded-[30px]"
+        >
+          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+            {FaqItems[3].question}
+          </AccordionTrigger>
+          <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+            <hr className="w-[90%] mx-auto" />
+            <div className="px-8 py-6 text-white">{FaqItems[3].answer}</div>
+          </AccordionContent>
+        </AccordionItem>
       </Accordion>
 
       <div className="text-center mt-12">

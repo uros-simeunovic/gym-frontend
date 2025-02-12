@@ -18,8 +18,9 @@ export const EditForm = () => {
     mutate({ exerciseId: data?.id, planId: planId });
     onClose();
   };
+
   const [isVideoIncluded, setIsVideoIncluded] = useState(false);
-  console.log(isVideoIncluded);
+
   return (
     <div className="flex flex-col gap-4 relative">
       <div className="flex flex-col gap-2">

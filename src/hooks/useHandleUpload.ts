@@ -18,7 +18,6 @@ export const useHandleUpload = () => {
   const { planId } = params;
 
   const handleUpload = async () => {
-    console.log(videoFile);
     if (!videoFile) {
       setError("Izaberite fajl za upload");
       return;

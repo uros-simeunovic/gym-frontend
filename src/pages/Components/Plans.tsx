@@ -18,7 +18,7 @@ const Plans = () => {
 
   return (
     <>
-      <div className="px-2 space-y-40 mt-[200px] sm:mt-[400px]">
+      <div className="px-2 space-y-20 sm:space-y-40 mt-[200px] sm:mt-[400px]">
         <div
           className="flex flex-col text-center justify-center items-center"
           id="plans"
@@ -30,7 +30,7 @@ const Plans = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing
           </p>
         </div>
-        <div className="space-y-32 sm:space-y-80">
+        <div className="space-y-20 sm:space-y-80">
           <div className="relative md:h-[500px] p-6 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
             <div className="h-full text-white flex flex-col justify-between gap-12">
               <div className="space-y-4">

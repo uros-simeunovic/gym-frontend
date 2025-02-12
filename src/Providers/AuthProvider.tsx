@@ -97,7 +97,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.removeItem("signedIn");
       await signOut(auth);
       navigate("/");
-      console.log("Signed out...");
       toast.message("Uspesno ste se odjavili.");
     } catch (error) {
       console.error("Error signing out", error);

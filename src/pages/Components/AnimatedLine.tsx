@@ -6,13 +6,14 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
+import logo from "../../assets/GGWhiteMainLogo.png";
 
-export const AnimatedLine = ({ logo }: { logo: string }) => {
+export const AnimatedLine = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end start", "start end"],
+    offset: ["start end", "end start"],
   });
   const scrollSpring = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -21,18 +22,26 @@ export const AnimatedLine = ({ logo }: { logo: string }) => {
     duration: 0.25,
   });
 
-  const line = useTransform(scrollSpring, [0, 1], ["0%", "-20%"]);
+  const line = useTransform(scrollSpring, [0, 1], ["0%", "-10%"]);
 
   return (
     <AnimatePresence>
       <motion.div
         key="line"
         ref={ref}
-        className="absolute -left-[200px] flex flex-row items-center gap-20 text-4xl w-[1000px] md:w-[2500px] h-[50px] bg-pink-600"
+        className="absolute -left-[600px] flex flex-row items-center gap-20 text-4xl w-[3000px] md:w-[3500px] h-[50px] bg-pink-500"
         style={{
           translateX: line,
         }}
       >
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="" className="w-16" />
         <img src={logo} alt="" className="w-16" />
         <img src={logo} alt="" className="w-16" />
         <img src={logo} alt="" className="w-16" />

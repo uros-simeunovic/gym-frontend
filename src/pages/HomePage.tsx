@@ -1,4 +1,3 @@
-import logo from "../assets/GGWhiteMainLogo.png";
 import { HeroSection } from "./Components/HeroSection";
 import { AnimatedLine } from "./Components/AnimatedLine";
 import { Footer } from "@/components/Footer";
@@ -35,26 +34,28 @@ const HomePage = () => {
     <div className="w-full overflow-hidden relative">
       <div className="px-2 md:max-w-[1600px] mx-auto">
         <HeroSection scrollToSection={scrollToAboutMeSection} />
-        <AnimatedLine logo={logo} />
+        <AnimatedLine />
       </div>
       <div ref={aboutMeSectionRef}>
         <AboutMe scrollToSection={scrollToContactFormSection} />
       </div>
-      <div className="max-w-[1000px] mx-auto space-y-[300px]">
+      <div className="max-w-[1000px] mx-auto">
         <div ref={plansSectionRef}>
           <Plans />
         </div>
+        <div className="h-[50px] my-20">
+          <AnimatedLine />
+        </div>
         <Faq />
-        <div ref={contactFormSectionRef}>
+        <div ref={contactFormSectionRef} className="my-24">
           <AskQuestion />
         </div>
       </div>
       <div className="h-[50px]">
-        <AnimatedLine logo={logo} />
+        <AnimatedLine />
       </div>
       <div className="p-2 bg-[#171717] w-full">
         <Footer
-          logo={logo}
           scrollToAboutMe={scrollToAboutMeSection}
           scrollToPlans={scrollToPlansSection}
         />

@@ -10,7 +10,6 @@ import AdminLayout from "./layouts/AdminLayout";
 import ManagerPage from "./pages/Admin/ManagerPage";
 import { ExercisesPage } from "./pages/Admin/ExercisesPage";
 import PrivateRoutes from "./components/PrivateRoutes";
-// import { Plans } from "./pages/TrainingPages/Plans";
 import { PlanExercises } from "./components/PlanExercises";
 
 const App = () => {
@@ -21,7 +20,6 @@ const App = () => {
       </Route>
       <Route element={<PrivateRoutes />}>
         <Route element={<TrainingsLayout />}>
-          {/* <Route path="/plans" element={<Plans />} /> */}
           <Route path="/plans/:planId" element={<PlanExercises />} />
           <Route
             path="/plans/:planId/exercise/:exerciseId"

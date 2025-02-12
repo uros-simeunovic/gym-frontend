@@ -92,39 +92,7 @@ export const PlanExercises = () => {
           </AccordionItem>
         </Accordion>
       </div>
-      <VideoModal title={selectedExercise?.name!}>
-        <video
-          controls
-          src={selectedExercise?.videoUrl}
-          className="rounded-2xl md:rounded-xl aspect-video"
-          poster={selectedExercise?.thumbnail}
-          preload="metadata"
-        />
-
-        <div>
-          <h1 className="text-xl">Opis</h1>
-          <div className="font-light text-lg flex leading-[22px]">
-            <span className="mr-1">-</span>
-            <p>{selectedExercise?.description1}</p>
-          </div>
-          <div className="font-light text-lg flex">
-            <span className="mr-1">-</span>
-            <p>{selectedExercise?.description2}</p>
-          </div>
-          {selectedExercise?.description3 && (
-            <div className="font-light text-lg flex">
-              <span className="mr-1">-</span>
-              {selectedExercise?.description3}
-            </div>
-          )}
-          <h1 className="mt-4 text-xl">Broj ponavljanja</h1>
-          <ul className="font-light text-lg">
-            {selectedExercise?.reps.map((rep) => (
-              <li>{rep}</li>
-            ))}
-          </ul>
-        </div>
-      </VideoModal>
+      <VideoModal selectedExercise={selectedExercise} />
     </div>
   );
 };
