@@ -6,7 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import logo from "../../assets/GGWhiteMainLogo.png";
+import logo from "@/assets/GGWhiteMainLogo.png";
 
 export const AnimatedLine = () => {
   const ref = useRef<HTMLDivElement>(null);

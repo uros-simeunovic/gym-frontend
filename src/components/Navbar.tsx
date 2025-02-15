@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logoGG1.png";
+import logo from "@/assets/logoGG1.png";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "./ui/sheet";
 import { NavmenuSidebar } from "./NavmenuSidebar";
 import { Menu } from "lucide-react";

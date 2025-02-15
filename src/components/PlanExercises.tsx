@@ -1,10 +1,8 @@
 import { useVideoModal } from "@/hooks/useVideoModal";
 import { VideoModal } from "./modals/VideoModal";
-import { useGetLowerBody1Exercises } from "@/hooks/exercise/useGetLowerBodyExercises";
 import { progressValue } from "@/lib/utils";
 import { useGetUserById } from "@/hooks/useGetUserById";
 import { Link, useParams } from "react-router-dom";
-import ExercisesSkeleton from "./skeleton/ExercisesSkeleton";
 import { Progress } from "./ui/progress";
 import {
   Accordion,
@@ -15,20 +13,17 @@ import {
 import { PhaseOne } from "./PhaseOne";
 import { PhaseTwo } from "./PhaseTwo";
 import { useGetPlanById } from "@/hooks/plan/useGetPlanById";
+import { useGetExercisesByPlanId } from "@/hooks/exercise/useGetExercisesByPlanId";
 
 export const PlanExercises = () => {
   const { planId } = useParams();
-  const { data: exercises } = useGetLowerBody1Exercises(planId);
+  const { data: exercises } = useGetExercisesByPlanId(planId);
   const { selectedExercise } = useVideoModal();
 
   const { data: userDetails, isLoading } = useGetUserById();
 
   const { data: planDetails } = useGetPlanById();
-
-  if (isLoading) {
-    return <ExercisesSkeleton />;
-  }
-
+  
   if (exercises?.length == 0) {
     return (
       <div className="h-[500px] flex flex-col items-center justify-center gap-4">
@@ -42,21 +37,26 @@ export const PlanExercises = () => {
 
   return (
     <div className="flex flex-col gap-8 justify-center flex-wrap m-10">
-      <div className="flex flex-col items-center gap-2">
-        <h3 className="text-xl">
-          Progres:
-          <span className="px-1">
-            {progressValue(
+      {!isLoading && (
+        <div className="flex flex-col items-center gap-2">
+          <h3 className="text-xl">
+            Progres:
+            <span className="px-1">
+              {progressValue(
+                userDetails?.progress.length,
+                exercises?.length
+              ).toFixed(0)}
+            </span>
+            %
+          </h3>
+          <Progress
+            value={progressValue(
               userDetails?.progress.length,
               exercises?.length
-            ).toFixed(0)}
-          </span>
-          %
-        </h3>
-        <Progress
-          value={progressValue(userDetails?.progress.length, exercises?.length)}
-        />
-      </div>
+            )}
+          />
+        </div>
+      )}
       <div>
         <h1 className="text-4xl font-bold text-center">{planDetails?.name}</h1>
       </div>

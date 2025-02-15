@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroSectionImage from "../../assets/HeroSection.webp";
+import heroSectionImage from "@/assets/HeroSection.webp";
 
 export const HeroSection = ({
   scrollToSection,

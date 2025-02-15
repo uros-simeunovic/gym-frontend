@@ -1,4 +1,5 @@
 import { auth, db, provider } from "@/firebase";
+import { useMainSidebarMobile } from "@/hooks/useMainSidebarMobile";
 import {
   User,
   onAuthStateChanged,
@@ -59,6 +60,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [loading, setLoading] = useState(true);
+  const { onClose } = useMainSidebarMobile();
 
   const navigate = useNavigate();
 
@@ -97,6 +99,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.removeItem("signedIn");
       await signOut(auth);
       navigate("/");
+      onClose();
       toast.message("Uspesno ste se odjavili.");
     } catch (error) {
       console.error("Error signing out", error);

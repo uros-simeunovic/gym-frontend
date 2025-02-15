@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import HomeLayout from "./layouts/HomeLayout";
 import TrainingsLayout from "./layouts/TrainingsLayout";
-import Workout from "./pages/TrainingPages/Workout";
 import AdminPanel from "./pages/Admin/AdminPanel";
 import { LoginPage } from "./pages/LoginPage";
 import PrivateAdminRoutes from "./components/PrivateAdminRoutes";
@@ -21,10 +20,6 @@ const App = () => {
       <Route element={<PrivateRoutes />}>
         <Route element={<TrainingsLayout />}>
           <Route path="/plans/:planId" element={<PlanExercises />} />
-          <Route
-            path="/plans/:planId/exercise/:exerciseId"
-            element={<Workout />}
-          />
         </Route>
       </Route>
 

@@ -1,8 +1,8 @@
 import { useScroll, useSpring, useTransform } from "framer-motion";
-import aboutMeImage from "../../assets/AboutMe.webp";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import instagramLogo from "../../assets/instagram.png";
+import aboutMeImage from "@/assets/AboutMe.webp";
+import instagramLogo from "@/assets/instagram.png";
 
 const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
   const textSectionRef = useRef<HTMLDivElement | null>(null);

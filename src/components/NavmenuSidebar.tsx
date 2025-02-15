@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/logoGG1.png";
+import logo from "@/assets/logoGG1.png";
 import { useMainSidebarMobile } from "@/hooks/useMainSidebarMobile";
 import { useAuth } from "@/Providers/AuthProvider";
 import { Button } from "./ui/button";
 
 export const NavmenuSidebar = () => {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, userDetails } = useAuth();
 
   const { onClose } = useMainSidebarMobile();
 
@@ -51,12 +51,25 @@ export const NavmenuSidebar = () => {
         </div>
         <div className="text-center">
           {currentUser ? (
-            <Button
-              onClick={logout}
-              className="bg-[#f99b62] text-white text-[30px] font-semibold w-[200px] h-[70px] rounded-[40px]"
-            >
-              Logout
-            </Button>
+            <div className="flex flex-col items-center gap-4">
+              <Button
+                onClick={logout}
+                className="bg-[#f99b62] hover:bg-[#c56930] text-white text-[30px] font-semibold w-[200px] h-[70px] rounded-[40px]"
+              >
+                Logout
+              </Button>
+              {userDetails?.isAdmin && (
+                <Button
+                  onClick={() => {
+                    navigate("/admin/dashboard/users");
+                    onClose();
+                  }}
+                  className="text-white text-[30px] font-semibold w-[200px] h-[70px] rounded-[40px]"
+                >
+                  Dashboard
+                </Button>
+              )}
+            </div>
           ) : (
             <Button
               onClick={login}

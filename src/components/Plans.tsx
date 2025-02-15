@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
-import plan1Image from "../../assets/Plan1Image.webp";
-import whitePlan2 from "../../assets/WhiteGirl1.webp";
+import plan1Image from "@/assets/Plan1Image.webp";
+import whitePlan2 from "@/assets/WhiteGirl1.webp";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { useDialog } from "@/hooks/useDialog";
 import { Modal } from "@/components/modals/Modal";
 
-const Plans = () => {
+export const Plans = () => {
   const { userDetails } = useAuth();
   const navigate = useNavigate();
 
   const { onOpen } = useDialog();
 
   const onClick = () => {
-    onOpen();
+    userDetails ? onOpen() : navigate("/auth/login");
   };
 
   return (
@@ -37,40 +37,40 @@ const Plans = () => {
                 <h1 className="text-[40px] font-medium leading-none">
                   3 x nedeljno
                 </h1>
-                <ol className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1 max-w-[60%]">
-                  <li className="relative">
+                <div className="flex flex-col font-normal text-[12px] sm:text-xl leading-[16px] space-y-1 max-w-[60%]">
+                  <div className="relative">
                     <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                     <p className="ml-3">
                       Idealno za početnike ili zauzet raspored.
                     </p>
-                  </li>
-                  <li className="relative">
+                  </div>
+                  <div className="relative">
                     <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                     <p className="ml-3">
                       Dovoljno za održavanje zdravlja, povećanje snage i
                       sagorevanje kalorija.
                     </p>
-                  </li>
-                  <li className="relative">
+                  </div>
+                  <div className="relative">
                     <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                     <p className="ml-3">
                       Omogućava dovoljno vremena za oporavak između treninga.
                     </p>
-                  </li>
-                  <li className="relative">
+                  </div>
+                  <div className="relative">
                     <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                     <p className="ml-3">
                       Manje treninga može delovati manje zastrašujuće, što
                       olakšava pridržavanje rutini.
                     </p>
-                  </li>
-                  <li className="relative">
+                  </div>
+                  <div className="relative">
                     <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                     <p className="ml-3">
                       Fokus na kvalitet, a ne kvantitet treninga.
                     </p>
-                  </li>
-                </ol>
+                  </div>
+                </div>
               </div>
               {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ? (
                 <Button
@@ -101,45 +101,45 @@ const Plans = () => {
                 <h1 className="text-[40px] font-medium leading-none text-left">
                   4 x nedeljno
                 </h1>
-                <p className="font-normal text-[12px] sm:text-xl leading-none">
-                  <ol className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1">
-                    <li className="relative">
+                <div className="font-normal text-[12px] sm:text-xl leading-none">
+                  <div className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1">
+                    <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">Brži rezultati.</p>
-                    </li>
-                    <li className="relative">
+                    </div>
+                    <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">
                         Dodatni trening ubrzava napredak u gubitku masnoća i
                         povećanju mišića.
                       </p>
-                    </li>
-                    <li className="relative">
+                    </div>
+                    <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">
                         Više dana omogućava detaljniji rad na pojedinačnim
                         mišićnim grupama.
                       </p>
-                    </li>
-                    <li className="relative">
+                    </div>
+                    <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">Stvaranje snažnijih navika.</p>
-                    </li>
-                    <li className="relative">
+                    </div>
+                    <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">
                         Učestaliji trening postaje deo dnevne rutine, što jača
                         disciplinu.
                       </p>
-                    </li>
-                    <li className="relative">
+                    </div>
+                    <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">
                         Pruža više prostora za raznovrsnost u vežbama.
                       </p>
-                    </li>
-                  </ol>
-                </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="ml-auto">
                 {userDetails?.paidPlan == "OSlO6JVoATh8KNg7iF9A" ? (
@@ -171,5 +171,3 @@ const Plans = () => {
     </>
   );
 };
-
-export default Plans;

@@ -1,11 +1,11 @@
 import { HeroSection } from "./Components/HeroSection";
 import { AnimatedLine } from "./Components/AnimatedLine";
+import { Faq } from "@/components/Faq";
+import { Plans } from "@/components/Plans";
 import { Footer } from "@/components/Footer";
-import Plans from "./Components/Plans";
 import { useRef } from "react";
 import AboutMe from "./Components/AboutMe";
 import AskQuestion from "./Components/AskQuestion";
-import { Faq } from "@/components/Faq";
 
 const HomePage = () => {
   const aboutMeSectionRef = useRef<HTMLDivElement | null>(null);

@@ -1,6 +1,6 @@
-import instagramLogo from "../assets/instagram.png";
+import instagramLogo from "@/assets/instagram.png";
+import logo from "@/assets/GGWhiteMainLogo.png";
 import { Button } from "./ui/button";
-import logo from "../assets/GGWhiteMainLogo.png";
 
 export const Footer = ({
   scrollToAboutMe,

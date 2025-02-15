@@ -1,7 +1,7 @@
 import { useAuth } from "@/Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import logo from "../assets/LogoGGWhite.svg";
+import logo from "@/assets/LogoGGWhite.svg";
 
 export const Sidebar = () => {
   const { userDetails, logout, currentUser } = useAuth();
