@@ -35,7 +35,7 @@ export const Plans = () => {
             <div className="h-full text-white flex flex-col justify-between gap-12">
               <div className="space-y-4">
                 <h1 className="text-[40px] font-medium leading-none">
-                  3 x nedeljno
+                  BubbleUp
                 </h1>
                 <div className="flex flex-col font-normal text-[12px] sm:text-xl leading-[16px] space-y-1 max-w-[60%]">
                   <div className="relative">
@@ -99,7 +99,7 @@ export const Plans = () => {
             <div className="ml-[120px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
               <div className="space-y-4">
                 <h1 className="text-[40px] font-medium leading-none text-left">
-                  4 x nedeljno
+                  GluteGoddess
                 </h1>
                 <div className="font-normal text-[12px] sm:text-xl leading-none">
                   <div className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1">

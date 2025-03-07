@@ -1,5 +1,5 @@
-import { useVideoModal } from "@/hooks/useVideoModal";
-import { VideoModal } from "./modals/VideoModal";
+// import { useVideoModal } from "@/hooks/useVideoModal";
+// import { VideoModal } from "./modals/VideoModal";
 import { progressValue } from "@/lib/utils";
 import { useGetUserById } from "@/hooks/useGetUserById";
 import { Link, useParams } from "react-router-dom";
@@ -18,7 +18,7 @@ import { useGetExercisesByPlanId } from "@/hooks/exercise/useGetExercisesByPlanI
 export const PlanExercises = () => {
   const { planId } = useParams();
   const { data: exercises } = useGetExercisesByPlanId(planId);
-  const { selectedExercise } = useVideoModal();
+  // const { selectedExercise } = useVideoModal();
 
   const { data: userDetails, isLoading } = useGetUserById();
 
@@ -36,7 +36,7 @@ export const PlanExercises = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8 justify-center flex-wrap m-10">
+    <div className="flex flex-col gap-8 justify-center flex-wrap mt-10">
       {!isLoading && (
         <div className="flex flex-col items-center gap-2">
           <h3 className="text-xl">
@@ -58,7 +58,7 @@ export const PlanExercises = () => {
         </div>
       )}
       <div>
-        <h1 className="text-4xl font-bold text-center">{planDetails?.name}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center">{planDetails?.name}</h1>
       </div>
       <div>
         <Accordion type="single" collapsible className="space-y-4">
@@ -92,7 +92,7 @@ export const PlanExercises = () => {
           </AccordionItem>
         </Accordion>
       </div>
-      <VideoModal selectedExercise={selectedExercise} />
+      {/* <VideoModal selectedExercise={selectedExercise} /> */}
     </div>
   );
 };

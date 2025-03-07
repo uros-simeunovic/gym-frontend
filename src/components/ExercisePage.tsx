@@ -1,0 +1,44 @@
+import { useGetExerciseById } from "@/hooks/exercise/useGetExerciseById";
+import { useParams } from "react-router-dom"
+
+export const ExercisePage = () => {
+    const {exerciseId, planId} = useParams()
+
+    if (!exerciseId || !planId) {
+        return <div>Wrong URL</div>
+    }
+
+    const {data: exercise} = useGetExerciseById(exerciseId, planId);
+
+    return (
+        <div className="max-w-[800px] mt-4 mx-auto">
+            <h1 className="text-2xl font-bold text-center">{exercise?.name}</h1>
+            <video width="1000px" src={exercise?.videoUrl} controls className="rounded-2xl mt-2" poster={exercise?.thumbnail}/>
+            <div className="mt-4">
+                <div className="font-semibold text-xl">Opis</div>
+                <div className="flex">
+                    <div>-</div>
+                    <p>{exercise?.description1}</p>
+                </div>
+                <div className="flex">
+                    <div>-</div>
+                    <p>{exercise?.description2}</p>
+                </div>
+                {exercise?.description3 && (
+                    <div className="flex">
+                        <div>-</div>
+                        <p>{exercise.description3}</p>
+                    </div>
+                )}
+            </div>
+            {exercise?.reps && (
+                <div className="mt-4">
+                    <div className="font-semibold text-xl">Broj serija i ponavljanja</div>
+                    {exercise?.reps.map((rep,index) => (
+                        <div key={index}>{index + 1}. {rep}</div>
+                    ))}
+                </div>
+            )}
+        </div>
+    )
+}

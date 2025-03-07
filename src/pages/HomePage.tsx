@@ -54,7 +54,7 @@ const HomePage = () => {
       <div className="h-[50px]">
         <AnimatedLine />
       </div>
-      <div className="p-2 bg-[#171717] w-full">
+      <div className="p-2 bg-[#191919] w-full">
         <Footer
           scrollToAboutMe={scrollToAboutMeSection}
           scrollToPlans={scrollToPlansSection}

@@ -7,8 +7,7 @@ const TrainingsLayout = () => {
       <div className="h-[80px] w-full z-50 inset-y-0 relative">
         <Navbar />
       </div>
-      {/* <Overlay /> */}
-      <div className="md:mx-28">
+      <div className="mx-2 md:mx-[148px]">
         <Outlet />
       </div>
     </main>

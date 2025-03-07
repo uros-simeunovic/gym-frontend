@@ -43,12 +43,15 @@ export interface ExerciseTest {
   thumbnail: string;
   order: number;
   exerciseType:
-    | "upper1"
     | "lower1"
-    | "upper2"
+    | "lower1.2"
     | "lower2"
+    | "lower2.2"
     | "lower3"
-    | "lower1.2";
+    | "lower3.2"
+    | "upper1"
+    | "upper1.2"
+    | "upper2"
   description1: string;
   description2: string;
   description3: string;
@@ -62,7 +65,7 @@ export const getExercisesByPlanId = async (planId: string | undefined | null) =>
   );
 
   const exercisesSnapshot = await getDocs(exercisesQuery);
-  console.log(exercisesSnapshot.docs);
+
   const exercisesList = exercisesSnapshot.docs.map((doc) => {
     const document = {
       id: doc.id,
@@ -85,4 +88,11 @@ export const getPlanById = async (planId: string | undefined) => {
   const planRef = doc(db, `plans/${planId}`);
   const planDoc = await getDoc(planRef);
   return planDoc.data() as Plan;
+};
+
+export const getExerciseById = async (exerciseId: string, planId: string) => {
+  const exerciseRef = doc(db, `/plans/${planId}/exercises/${exerciseId}`);
+
+  const exerciseDoc = await getDoc(exerciseRef);
+  return exerciseDoc.data() as ExerciseTest;
 };

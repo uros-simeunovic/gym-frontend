@@ -10,6 +10,7 @@ import ManagerPage from "./pages/Admin/ManagerPage";
 import { ExercisesPage } from "./pages/Admin/ExercisesPage";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { PlanExercises } from "./components/PlanExercises";
+import { ExercisePage } from "./components/ExercisePage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Route element={<PrivateRoutes />}>
         <Route element={<TrainingsLayout />}>
           <Route path="/plans/:planId" element={<PlanExercises />} />
+          <Route path="/plans/:planId/exercises/:exerciseId" element={<ExercisePage />} />
         </Route>
       </Route>
 
