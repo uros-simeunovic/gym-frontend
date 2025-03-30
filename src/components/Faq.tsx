@@ -34,7 +34,7 @@ export const Faq = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-[#f96294] bg-clip-text text-transparent">
           Najčešće postavljena pitanja
         </h2>
         <p className="text-xl text-pink-300">
@@ -45,9 +45,9 @@ export const Faq = () => {
       <Accordion type="single" collapsible className="space-y-4">
         <AccordionItem
           value={"item-1"}
-          className="border-none bg-pink-500 rounded-[30px]"
+          className="border-none bg-[#f96294] rounded-[30px]"
         >
-          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+          <AccordionTrigger className="bg-[#f96294] rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
             {FaqItems[0].question}
           </AccordionTrigger>
           <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
@@ -57,9 +57,9 @@ export const Faq = () => {
         </AccordionItem>
         <AccordionItem
           value={"item-2"}
-          className="border-none bg-pink-500 rounded-[30px]"
+          className="border-none bg-[#f96294] rounded-[30px]"
         >
-          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+          <AccordionTrigger className="bg-[#f96294] rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
             {FaqItems[1].question}
           </AccordionTrigger>
           <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
@@ -69,9 +69,9 @@ export const Faq = () => {
         </AccordionItem>
         <AccordionItem
           value={"item-3"}
-          className="border-none bg-pink-500 rounded-[30px]"
+          className="border-none bg-[#f96294] rounded-[30px]"
         >
-          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+          <AccordionTrigger className="bg-[#f96294] rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
             {FaqItems[2].question}
           </AccordionTrigger>
           <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
@@ -81,9 +81,9 @@ export const Faq = () => {
         </AccordionItem>
         <AccordionItem
           value={"item-4"}
-          className="border-none bg-pink-500 rounded-[30px]"
+          className="border-none bg-[#f96294] rounded-[30px]"
         >
-          <AccordionTrigger className="bg-pink-500 rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
+          <AccordionTrigger className="bg-[#f96294] rounded-full px-8 py-4 text-white font-medium text-left w-full transition-all duration-300 ease-in-out">
             {FaqItems[3].question}
           </AccordionTrigger>
           <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
@@ -97,7 +97,7 @@ export const Faq = () => {
         <p className="text-pink-400 mb-4">Dodatna pitanja?</p>
         <Button
           variant="outline"
-          className="rounded-full px-8 py-6 h-auto text-lg border-pink-500 text-pink-500 hover:bg-pink-50"
+          className="rounded-full px-8 py-6 h-auto text-lg border-[#f96294] text-[#f96294] hover:bg-pink-50"
           onClick={() => {
             const contactForm = document.getElementById("contact-form");
             if (contactForm) {

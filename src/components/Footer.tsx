@@ -1,6 +1,7 @@
 import instagramLogo from "@/assets/instagram.png";
 import logo from "@/assets/GGWhiteMainLogo.png";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 export const Footer = ({
   scrollToAboutMe,
@@ -14,23 +15,18 @@ export const Footer = ({
   };
 
   return (
-    <footer className="md:max-w-[1600px] mt-4 mx-auto py-10 flex flex-col gap-10 md:flex-row items-center justify-between">
-      <div className="flex flex-row justify-between max-w-[600px] w-full">
-        <div className="flex flex-col gap-6">
-          <img
-            onClick={scrollToTop}
-            src={logo}
-            alt="logo"
-            className="w-[100px] md:w-[140px] cursor-pointer"
-          />
-          <div className="flex flex-row gap-2 text-white items-center cursor-pointer hover:scale-[1.02] transition-all">
-            <img src={instagramLogo} className="w-8 h-8" alt="social-link" />
-            <p>@_kris_tinna</p>
+    <footer className="bg-[#f96294] text-white py-12 md:py-20 px-6 md:px-12">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+          <div className="mb-6 md:mb-0">
+            <img
+              onClick={scrollToTop}
+              src={logo}
+              alt="logo"
+              className="w-[100px] md:w-[140px] cursor-pointer"
+            />
           </div>
-        </div>
-        <div className="flex flex-col font-light text-white gap-4">
-          <h1 className="text-4xl">Linkovi</h1>
-          <div className="flex flex-col ">
+          <nav className="flex flex-col md:flex-row gap-4 md:gap-8 mb-6 md:mb-0 text-center md:text-left">
             <div onClick={scrollToTop} className="cursor-pointer text-xl">
               <Button
                 variant="link"
@@ -55,7 +51,18 @@ export const Footer = ({
                 O meni
               </Button>
             </div>
+          </nav>
+          <div className="text-center md:text-right">
+            <div className="flex justify-center md:justify-end gap-3">
+              <Link to={"https://www.instagram.com/_kris_tinna/"} className="flex flex-row items-center gap-2 cursor-pointer">
+                <img src={instagramLogo} alt="instagram-logo" className="w-8" />
+                <p className="text-lg">@_kriss_tina</p>
+              </Link>
+            </div>
           </div>
+        </div>
+        <div className="text-sm text-center md:text-left border-t border-white/20 pt-4">
+          2025 © GrlGainz
         </div>
       </div>
     </footer>

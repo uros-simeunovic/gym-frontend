@@ -10,7 +10,7 @@ const AskQuestion = () => {
 
   return (
     <div className="h-[600px] relative" id="contact-form">
-      <div className="absolute -left-[200px] sm:-left-[600px] h-[360px] sm:h-[460px] sm:bottom-[200px] w-[2400px] bg-pink-500 -rotate-[10deg] -z-0" />
+      <div className="absolute -left-[200px] sm:-left-[600px] h-[360px] sm:h-[460px] sm:bottom-[200px] w-[2400px] bg-[#f96294] -rotate-[10deg] -z-0" />
       <div className="absolute flex flex-col gap-4 pt-16 px-2 top-[150px] sm:top-[50px]">
         <h2 className="text-white text-2xl sm:text-4xl sm:font-semibold">
           Dodatna pitanja?

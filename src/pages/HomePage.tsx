@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { useRef } from "react";
 import AboutMe from "./Components/AboutMe";
 import AskQuestion from "./Components/AskQuestion";
+import ProgramSection from "./Components/ProgramSection";
 
 const HomePage = () => {
   const aboutMeSectionRef = useRef<HTMLDivElement | null>(null);
@@ -36,10 +37,13 @@ const HomePage = () => {
         <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine />
       </div>
-      <div ref={aboutMeSectionRef}>
+      <div ref={aboutMeSectionRef} className="mb-[200px] sm:mb-[350px]">
         <AboutMe scrollToSection={scrollToContactFormSection} />
       </div>
       <div className="max-w-[1000px] mx-auto">
+        <ProgramSection />
+      </div>
+      <div className="max-w-[1000px] mx-auto mt-[200px]">
         <div ref={plansSectionRef}>
           <Plans />
         </div>
@@ -51,10 +55,10 @@ const HomePage = () => {
           <AskQuestion />
         </div>
       </div>
-      <div className="h-[50px]">
+      {/* <div className="h-[50px]">
         <AnimatedLine />
-      </div>
-      <div className="p-2 bg-[#191919] w-full">
+      </div> */}
+      <div className="w-full">
         <Footer
           scrollToAboutMe={scrollToAboutMeSection}
           scrollToPlans={scrollToPlansSection}

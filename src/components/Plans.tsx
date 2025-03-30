@@ -18,15 +18,15 @@ export const Plans = () => {
 
   return (
     <>
-      <div className="px-2 space-y-20 sm:space-y-40 mt-[200px] sm:mt-[400px]">
+      <div className="px-2 space-y-20 sm:space-y-40">
         <div
           className="flex flex-col text-center justify-center items-center"
           id="plans"
         >
-          <h1 className="text-7xl sm:text-8xl font-semibold text-pink-500">
+          <h1 className="text-7xl sm:text-8xl font-semibold text-[#f96294]">
             Planovi
           </h1>
-          <p className="text-sm sm:text-xl text-pink-500">
+          <p className="text-sm sm:text-xl text-[#f96294]">
             Lorem ipsum dolor sit amet consectetur adipisicing
           </p>
         </div>
@@ -92,11 +92,11 @@ export const Plans = () => {
               <img src={plan1Image} className="w-[180px] sm:w-[320px]" />
             </div>
           </div>
-          <div className="relative md:h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto">
-            <div className="absolute bottom-0 left-[5px] overflow-hidden">
+          <div className="relative md:h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto overflow-hidden sm:overflow-visible">
+            <div className="absolute bottom-0 -left-2 overflow-hidden">
               <img src={whitePlan2} className="w-[180px] sm:w-[300px]" />
             </div>
-            <div className="ml-[120px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
+            <div className="ml-[80px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
               <div className="space-y-4">
                 <h1 className="text-[40px] font-medium leading-none text-left">
                   GluteGoddess
@@ -141,7 +141,7 @@ export const Plans = () => {
                   </div>
                 </div>
               </div>
-              <div className="ml-auto">
+              <div className="ml-[80px] sm:ml-auto">
                 {userDetails?.paidPlan == "OSlO6JVoATh8KNg7iF9A" ? (
                   <Button
                     onClick={() => navigate(`/plans/${userDetails.paidPlan}`)}

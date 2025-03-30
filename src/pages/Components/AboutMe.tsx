@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import aboutMeImage from "@/assets/AboutMe.webp";
 import instagramLogo from "@/assets/instagram.png";
+import { Link } from "react-router-dom";
 
 const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
   const textSectionRef = useRef<HTMLDivElement | null>(null);
@@ -28,6 +29,7 @@ const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
       <div
         ref={textSectionRef}
         className="h-[400px] sm:h-[600px] relative flex justify-center pt-10"
+        id="about-me"
       >
         <div className="absolute">
           <motion.h1
@@ -49,11 +51,11 @@ const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
       <div className="rounded-t-[60px] absolute w-full h-[500px] bg-white px-8 pt-10">
         <div className="flex flex-col gap-6 sm:w-[700px] md:w-[1000px] relative mx-auto">
           <div>
-            <h2 className="text-2xl font-bold text-pink-500">
+            <h2 className="text-2xl font-bold text-[#f96294]">
               Kristina Mitrović
             </h2>
             <hr className="my-2 border-pink-300" />
-            <p className="text-pink-500">
+            <p className="text-[#f96294]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
               ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
@@ -61,10 +63,10 @@ const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
             </p>
             <hr className="my-2 border-pink-300" />
           </div>
-          <div className="flex flex-row items-center gap-2 cursor-pointer">
+          <Link to={"https://www.instagram.com/_kris_tinna/"} className="flex flex-row items-center gap-2 cursor-pointer">
             <img src={instagramLogo} alt="instagram-logo" className="w-8" />
-            <p className="text-lg text-pink-500">@_kriss_tina</p>
-          </div>
+            <p className="text-lg text-[#f96294]">@_kriss_tina</p>
+          </Link>
           <button
             onClick={scrollToSection}
             className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]"
