@@ -6,14 +6,14 @@ export const PhaseTwo = ({
 }: {
   exercises: ExerciseTest[] | undefined;
 }) => {
-  const navigate = useNavigate()
-  const params = useParams()
+  const navigate = useNavigate();
+  const params = useParams();
 
   const onClick = (exerciseId: string) => {
-    navigate(`/plans/${params.planId}/exercises/${exerciseId}`)
+    navigate(`/plans/${params.planId}/exercises/${exerciseId}`);
   };
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <div>
         <h1 className="font-bold text-2xl">Donji deo 1</h1>
         {exercises?.map((exercise) => {
@@ -23,20 +23,23 @@ export const PhaseTwo = ({
                 className="flex items-center gap-2 cursor-pointer"
                 key={exercise.id}
               >
-                <h1
-                  className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
+                <div
+                  className="flex font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
                   key={exercise.id}
                   onClick={() => onClick(exercise.id)}
                 >
-                  {exercise.order}. {exercise.name}
-                </h1>
+                  <div className="w-4 flex justify-center mr-1">
+                    <div>{exercise.order}.</div>
+                  </div>
+                  <div>{exercise.name}</div>
+                </div>
               </li>
             );
           }
         })}
       </div>
       <div>
-        <h1 className="font-bold text-2xl">Gornji deo 1</h1>
+        <h1 className="font-bold text-2xl">Gornji deo</h1>
         {exercises?.map((exercise) => {
           if (exercise.exerciseType == "upper1.2") {
             return (
@@ -44,13 +47,16 @@ export const PhaseTwo = ({
                 className="flex items-center gap-2 cursor-pointer"
                 key={exercise.id}
               >
-                <h1
-                  className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
+                <div
+                  className="flex font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
                   key={exercise.id}
                   onClick={() => onClick(exercise.id)}
                 >
-                  {exercise.order}. {exercise.name}
-                </h1>
+                  <div className="w-4 flex justify-center mr-1">
+                    <div>{exercise.order}.</div>
+                  </div>
+                  <div>{exercise.name}</div>
+                </div>
               </li>
             );
           }
@@ -65,13 +71,16 @@ export const PhaseTwo = ({
                 className="flex items-center gap-2 cursor-pointer"
                 key={exercise.id}
               >
-                <h1
-                  className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
+                <div
+                  className="flex font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
                   key={exercise.id}
                   onClick={() => onClick(exercise.id)}
                 >
-                  {exercise.order}. {exercise.name}
-                </h1>
+                  <div className="w-4 flex justify-center mr-1">
+                    <div>{exercise.order}.</div>
+                  </div>
+                  <div>{exercise.name}</div>
+                </div>
               </li>
             );
           }
@@ -87,19 +96,22 @@ export const PhaseTwo = ({
                   className="flex items-center gap-2 cursor-pointer"
                   key={exercise.id}
                 >
-                  <h1
-                    className="font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
+                  <div
+                    className="flex font-light text-xl relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:hover:w-full after:transition-all after:bg-white after:h-1"
                     key={exercise.id}
                     onClick={() => onClick(exercise.id)}
                   >
-                    {exercise.order}. {exercise.name}
-                  </h1>
+                    <div className="w-4 flex justify-center mr-1">
+                      <div>{exercise.order}.</div>
+                    </div>
+                    <div>{exercise.name}</div>
+                  </div>
                 </li>
               );
             }
           })}
         </div>
       )}
-    </>
+    </div>
   );
 };

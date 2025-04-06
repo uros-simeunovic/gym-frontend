@@ -66,12 +66,12 @@ export const PlanExercises = () => {
             value={"faza-1"}
             className="border-none bg-[#f96294] rounded-[30px]"
           >
-            <AccordionTrigger className="bg-[#f96294] rounded-full px-8 py-4 text-white font-bold text-4xl text-left w-full transition-all duration-300 ease-in-out">
+            <AccordionTrigger className="bg-[#f96294] rounded-full px-4 md:px-8 py-4 text-white font-bold text-4xl text-left w-full transition-all duration-300 ease-in-out">
               Faza 1
             </AccordionTrigger>
             <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
-              <hr className="w-[90%] mx-auto" />
-              <div className="px-8 py-6 text-white">
+              <hr className="w-[95%] mx-auto" />
+              <div className="px-4 md:px-8 py-6 text-white">
                 <PhaseOne exercises={exercises} />
               </div>
             </AccordionContent>
@@ -80,12 +80,12 @@ export const PlanExercises = () => {
             value={"faza-2"}
             className="border-none bg-[#f96294] rounded-[30px]"
           >
-            <AccordionTrigger className="bg-[#f96294] rounded-full px-8 py-4 text-white font-bold text-4xl text-left w-full transition-all duration-300 ease-in-out">
+            <AccordionTrigger className="bg-[#f96294] rounded-full px-4 md:px-8 py-4 text-white font-bold text-4xl text-left w-full transition-all duration-300 ease-in-out">
               Faza 2
             </AccordionTrigger>
             <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
-              <hr className="w-[90%] mx-auto" />
-              <div className="px-8 py-6 text-white">
+              <hr className="w-[95%] mx-auto" />
+              <div className="px-4 md:px-8 py-6 text-white">
                 <PhaseTwo exercises={exercises} />
               </div>
             </AccordionContent>

@@ -11,7 +11,7 @@ export const ExercisePage = () => {
     const {data: exercise} = useGetExerciseById(exerciseId, planId);
 
     return (
-        <div className="max-w-[800px] mt-4 mx-auto">
+        <div className="max-w-[800px] my-20 mx-auto">
             <h1 className="text-2xl font-bold text-center">{exercise?.name}</h1>
             <video width="1000px" src={exercise?.videoUrl} controls className="rounded-2xl mt-2" poster={exercise?.thumbnail}/>
             <div className="mt-4">
@@ -35,7 +35,12 @@ export const ExercisePage = () => {
                 <div className="mt-4">
                     <div className="font-semibold text-xl">Broj serija i ponavljanja</div>
                     {exercise?.reps.map((rep,index) => (
-                        <div key={index}>{index + 1}. {rep}</div>
+                      <div key={index} className="flex">
+                        <div className="w-4 flex justify-center mr-1">
+                          <div>{index + 1}.</div>
+                        </div>
+                        <div>{rep}</div>
+                      </div>
                     ))}
                 </div>
             )}
