@@ -5,7 +5,6 @@ import { Plans } from "@/components/Plans";
 import { Footer } from "@/components/Footer";
 import { useRef } from "react";
 import AboutMe from "./Components/AboutMe";
-import AskQuestion from "./Components/AskQuestion";
 import ProgramSection from "./Components/ProgramSection";
 
 const HomePage = () => {
@@ -51,13 +50,7 @@ const HomePage = () => {
           <AnimatedLine />
         </div>
         <Faq />
-        <div ref={contactFormSectionRef} className="my-24">
-          <AskQuestion />
-        </div>
       </div>
-      {/* <div className="h-[50px]">
-        <AnimatedLine />
-      </div> */}
       <div className="w-full">
         <Footer
           scrollToAboutMe={scrollToAboutMeSection}

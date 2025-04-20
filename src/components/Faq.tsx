@@ -1,11 +1,11 @@
-import { ChevronDown } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Button } from "./ui/button";
+import { Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FaqItems = [
   {
@@ -32,7 +32,7 @@ const FaqItems = [
 
 export const Faq = () => {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
+    <div className="max-w-3xl mx-auto px-4 pt-20 mb-36">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-[#f96294] bg-clip-text text-transparent">
           Najčešće postavljena pitanja
@@ -92,22 +92,32 @@ export const Faq = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-
-      <div className="text-center mt-12">
-        <p className="text-pink-400 mb-4">Dodatna pitanja?</p>
-        <Button
-          variant="outline"
-          className="rounded-full px-8 py-6 h-auto text-lg border-[#f96294] text-[#f96294] hover:bg-pink-50"
-          onClick={() => {
-            const contactForm = document.getElementById("contact-form");
-            if (contactForm) {
-              contactForm.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-        >
-          Kontaktiraj me
-          <ChevronDown className="ml-2 h-5 w-5" />
-        </Button>
+      <div className="container mx-auto my-20">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <h2 className="text-lg md:text-2xl font-bold tracking-tight text-pink-400">
+            Dodatna pitanja?
+          </h2>
+          <div className="flex items-center justify-center gap-4">
+            <Link
+              to="https://instagram.com/_kriss_tina"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"
+            >
+              <Instagram className="h-6 w-6" />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link
+              to="https://tiktok.com/@yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"
+            >
+              <Twitter className="h-6 w-6" />
+              <span className="sr-only">TikTok</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
