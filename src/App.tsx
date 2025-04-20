@@ -11,17 +11,24 @@ import { ExercisesPage } from "./pages/Admin/ExercisesPage";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { PlanExercises } from "./components/PlanExercises";
 import { ExercisePage } from "./components/ExercisePage";
+import { Payment } from "./pages/Payment";
 
 const App = () => {
   return (
     <Routes>
       <Route element={<HomeLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/placanje" element={<Payment />} />
+        </Route>
       </Route>
       <Route element={<PrivateRoutes />}>
         <Route element={<TrainingsLayout />}>
           <Route path="/plans/:planId" element={<PlanExercises />} />
-          <Route path="/plans/:planId/exercises/:exerciseId" element={<ExercisePage />} />
+          <Route
+            path="/plans/:planId/exercises/:exerciseId"
+            element={<ExercisePage />}
+          />
         </Route>
       </Route>
 

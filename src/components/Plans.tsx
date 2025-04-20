@@ -3,18 +3,11 @@ import plan1Image from "@/assets/Plan1Image.webp";
 import whitePlan2 from "@/assets/WhiteGirl1.webp";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import { useDialog } from "@/hooks/useDialog";
 import { Modal } from "@/components/modals/Modal";
 
 export const Plans = () => {
   const { userDetails } = useAuth();
   const navigate = useNavigate();
-
-  const { onOpen } = useDialog();
-
-  const onClick = () => {
-    userDetails ? onOpen() : navigate("/auth/login");
-  };
 
   return (
     <>
@@ -81,7 +74,7 @@ export const Plans = () => {
                 </Button>
               ) : (
                 <Button
-                  onClick={() => onClick()}
+                  onClick={() => navigate("/placanje")}
                   className="bg-white text-[#f96294] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
                 >
                   Kupi
@@ -151,7 +144,7 @@ export const Plans = () => {
                   </Button>
                 ) : (
                   <Button
-                    onClick={() => onClick()}
+                    onClick={() => navigate("/placanje")}
                     className="bg-white text-[#db84ff] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
                   >
                     Kupi

@@ -14,15 +14,17 @@ import { PhaseOne } from "./PhaseOne";
 import { PhaseTwo } from "./PhaseTwo";
 import { useGetPlanById } from "@/hooks/plan/useGetPlanById";
 import { useGetExercisesByPlanId } from "@/hooks/exercise/useGetExercisesByPlanId";
+import { useEffect, useState } from "react";
 
 export const PlanExercises = () => {
   const { planId } = useParams();
   const { data: exercises } = useGetExercisesByPlanId(planId);
+  const [value, setValue] = useState<string | undefined>(undefined);
 
   // const { data: userDetails, isLoading } = useGetUserById();
 
   const { data: planDetails } = useGetPlanById();
-  
+
   if (exercises?.length == 0) {
     return (
       <div className="h-[500px] flex flex-col items-center justify-center gap-4">
@@ -34,34 +36,25 @@ export const PlanExercises = () => {
     );
   }
 
+  useEffect(() => {
+    setValue(undefined);
+  }, []);
+
   return (
     <div className="flex flex-col gap-8 justify-center flex-wrap mt-10">
-      {/* {!isLoading && (
-        <div className="flex flex-col items-center gap-2">
-          <h3 className="text-xl">
-            Progres:
-            <span className="px-1">
-              {progressValue(
-                userDetails?.progress.length,
-                exercises?.length
-              ).toFixed(0)}
-            </span>
-            %
-          </h3>
-          <Progress
-            value={progressValue(
-              userDetails?.progress.length,
-              exercises?.length
-            )}
-          />
-        </div>
-      )} */}
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold text-center">{planDetails?.name}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center">
+          {planDetails?.name}
+        </h1>
       </div>
       <div className="mb-32">
-        {/* Fix the issue with going back from exercise accordion is opened and bugged */}
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-4"
+          value={value}
+          onValueChange={setValue}
+        >
           <AccordionItem
             value={"faza-1"}
             className="border-none bg-[#f96294] rounded-[30px]"
