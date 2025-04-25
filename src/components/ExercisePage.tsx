@@ -13,7 +13,7 @@ export const ExercisePage = () => {
     return (
         <div className="max-w-[800px] my-20 mx-auto">
             <h1 className="text-2xl font-bold text-center">{exercise?.name}</h1>
-            <video width="1000px" src={exercise?.videoUrl} controls className="rounded-2xl mt-2" poster={exercise?.thumbnail}/>
+            <video playsInline width="1000px" src={exercise?.videoUrl} controls className="rounded-2xl mt-2" poster={exercise?.thumbnail}/>
             <div className="mt-4">
                 <div className="font-semibold text-xl">Opis</div>
                 <div className="flex">
