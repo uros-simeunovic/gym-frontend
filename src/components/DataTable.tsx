@@ -50,6 +50,8 @@ export const DataTable = () => {
                   <TableCell key={index}>
                     {user.paidPlan == plan.id ? (
                       <Check className="w-16" color="green" />
+                    ) : user.isAdmin ? (
+                      <Check className="w-16" color="green" />
                     ) : (
                       <X className="w-16" color="red" />
                     )}

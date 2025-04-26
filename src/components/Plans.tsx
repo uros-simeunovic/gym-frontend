@@ -12,7 +12,7 @@ export const Plans = () => {
 
   useEffect(() => {
     localStorage.setItem("from", "home");
-  }, [])
+  }, []);
 
   return (
     <>
@@ -70,12 +70,10 @@ export const Plans = () => {
                   </div>
                 </div>
               </div>
-              {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ? (
+              {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ||
+              userDetails?.isAdmin ? (
                 <Button
-                  onClick={() => {
-                    window.history.state.fromHome = true;
-                    navigate(`/plans/${userDetails.paidPlan}`);
-                  }}
+                  onClick={() => navigate(`/plans/I1euJf8LyuMbj3GLVoh9`)}
                   className="bg-white text-[#f96294] text-[30px] font-semibold w-[200px] h-[60px] rounded-[40px]"
                 >
                   Otvori Plan
@@ -143,11 +141,10 @@ export const Plans = () => {
                 </div>
               </div>
               <div className="ml-[80px] sm:ml-auto">
-                {userDetails?.paidPlan == "OSlO6JVoATh8KNg7iF9A" ? (
+                {userDetails?.paidPlan == "OSlO6JVoATh8KNg7iF9A" ||
+                userDetails?.isAdmin ? (
                   <Button
-                    onClick={() => {
-                      navigate(`/plans/${userDetails.paidPlan}`);
-                    }}
+                    onClick={() => navigate("/plans/OSlO6JVoATh8KNg7iF9A")}
                     className="bg-white text-[#db84ff] text-[30px] font-semibold w-[200px] h-[60px] rounded-[40px]"
                   >
                     Otvori Plan

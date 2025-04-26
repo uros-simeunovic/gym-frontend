@@ -1,4 +1,5 @@
 import { useAuth } from "@/Providers/AuthProvider";
+import { Loader2 } from "lucide-react";
 import { Navigate, Outlet } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -7,8 +8,9 @@ const PrivateAdminRoutes = ({}) => {
 
   if (loading) {
     return (
-      <div className="w-full flex items-center justify-center mt-[150px] gap-2">
-        <h1>Loading</h1>
+      <div className="w-full h-screen flex items-center justify-center mt-[150px] gap-2">
+        <h1>Loading...</h1>
+        <Loader2 className="animate-spin" />
       </div>
     );
   }

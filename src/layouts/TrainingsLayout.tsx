@@ -12,7 +12,7 @@ const TrainingsLayout = () => {
     return <div>Loading</div>;
   }
 
-  if (userDetails?.paidPlan !== planId) {
+  if (userDetails?.paidPlan !== planId && userDetails?.isAdmin !== true) {
     toast.warning("Nemate kupljen ovaj plan")
     return <Navigate to={"/"} />
   }
