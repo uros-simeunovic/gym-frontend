@@ -4,10 +4,15 @@ import whitePlan2 from "@/assets/WhiteGirl1.webp";
 import { useAuth } from "@/Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "@/components/modals/Modal";
+import { useEffect } from "react";
 
 export const Plans = () => {
   const { userDetails } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.setItem("from", "home");
+  }, [])
 
   return (
     <>
@@ -67,7 +72,10 @@ export const Plans = () => {
               </div>
               {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ? (
                 <Button
-                  onClick={() => navigate(`/plans/${userDetails.paidPlan}`)}
+                  onClick={() => {
+                    window.history.state.fromHome = true;
+                    navigate(`/plans/${userDetails.paidPlan}`);
+                  }}
                   className="bg-white text-[#f96294] text-[30px] font-semibold w-[200px] h-[60px] rounded-[40px]"
                 >
                   Otvori Plan
@@ -137,7 +145,9 @@ export const Plans = () => {
               <div className="ml-[80px] sm:ml-auto">
                 {userDetails?.paidPlan == "OSlO6JVoATh8KNg7iF9A" ? (
                   <Button
-                    onClick={() => navigate(`/plans/${userDetails.paidPlan}`)}
+                    onClick={() => {
+                      navigate(`/plans/${userDetails.paidPlan}`);
+                    }}
                     className="bg-white text-[#db84ff] text-[30px] font-semibold w-[200px] h-[60px] rounded-[40px]"
                   >
                     Otvori Plan

@@ -1,22 +1,19 @@
 import { ExerciseTest } from "@/queries/trainings";
 import { useNavigate, useParams } from "react-router-dom";
 
-export const PhaseTwo = ({
-  exercises,
-}: {
-  exercises: ExerciseTest[] | undefined;
-}) => {
+export const PhaseTwo = ({ exercises }: { exercises: ExerciseTest[] }) => {
   const navigate = useNavigate();
   const params = useParams();
 
   const onClick = (exerciseId: string) => {
     navigate(`/plans/${params.planId}/exercises/${exerciseId}`);
   };
+
   return (
     <div className="flex flex-col gap-4">
       <div>
         <h1 className="font-bold text-2xl">Donji deo 1</h1>
-        {exercises?.map((exercise) => {
+        {exercises.map((exercise) => {
           if (exercise.exerciseType == "lower1.2") {
             return (
               <li
@@ -40,7 +37,7 @@ export const PhaseTwo = ({
       </div>
       <div>
         <h1 className="font-bold text-2xl">Gornji deo</h1>
-        {exercises?.map((exercise) => {
+        {exercises.map((exercise) => {
           if (exercise.exerciseType == "upper1.2") {
             return (
               <li

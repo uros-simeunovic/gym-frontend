@@ -1,11 +1,7 @@
 import { ExerciseTest } from "@/queries/trainings";
 import { useNavigate, useParams } from "react-router-dom";
 
-export const PhaseOne = ({
-  exercises,
-}: {
-  exercises: ExerciseTest[] | undefined;
-}) => {
+export const PhaseOne = ({ exercises }: { exercises: ExerciseTest[] }) => {
   const navigate = useNavigate();
   const params = useParams();
 
@@ -17,7 +13,7 @@ export const PhaseOne = ({
     <div className="flex flex-col gap-4">
       <div>
         <h1 className="font-bold text-2xl">Donji deo 1</h1>
-        {exercises?.map((exercise) => {
+        {exercises.map((exercise) => {
           if (exercise.exerciseType == "lower1") {
             return (
               <li
@@ -41,7 +37,7 @@ export const PhaseOne = ({
       </div>
       <div>
         <h1 className="font-bold text-2xl">Gornji deo</h1>
-        {exercises?.map((exercise) => {
+        {exercises.map((exercise) => {
           if (exercise.exerciseType == "upper1") {
             return (
               <li
@@ -65,7 +61,7 @@ export const PhaseOne = ({
       </div>
       <div>
         <h1 className="font-bold text-2xl">Donji deo 2</h1>
-        {exercises?.map((exercise) => {
+        {exercises.map((exercise) => {
           if (exercise.exerciseType == "lower2") {
             return (
               <li
@@ -90,7 +86,7 @@ export const PhaseOne = ({
       {params.planId === "OSlO6JVoATh8KNg7iF9A" && (
         <div>
           <h1 className="font-bold text-2xl">Donji deo 3</h1>
-          {exercises?.map((exercise) => {
+          {exercises.map((exercise) => {
             if (exercise.exerciseType == "lower3") {
               return (
                 <li

@@ -6,7 +6,7 @@ export const useGetExerciseById = (
   planId: string 
 ) => {
   const query = useQuery({
-    queryKey: ["exercises"],
+    queryKey: ["exercise"],
     queryFn: async () => await getExerciseById(exerciseId, planId),
   });
 
