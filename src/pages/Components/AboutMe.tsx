@@ -56,16 +56,22 @@ const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
             </h2>
             <hr className="my-2 border-pink-300" />
             <p className="text-[#f96294]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
+              Napravila sam ovaj online plan na osnovu godina rada, ali pre
+              svega - zahvaljujući mojim devojkama. Slušala sam šta vam treba,
+              testirala zajedno sa vama, korigovala, prilagođavala i gledala
+              kako rastete. Svaka vežba, svaka faza i svaki savet u ovom
+              programu ima svoje “zašto” - jer je proveren u stvarnim
+              transformacijama, uz stvarne ljude. Tu sam da vam pomognem da
+              zaista uspete. Uz razumevanje, iskustvo i konkretne korake, ovaj
+              plan je vaša mapa ka najboljoj verziji sebe.
             </p>
             <hr className="my-2 border-pink-300" />
           </div>
           <div className="space-y-4 flex flex-col items-center md:block">
             <Link
               to={"https://www.instagram.com/_kris_tinna/"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex flex-row items-center gap-2 cursor-pointer"
             >
               <img src={instagramLogo} alt="instagram-logo" className="w-8" />

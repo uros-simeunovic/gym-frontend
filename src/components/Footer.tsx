@@ -54,7 +54,12 @@ export const Footer = ({
           </nav>
           <div className="text-center md:text-right">
             <div className="flex justify-center md:justify-end gap-3">
-              <Link to={"https://www.instagram.com/_kris_tinna/"} className="flex flex-row items-center gap-2 cursor-pointer">
+              <Link
+                to={"https://www.instagram.com/_kris_tinna/"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-row items-center gap-2 cursor-pointer"
+              >
                 <img src={instagramLogo} alt="instagram-logo" className="w-8" />
                 <p className="text-lg">@_kriss_tina</p>
               </Link>

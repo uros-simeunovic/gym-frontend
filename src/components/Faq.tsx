@@ -4,27 +4,34 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Instagram, Twitter } from "lucide-react";
+import tiktok from "@/assets/tiktok.svg";
+import instagram from "@/assets/instagram.svg";
 import { Link } from "react-router-dom";
 
 const FaqItems = [
   {
-    question: "Da li ovaj program moze da koristi svako?",
+    question: "Da li ovaj program može da koristi svako?",
     answer:
-      "Prilagođeno baš tebi Svaka žena je jedinstvena, i moj program to poštuje. Bilo da si početnica ili već treniraš, vežbe su prilagođene tvom nivou, ciljevima i tempu.",
+      "Svaka žena je jedinstvena, i moj program to poštuje. Bilo da si početnica ili već treniraš, vežbe su prilagođene tvom nivou, ciljevima i tempu.",
   },
   {
-    question: "Kako funkcionise online program?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+    question: "Kako funkcioniše online program?",
+    answer: "Program uključuje:",
+    dots: [
+      "Video demonstracije svih vežbi",
+      "Detaljna uputstva za svaki trening",
+      "Personalizovane preporuke",
+    ],
+    answer2:
+      "Pristup materijalima dobijaš odmah nakon prijave i možeš ih koristiti kad god ti odgovara.",
   },
   {
     question: "Koje u prednosti online programa?",
     answer:
-      "Fleksibilnost bez granica Zaboravi na gužve u teretani i gubljenje vremena! Treniraj kad ti odgovara, ujutru pre posla, tokom pauze ili uveče – potpuno prilagođeno tvom rasporedu.",
+      "Zaboravi na gužve u teretani i gubljenje vremena! Treniraj kad ti odgovara, ujutru pre posla, tokom pauze ili uveče – potpuno prilagođeno tvom rasporedu.",
   },
   {
-    question: "Da li mogu da se obratim treneru za pomoc?",
+    question: "Da li mogu da se obratim treneru za pomoć?",
     answer:
       "Naravno! Uvek sam tu za tebe. Možeš me kontaktirati putem emaila, instragrama ili platforme, i rado ću odgovoriti na sva tvoja pitanja ili prilagoditi treninge.",
   },
@@ -64,7 +71,21 @@ export const Faq = () => {
           </AccordionTrigger>
           <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
             <hr className="w-[90%] mx-auto" />
-            <div className="px-8 py-6 text-white">{FaqItems[1].answer}</div>
+            <div className="px-8 py-6 space-y-4 text-white">
+              <div>{FaqItems[1].answer}</div>
+              <div>
+                {FaqItems[1].dots?.map((dot, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center space-x-2 mt-2 text-white"
+                  >
+                    <span className="text-pink-300">•</span>
+                    <p>{dot}</p>
+                  </div>
+                ))}
+              </div>
+              <div>{FaqItems[1].answer2}</div>
+            </div>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem
@@ -99,12 +120,12 @@ export const Faq = () => {
           </h2>
           <div className="flex items-center justify-center gap-4">
             <Link
-              to="https://instagram.com/_kriss_tina"
+              to="https://www.instagram.com/_kris_tinna/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"
             >
-              <Instagram className="h-6 w-6" />
+              <img className="h-6 w-6" src={instagram} />
               <span className="sr-only">Instagram</span>
             </Link>
             <Link
@@ -113,7 +134,7 @@ export const Faq = () => {
               rel="noopener noreferrer"
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"
             >
-              <Twitter className="h-6 w-6" />
+              <img className="h-6 w-6" src={tiktok} />
               <span className="sr-only">TikTok</span>
             </Link>
           </div>

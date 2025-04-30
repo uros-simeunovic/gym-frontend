@@ -15,7 +15,7 @@ export const HeroSection = ({
         <div className="overflow-hidden">
           <motion.h1
             key="heading1"
-            className="font-light text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none text-[#f96294]"
+            className="font-light text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[900px] md:text-[126px] leading-none text-[#f96294]"
             initial={{
               translateY: "200px",
             }}
@@ -28,13 +28,13 @@ export const HeroSection = ({
               delay: 0.1,
             }}
           >
-            FIND YOUR
+            BUDI SVOJA
           </motion.h1>
         </div>
         <div className="overflow-hidden">
           <motion.h1
             key="heading2"
-            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[600px] md:text-[126px] leading-none text-[#f96294]"
+            className="font-bold text-[60px] sm:text-[86px] sm2:text-[100px] md:max-w-[900px] md:text-[126px] leading-none text-[#f96294]"
             initial={{
               translateY: "200px",
             }}
@@ -46,13 +46,13 @@ export const HeroSection = ({
               ease: [0.45, 0, 0.55, 1],
             }}
           >
-            STRENGTH
+            MOTIVACIJA
           </motion.h1>
         </div>
         <div className="overflow-hidden">
           <motion.h5
             key="small-heading"
-            className="font-normal text-xl sm2:text-2xl text-[#f96294]"
+            className="font-normal text-xl md:text-3xl text-[#f96294]"
             initial={{
               translateY: "-100px",
             }}
@@ -65,7 +65,7 @@ export const HeroSection = ({
               delay: 0.3,
             }}
           >
-            ACHIEVE YOUR FITNESS GOALS
+            KRENI BEZ IZGOVORA
           </motion.h5>
         </div>
       </div>
@@ -128,7 +128,7 @@ export const HeroSection = ({
               onClick={scrollToSection}
               className="bg-[#f99b62] text-white text-[18px] font-semibold w-[140px] h-[55px] sm:w-[180px] sm:h-[65px] rounded-[40px]"
             >
-              Saznaj vise
+              Saznaj više
             </button>
           </motion.div>
         </div>
