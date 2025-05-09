@@ -32,7 +32,7 @@ export const Footer = ({
                 variant="link"
                 className="font-light text-lg p-0 text-white"
               >
-                Pocetna
+                Početna
               </Button>
             </div>
             <div onClick={scrollToPlans}>
@@ -55,13 +55,13 @@ export const Footer = ({
           <div className="text-center md:text-right">
             <div className="flex justify-center md:justify-end gap-3">
               <Link
-                to={"https://www.instagram.com/_kris_tinna/"}
+                to={"https://www.instagram.com/mitrovic_kris/"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-row items-center gap-2 cursor-pointer"
               >
                 <img src={instagramLogo} alt="instagram-logo" className="w-8" />
-                <p className="text-lg">@_kriss_tina</p>
+                <p className="text-lg">@mitrovic_kris</p>
               </Link>
             </div>
           </div>

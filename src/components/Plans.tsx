@@ -24,9 +24,9 @@ export const Plans = () => {
           <h1 className="text-7xl sm:text-8xl font-semibold text-[#f96294]">
             Planovi
           </h1>
-          <p className="text-sm sm:text-xl text-[#f96294]">
+          {/* <p className="text-sm sm:text-xl text-[#f96294]">
             Lorem ipsum dolor sit amet consectetur adipisicing
-          </p>
+          </p> */}
         </div>
         <div className="space-y-20 sm:space-y-80">
           <div className="relative md:h-[500px] p-6 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">

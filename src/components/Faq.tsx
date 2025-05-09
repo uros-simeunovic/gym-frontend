@@ -41,12 +41,12 @@ export const Faq = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 pt-20 mb-36">
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-[#f96294] bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#f96294]">
           Najčešće postavljena pitanja
         </h2>
-        <p className="text-xl text-pink-300">
+        {/* <p className="text-xl text-pink-300">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-        </p>
+        </p> */}
       </div>
 
       <Accordion type="single" collapsible className="space-y-4">
@@ -115,12 +115,12 @@ export const Faq = () => {
       </Accordion>
       <div className="container mx-auto my-20">
         <div className="flex flex-col items-center justify-center space-y-4">
-          <h2 className="text-lg md:text-2xl font-bold tracking-tight text-pink-400">
+          <h2 className="text-lg md:text-2xl font-bold tracking-tight text-[#f96294]">
             Dodatna pitanja?
           </h2>
           <div className="flex items-center justify-center gap-4">
             <Link
-              to="https://www.instagram.com/_kris_tinna/"
+              to="https://www.instagram.com/mitrovic_kris/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"

@@ -5,7 +5,7 @@ import aboutMeImage from "@/assets/AboutMe.webp";
 import instagramLogo from "@/assets/instagram.png";
 import { Link } from "react-router-dom";
 
-const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
+const AboutMe = () => {
   const textSectionRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -69,20 +69,20 @@ const AboutMe = ({ scrollToSection }: { scrollToSection: () => void }) => {
           </div>
           <div className="space-y-4 flex flex-col items-center md:block">
             <Link
-              to={"https://www.instagram.com/_kris_tinna/"}
+              to={"https://www.instagram.com/mitrovic_kris/"}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-row items-center gap-2 cursor-pointer"
             >
               <img src={instagramLogo} alt="instagram-logo" className="w-8" />
-              <p className="text-lg text-[#f96294]">@_kriss_tina</p>
+              <p className="text-lg text-[#f96294]">@mitrovic_kris</p>
             </Link>
-            <button
+            {/* <button
               onClick={scrollToSection}
               className="bg-[#f99b62] text-white text-[18px] font-semibold w-[120px] h-[45px] rounded-[40px]"
             >
               Kontakt
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

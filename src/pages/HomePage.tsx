@@ -9,7 +9,7 @@ import ProgramSection from "./Components/ProgramSection";
 
 const HomePage = () => {
   const aboutMeSectionRef = useRef<HTMLDivElement | null>(null);
-  const contactFormSectionRef = useRef<HTMLDivElement | null>(null);
+  // const contactFormSectionRef = useRef<HTMLDivElement | null>(null);
   const plansSectionRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToAboutMeSection = () => {
@@ -18,11 +18,11 @@ const HomePage = () => {
     }
   };
 
-  const scrollToContactFormSection = () => {
-    if (contactFormSectionRef.current) {
-      contactFormSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToContactFormSection = () => {
+  //   if (contactFormSectionRef.current) {
+  //     contactFormSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   const scrollToPlansSection = () => {
     if (plansSectionRef.current) {
@@ -37,7 +37,7 @@ const HomePage = () => {
         <AnimatedLine />
       </div>
       <div ref={aboutMeSectionRef} className="mb-[200px] sm:mb-[350px]">
-        <AboutMe scrollToSection={scrollToContactFormSection} />
+        <AboutMe />
       </div>
       <div className="max-w-[1000px] mx-auto">
         <ProgramSection />

@@ -5,9 +5,9 @@ export default function ProgramSection() {
     <section className="py-16 px-6 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
-          <h3 className="text-[#f96294] font-medium mb-4">
+          {/* <h3 className="text-[#f96294] font-medium mb-4">
             KAKO FUNKCIONIŠE PROGRAM?
-          </h3>
+          </h3> */}
           <h2 className="text-5xl font-bold text-[#f96294] mb-6">
             2 Koraka Do Rezultata
           </h2>
