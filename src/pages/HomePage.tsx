@@ -36,7 +36,7 @@ const HomePage = () => {
         <HeroSection scrollToSection={scrollToAboutMeSection} />
         <AnimatedLine />
       </div>
-      <div ref={aboutMeSectionRef} className="mb-[200px] sm:mb-[350px]">
+      <div ref={aboutMeSectionRef} className="mb-[300px] sm:mb-[350px]">
         <AboutMe />
       </div>
       <div className="max-w-[1000px] mx-auto">

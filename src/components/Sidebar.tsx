@@ -26,7 +26,7 @@ export const Sidebar = () => {
             <h1>{userDetails?.name}</h1>
           </div>
           <Button onClick={logout} className="absolute bottom-2 right-0">
-            Logout
+            Log out
           </Button>
         </>
       ) : (

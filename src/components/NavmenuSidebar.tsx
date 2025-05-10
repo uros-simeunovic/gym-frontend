@@ -56,7 +56,7 @@ export const NavmenuSidebar = () => {
                 onClick={logout}
                 className="bg-[#f99b62] hover:bg-[#c56930] text-white text-[30px] font-semibold w-[200px] h-[70px] rounded-[40px]"
               >
-                Logout
+                Log out
               </Button>
               {userDetails?.isAdmin && (
                 <Button

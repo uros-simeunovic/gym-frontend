@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import plan1Image from "@/assets/Plan1Image.webp";
 import whitePlan2 from "@/assets/WhiteGirl1.webp";
 import { useAuth } from "@/Providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "@/components/modals/Modal";
 import { useEffect } from "react";
+import { Badge } from "./ui/badge";
 
 export const Plans = () => {
   const { userDetails } = useAuth();
@@ -24,18 +25,36 @@ export const Plans = () => {
           <h1 className="text-7xl sm:text-8xl font-semibold text-[#f96294]">
             Planovi
           </h1>
-          {/* <p className="text-sm sm:text-xl text-[#f96294]">
-            Lorem ipsum dolor sit amet consectetur adipisicing
-          </p> */}
         </div>
-        <div className="space-y-20 sm:space-y-80">
-          <div className="relative md:h-[500px] p-6 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
-            <div className="h-full text-white flex flex-col justify-between gap-12">
+        <div className="space-y-36 sm:space-y-80 pt-28">
+          <div className="relative min-h-[350px] md:min-h-[500px] p-6 bg-gradient-to-r from-[#f96294] to-[#ffcdde] rounded-[40px] mx-auto">
+            <div className="mt-4 mb-2 absolute -top-24">
+              <div className="flex items-center gap-2">
+                <span className="text-lg line-through opacity-70 text-[#f96294]">
+                  2700rsd
+                </span>
+                <Badge className="bg-[#f96294] text-white">-25%</Badge>
+              </div>
+              <div className="flex items-center mt-1">
+                <span className="text-4xl font-bold text-[#f96294]">
+                  1999rsd
+                </span>
+                <Badge className="ml-2 bg-[#f96294] text-white">Akcija</Badge>
+              </div>
+            </div>
+            <div className="absolute z-0 bottom-0 right-0 rounded-br-[40px] overflow-hidden">
+              <img src={plan1Image} className="w-[180px] sm:w-[320px]" />
+            </div>
+            <div className="text-white flex flex-col gap-12">
               <div className="space-y-4">
-                <h1 className="text-[40px] font-medium leading-none">
+                <h1 className="text-[40px] sm:text-[50px] font-semibold leading-none">
                   BubbleUp
                 </h1>
                 <div className="flex flex-col font-normal text-[12px] sm:text-xl leading-[16px] space-y-1 max-w-[60%]">
+                  <div className="relative">
+                    <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                    <p className="ml-3">Tri treninga nedeljno</p>
+                  </div>
                   <div className="relative">
                     <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                     <p className="ml-3">
@@ -70,38 +89,60 @@ export const Plans = () => {
                   </div>
                 </div>
               </div>
-              {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ||
-              userDetails?.isAdmin ? (
-                <Button
-                  onClick={() => navigate(`/plans/I1euJf8LyuMbj3GLVoh9`)}
-                  className="bg-white text-[#f96294] text-[30px] font-semibold w-[200px] h-[60px] rounded-[40px]"
-                >
-                  Otvori Plan
-                </Button>
-              ) : (
-                <Button
-                  onClick={() => navigate("/placanje")}
-                  className="bg-white text-[#f96294] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
-                >
-                  Kupi
-                </Button>
-              )}
-            </div>
-            <div className="absolute bottom-0 right-0 rounded-br-[40px] overflow-hidden">
-              <img src={plan1Image} className="w-[180px] sm:w-[320px]" />
+              <div className="relative">
+                {userDetails?.paidPlan == "I1euJf8LyuMbj3GLVoh9" ||
+                userDetails?.isAdmin ? (
+                  <Button
+                    onClick={() => navigate(`/plans/I1euJf8LyuMbj3GLVoh9`)}
+                    className="bg-white text-[#f96294] text-[24px] sm:text-[30px] font-semibold w-[170px] sm:w-[200px] h-[50px] sm:h-[60px] rounded-[40px]"
+                  >
+                    Otvori Plan
+                  </Button>
+                ) : (
+                  <Link
+                    to={"https://www.instagram.com/mitrovic_kris/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-white text-[#f96294] text-[30px] font-semibold w-[140px] sm:w-[170px] h-[50px] sm:h-[60px] rounded-[40px]">
+                      Kupi
+                    </Button>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
-          <div className="relative md:h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto overflow-hidden sm:overflow-visible">
+          <div className="relative min-h-[350px] md:min-h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto  sm:overflow-visible">
+            <div className="mt-4 mb-2 absolute -top-24 right-0">
+              <div className="flex justify-end flex-row items-center gap-2">
+                <Badge className="bg-[#db84ff] text-white">-25%</Badge>
+                <span className="text-lg line-through opacity-70 text-[#db84ff]">
+                  3499rsd
+                </span>
+              </div>
+              <div className="flex flex-row justify-end items-center mt-1">
+                <Badge className="bg-[#db84ff] text-white">Akcija</Badge>
+                <span className="ml-2 text-4xl font-bold text-[#db84ff]">
+                  2599rsd
+                </span>
+              </div>
+            </div>
             <div className="absolute bottom-0 -left-2 overflow-hidden">
               <img src={whitePlan2} className="w-[180px] sm:w-[300px]" />
             </div>
             <div className="ml-[80px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
               <div className="space-y-4">
-                <h1 className="text-[40px] font-medium leading-none text-left">
-                  GluteGoddess
-                </h1>
+                <div>
+                  <h1 className="text-[34px] sm:text-[50px] font-semibold leading-none text-left">
+                    GluteGoddess
+                  </h1>
+                </div>
                 <div className="font-normal text-[12px] sm:text-xl leading-none">
                   <div className="font-normal text-[12px] sm:text-xl leading-[16px] space-y-1">
+                    <div className="relative">
+                      <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
+                      <p className="ml-3">Četiri treninga nedeljno</p>
+                    </div>
                     <div className="relative">
                       <div className="absolute left-0 top-[4px] sm:top-[10px] w-[8px] h-[8px] rounded-full bg-white" />
                       <p className="ml-3">Brži rezultati.</p>
@@ -140,22 +181,25 @@ export const Plans = () => {
                   </div>
                 </div>
               </div>
-              <div className="ml-[80px] sm:ml-auto">
+              <div>
                 {userDetails?.paidPlan == "OSlO6JVoATh8KNg7iF9A" ||
                 userDetails?.isAdmin ? (
                   <Button
                     onClick={() => navigate("/plans/OSlO6JVoATh8KNg7iF9A")}
-                    className="bg-white text-[#db84ff] text-[30px] font-semibold w-[200px] h-[60px] rounded-[40px]"
+                    className="bg-white text-[#db84ff] absolute bottom-6 right-6 text-[24px] sm:text-[30px] font-semibold w-[170px] sm:w-[200px] h-[46px] sm:h-[60px] rounded-[40px]"
                   >
                     Otvori Plan
                   </Button>
                 ) : (
-                  <Button
-                    onClick={() => navigate("/placanje")}
-                    className="bg-white text-[#db84ff] text-[30px] font-semibold w-[170px] h-[60px] rounded-[40px]"
+                  <Link
+                    to={"https://www.instagram.com/mitrovic_kris/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Kupi
-                  </Button>
+                    <Button className="bg-white text-[#db84ff] absolute bottom-6 right-6 text-[30px] font-semibold w-[140px] sm:w-[170px] h-[50px] sm:h-[60px] rounded-[40px]">
+                      Kupi
+                    </Button>
+                  </Link>
                 )}
               </div>
             </div>

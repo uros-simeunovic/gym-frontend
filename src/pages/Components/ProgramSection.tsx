@@ -1,4 +1,4 @@
-import { Heart, ArrowUpRight } from "lucide-react";
+import { Heart, Dumbbell } from "lucide-react";
 
 export default function ProgramSection() {
   return (
@@ -16,16 +16,16 @@ export default function ProgramSection() {
         <div className="grid md:grid-cols-2 gap-10 mt-16">
           <div className="flex flex-col items-center text-center">
             <div className="w-20 h-20 flex items-center justify-center mb-6">
-              <Heart className="w-16 h-16 text-rose-400 stroke-1" />
+              <Heart className="w-16 h-16 text-[#f96294] stroke-[1.5px]" />
             </div>
             <h3 className="text-2xl font-bold text-[#f96294] mb-4">
-              Zamisli koliko sjajno mozes da izgledaš.
+              Zamisli koliko sjajno možeš da izgledaš.
             </h3>
             <p className="text-gray-600"></p>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <div className="w-20 h-20 flex items-center justify-center mb-6 relative">
+            {/* <div className="w-20 h-20 flex items-center justify-center mb-6 relative">
               <div className="w-14 h-8 bg-rose-200 rounded-full absolute"></div>
               <div className="relative">
                 <div className="w-12 h-1 bg-rose-400 rounded-full absolute top-0 left-0"></div>
@@ -33,6 +33,9 @@ export default function ProgramSection() {
                 <div className="w-3 h-8 bg-rose-400 rounded-full absolute -top-3 right-0"></div>
                 <ArrowUpRight className="w-6 h-6 text-rose-400 absolute -top-8 right-0" />
               </div>
+            </div> */}
+            <div className="w-20 h-20 flex items-center justify-center mb-6">
+              <Dumbbell className="w-16 h-16 text-[#f96294] stroke-[1.5px]" />
             </div>
             <h3 className="text-2xl font-bold text-[#f96294] mb-4">
               Kreni - niko neće umesto tebe.

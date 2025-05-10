@@ -51,17 +51,17 @@ const AboutMe = () => {
       <div className="rounded-t-[60px] absolute w-full h-[500px] bg-white px-8 pt-10">
         <div className="flex flex-col gap-6 sm:w-[700px] md:w-[1000px] relative mx-auto">
           <div>
-            <h2 className="text-2xl font-bold text-[#f96294]">
+            <h2 className="text-4xl font-bold text-[#f96294]">
               Kristina Mitrović
             </h2>
             <hr className="my-2 border-pink-300" />
-            <p className="text-[#f96294]">
-              Napravila sam ovaj online plan na osnovu godina rada, ali pre
+            <p className="text-[#f96294] text-lg">
+              Napravila sam GRL GAINZ online plan na osnovu godina rada, ali pre
               svega - zahvaljujući mojim devojkama. Slušala sam šta vam treba,
               testirala zajedno sa vama, korigovala, prilagođavala i gledala
               kako rastete. Svaka vežba, svaka faza i svaki savet u ovom
               programu ima svoje “zašto” - jer je proveren u stvarnim
-              transformacijama, uz stvarne ljude. Tu sam da vam pomognem da
+              transformacijama. Tu sam da vam pomognem da
               zaista uspete. Uz razumevanje, iskustvo i konkretne korake, ovaj
               plan je vaša mapa ka najboljoj verziji sebe.
             </p>
