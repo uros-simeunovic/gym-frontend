@@ -125,7 +125,7 @@ export const Faq = () => {
               rel="noopener noreferrer"
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"
             >
-              <img className="h-6 w-6" src={instagram} />
+              <img className="h-6 w-6" src={instagram} alt="instagram-logo" />
               <span className="sr-only">Instagram</span>
             </Link>
             <Link
@@ -134,7 +134,7 @@ export const Faq = () => {
               rel="noopener noreferrer"
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"
             >
-              <img className="h-6 w-6" src={tiktok} />
+              <img className="h-6 w-6" src={tiktok} alt="tiktok-logo" />
               <span className="sr-only">TikTok</span>
             </Link>
           </div>

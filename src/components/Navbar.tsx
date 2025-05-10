@@ -12,7 +12,11 @@ export const Navbar = () => {
     <div className="h-full p-2 pt-6 bg-background">
       <div className="h-full md:max-w-[1600px] mx-auto flex items-center justify-between">
         <Link to={"/"}>
-          <img src={logo} alt="logo" className="w-[100px] md:w-[140px]" />
+          <img
+            src={logo}
+            alt="grlgainz-logo"
+            className="w-[100px] md:w-[140px]"
+          />
         </Link>
         <div onClick={onOpen}>
           <Menu className="w-10 cursor-pointer" />

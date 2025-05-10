@@ -15,7 +15,7 @@ export const LoginPage = () => {
       <div className="border-2 m-10 w-full h-[300px] md:w-[500px] md:h-[400px] rounded-3xl flex flex-col gap-20 items-center justify-center">
         <div className="flex flex-row items-center justify-center gap-6 mt-8">
           <h1 className="text-2xl md:text-4xl">Ulogujte se na</h1>
-          <img src={logo} alt="logo" className="w-20 md:w-28" />
+          <img src={logo} alt="grlgainz-logo" className="w-20 md:w-28" />
         </div>
         <div
           onClick={signInWithGoogle}

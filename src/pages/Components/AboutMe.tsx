@@ -61,9 +61,9 @@ const AboutMe = () => {
               testirala zajedno sa vama, korigovala, prilagođavala i gledala
               kako rastete. Svaka vežba, svaka faza i svaki savet u ovom
               programu ima svoje “zašto” - jer je proveren u stvarnim
-              transformacijama. Tu sam da vam pomognem da
-              zaista uspete. Uz razumevanje, iskustvo i konkretne korake, ovaj
-              plan je vaša mapa ka najboljoj verziji sebe.
+              transformacijama. Tu sam da vam pomognem da zaista uspete. Uz
+              razumevanje, iskustvo i konkretne korake, ovaj plan je vaša mapa
+              ka najboljoj verziji sebe.
             </p>
             <hr className="my-2 border-pink-300" />
           </div>

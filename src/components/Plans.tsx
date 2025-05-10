@@ -43,7 +43,11 @@ export const Plans = () => {
               </div>
             </div>
             <div className="absolute z-0 bottom-0 right-0 rounded-br-[40px] overflow-hidden">
-              <img src={plan1Image} className="w-[180px] sm:w-[320px]" />
+              <img
+                src={plan1Image}
+                alt="plan-1-image"
+                className="w-[180px] sm:w-[320px]"
+              />
             </div>
             <div className="text-white flex flex-col gap-12">
               <div className="space-y-4">
@@ -128,7 +132,11 @@ export const Plans = () => {
               </div>
             </div>
             <div className="absolute bottom-0 -left-2 overflow-hidden">
-              <img src={whitePlan2} className="w-[180px] sm:w-[300px]" />
+              <img
+                src={whitePlan2}
+                alt="plan-2-image"
+                className="w-[180px] sm:w-[300px]"
+              />
             </div>
             <div className="ml-[80px] sm:ml-[180px] text-white flex flex-col justify-between gap-12">
               <div className="space-y-4">

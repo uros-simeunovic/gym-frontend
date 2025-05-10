@@ -34,27 +34,27 @@ export const AnimatedLine = () => {
           translateX: line,
         }}
       >
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
-        <img src={logo} alt="" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
+        <img src={logo} alt="grlgainz-logo" className="w-16" />
       </motion.div>
     </AnimatePresence>
   );
