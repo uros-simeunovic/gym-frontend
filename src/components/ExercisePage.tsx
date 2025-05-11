@@ -23,6 +23,7 @@ export const ExercisePage = () => {
         width="1000px"
         src={exercise?.videoUrl}
         controls
+        controlsList="nodownload"
         className="rounded-2xl mt-2"
         poster={exercise?.thumbnail}
       />

@@ -117,7 +117,7 @@ export const Plans = () => {
             </div>
           </div>
           <div className="relative min-h-[350px] md:min-h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto  sm:overflow-visible">
-            <div className="mt-4 mb-2 absolute -top-24 right-0">
+            <div className="mt-4 mb-2 absolute -top-24 right-6">
               <div className="flex justify-end flex-row items-center gap-2">
                 <Badge className="bg-[#db84ff] text-white">-25%</Badge>
                 <span className="text-lg line-through opacity-70 text-[#db84ff]">
