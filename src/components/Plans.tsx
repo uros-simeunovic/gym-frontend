@@ -31,13 +31,13 @@ export const Plans = () => {
             <div className="mt-4 mb-2 absolute -top-24">
               <div className="flex items-center gap-2">
                 <span className="text-lg line-through opacity-70 text-[#f96294]">
-                  2700rsd
+                  5200rsd
                 </span>
-                <Badge className="bg-[#f96294] text-white">-25%</Badge>
+                <Badge className="bg-[#f96294] text-white">-30%</Badge>
               </div>
               <div className="flex items-center mt-1">
                 <span className="text-4xl font-bold text-[#f96294]">
-                  1999rsd
+                  3600rsd
                 </span>
                 <Badge className="ml-2 bg-[#f96294] text-white">Akcija</Badge>
               </div>
@@ -119,15 +119,15 @@ export const Plans = () => {
           <div className="relative min-h-[350px] md:min-h-[500px] flex p-6 bg-gradient-to-r from-[#edc0ff] to-[#db84ff] rounded-[40px] mx-auto  sm:overflow-visible">
             <div className="mt-4 mb-2 absolute -top-24 right-6">
               <div className="flex justify-end flex-row items-center gap-2">
-                <Badge className="bg-[#db84ff] text-white">-25%</Badge>
+                <Badge className="bg-[#db84ff] text-white">-30%</Badge>
                 <span className="text-lg line-through opacity-70 text-[#db84ff]">
-                  3499rsd
+                  6200rsd
                 </span>
               </div>
               <div className="flex flex-row justify-end items-center mt-1">
                 <Badge className="bg-[#db84ff] text-white">Akcija</Badge>
                 <span className="ml-2 text-4xl font-bold text-[#db84ff]">
-                  2599rsd
+                  4300rsd
                 </span>
               </div>
             </div>
