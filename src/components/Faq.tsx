@@ -129,7 +129,7 @@ export const Faq = () => {
               <span className="sr-only">Instagram</span>
             </Link>
             <Link
-              to="https://tiktok.com/@yourusername"
+              to="https://www.tiktok.com/@kristinna.trener"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#f96294] text-white transition-colors hover:bg-opacity-90"

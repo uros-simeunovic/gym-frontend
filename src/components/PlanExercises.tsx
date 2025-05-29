@@ -86,9 +86,6 @@ export const PlanExercises = () => {
         </Accordion>
       </div>
       <div className="mb-20">
-        {/* <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          Uputstvo
-        </h1> */}
         <div className="rounded-[30px]">
           <div
             className={cn(
