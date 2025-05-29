@@ -6,6 +6,7 @@ import { useGetExercisesByPlanId } from "@/hooks/exercise/useGetExercisesByPlanI
 import { Loader2 } from "lucide-react";
 import { Accordion } from "./Accordion";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export const PlanExercises = () => {
   const { planId } = useParams();
@@ -83,6 +84,47 @@ export const PlanExercises = () => {
         >
           <PhaseTwo exercises={exercises} />
         </Accordion>
+      </div>
+      <div className="mb-20">
+        {/* <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+          Uputstvo
+        </h1> */}
+        <div className="rounded-[30px]">
+          <div
+            className={cn(
+              "w-full text-left font-bold bg-white shadow-2xl rounded-[30px] relative overflow-hidden transition-all duration-300 ease-in-out h-[100px]",
+              openIndex === 2 ? "h-max max-h-[1000px]" : "h-auto max-h-[100px]"
+            )}
+          >
+            <div
+              onClick={() => toggle(2)}
+              className="font-bold text-4xl h-[100px] flex items-center pl-8 cursor-pointer relative"
+            >
+              <div>VAŽNO</div>
+              <div className="h-[2px] rounded-2xl absolute bg-white left-5 right-5 -bottom-1" />
+            </div>
+            <div className="p-2 my-10 sm:p-10 top-[120px]">
+              <video
+                playsInline
+                src="https://firebasestorage.googleapis.com/v0/b/gaingrlz.appspot.com/o/videos%2Ftutorijal.mp4?alt=media&token=184986c2-fd63-4c33-8193-36c0e836ef84"
+                controls
+                controlsList="nodownload"
+                className="rounded-2xl mt-2"
+                poster="https://firebasestorage.googleapis.com/v0/b/gaingrlz.appspot.com/o/thumbnails%2Ftutorijal.jpeg?alt=media&token=1f061cc4-b29e-49d8-ba64-b30060ef8af6"
+              />
+              <div className="mt-4 font-light">
+                <div className="font-semibold text-xl">Opis</div>
+                <p className="mb-2">
+                  Tvoje ciljeve uzimam ozbiljno, jer su i moji. Sve što želiš da
+                  ostvariš - možemo. Sa pravim planom, podrškom i verom u sebe,
+                  uspeh nije pitanje da li, već kada.
+                </p>
+                <p className="mb-2">Spremna si. Idemo zajedno.</p>
+                <p>Tvoj trener, Kristina Mitrović</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

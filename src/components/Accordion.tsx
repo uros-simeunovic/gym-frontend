@@ -22,7 +22,7 @@ export const Accordion = ({
     <div className="rounded-[30px] bg-[#f96294]">
       <div
         className={cn(
-          "w-full text-left font-bold bg-[#f96294] rounded-[30px] relative overflow-hidden transition-all duration-300 ease-in-out h-[100px]",
+          "w-full text-left font-bold bg-[#f96294] shadow-2xl rounded-[30px] relative overflow-hidden transition-all duration-300 ease-in-out h-[100px]",
           openIndex === index
             ? planId == "OSlO6JVoATh8KNg7iF9A"
               ? height
