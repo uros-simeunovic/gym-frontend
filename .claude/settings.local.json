@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(find C:/Users/dixyp/repos/gym-frontend -type d -iname *kristina*)",
+      "Bash(az account:*)",
+      "Bash(az group:*)",
+      "Bash(az storage:*)",
+      "Bash(node scripts/3-update-firestore-urls.js --dry-run)",
+      "Bash(node scripts/3-update-firestore-urls.js)"
+    ]
+  }
+}

@@ -103,11 +103,11 @@ export const PlanExercises = () => {
             <div className="p-2 my-10 sm:p-10 top-[120px]">
               <video
                 playsInline
-                src="https://firebasestorage.googleapis.com/v0/b/gaingrlz.appspot.com/o/videos%2Ftutorijal.mp4?alt=media&token=184986c2-fd63-4c33-8193-36c0e836ef84"
+                src={`https://${import.meta.env.VITE_AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/${import.meta.env.VITE_AZURE_CONTAINER}/videos_tutorijal.mp4`}
                 controls
                 controlsList="nodownload"
                 className="rounded-2xl mt-2"
-                poster="https://firebasestorage.googleapis.com/v0/b/gaingrlz.appspot.com/o/thumbnails%2Ftutorijal.jpeg?alt=media&token=1f061cc4-b29e-49d8-ba64-b30060ef8af6"
+                poster={`https://${import.meta.env.VITE_AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/${import.meta.env.VITE_AZURE_CONTAINER}/thumbnails_tutorijal.jpeg`}
               />
               <div className="mt-4 font-light">
                 <div className="font-semibold text-xl">Opis</div>

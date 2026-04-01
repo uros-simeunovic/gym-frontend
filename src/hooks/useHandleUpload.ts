@@ -1,8 +1,11 @@
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { db, storage } from "@/firebase";
+import { db } from "@/firebase";
 import { useDialog } from "./useDialog";
 import { addDoc, collection } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+
+const AZURE_ACCOUNT = import.meta.env.VITE_AZURE_STORAGE_ACCOUNT;
+const AZURE_CONTAINER = import.meta.env.VITE_AZURE_CONTAINER;
+const AZURE_SAS = import.meta.env.VITE_AZURE_SAS_TOKEN;
 
 export const useHandleUpload = () => {
   const {
@@ -22,45 +25,57 @@ export const useHandleUpload = () => {
       setError("Izaberite fajl za upload");
       return;
     }
+
+    if (!planId) {
+      return;
+    }
+
+    if (!exerciseDescription && !exerciseTitle) {
+      return;
+    }
+
     try {
-      // Upload video to Firebase Storage
-      const videoRef = ref(storage, `videos/${videoFile[0].name}`);
+      const file = videoFile[0];
+      const blobName = `${Date.now()}_${file.name}`;
+      const uploadUrl = `https://${AZURE_ACCOUNT}.blob.core.windows.net/${AZURE_CONTAINER}/${blobName}?${AZURE_SAS}`;
 
-      const uploadTask = uploadBytesResumable(videoRef, videoFile[0]);
+      const xhr = new XMLHttpRequest();
 
-      if (!planId) {
-        return;
-      }
+      await new Promise<void>((resolve, reject) => {
+        xhr.upload.addEventListener("progress", (e) => {
+          if (e.lengthComputable) {
+            setUploadProgress((e.loaded / e.total) * 100);
+          }
+        });
 
-      if (!exerciseDescription && !exerciseTitle) {
-        return;
-      }
+        xhr.addEventListener("load", () => {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve();
+          } else {
+            reject(new Error(`Upload failed: ${xhr.status} ${xhr.statusText}`));
+          }
+        });
 
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setUploadProgress(progress);
-        },
-        (error) => {
-          console.log("Error uploading video: ", error);
-        },
-        async () => {
-          const videoUrl = await getDownloadURL(videoRef);
+        xhr.addEventListener("error", () => reject(new Error("Upload failed")));
 
-          await addDoc(collection(db, `trainingPlans/${planId}/exercises`), {
-            name: exerciseTitle,
-            description: exerciseDescription,
-            videoUrl: videoUrl,
-            thumbnail: "thumbnail",
-            order: 1,
-          });
+        xhr.open("PUT", uploadUrl);
+        xhr.setRequestHeader("x-ms-blob-type", "BlockBlob");
+        xhr.setRequestHeader("Content-Type", file.type || "video/mp4");
+        xhr.send(file);
+      });
 
-          alert("Video uploaded and data saved successfully!");
-          setUploadProgress(0);
-        }
-      );
+      const videoUrl = `https://${AZURE_ACCOUNT}.blob.core.windows.net/${AZURE_CONTAINER}/${blobName}`;
+
+      await addDoc(collection(db, `trainingPlans/${planId}/exercises`), {
+        name: exerciseTitle,
+        description: exerciseDescription,
+        videoUrl: videoUrl,
+        thumbnail: "thumbnail",
+        order: 1,
+      });
+
+      alert("Video uploaded and data saved successfully!");
+      setUploadProgress(0);
     } catch (error) {
       console.error("Error uploading video: ", error);
     }
