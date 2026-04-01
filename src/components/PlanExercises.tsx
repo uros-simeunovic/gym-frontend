@@ -103,11 +103,11 @@ export const PlanExercises = () => {
             <div className="p-2 my-10 sm:p-10 top-[120px]">
               <video
                 playsInline
-                src={`https://${import.meta.env.VITE_AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/${import.meta.env.VITE_AZURE_CONTAINER}/videos_tutorijal.mp4`}
+                src={`https://${import.meta.env.VITE_AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/videos/tutorijal.mp4`}
                 controls
                 controlsList="nodownload"
                 className="rounded-2xl mt-2"
-                poster={`https://${import.meta.env.VITE_AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/${import.meta.env.VITE_AZURE_CONTAINER}/thumbnails_tutorijal.jpeg`}
+                poster={`https://${import.meta.env.VITE_AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/thumbnails/tutorijal.jpeg`}
               />
               <div className="mt-4 font-light">
                 <div className="font-semibold text-xl">Opis</div>
